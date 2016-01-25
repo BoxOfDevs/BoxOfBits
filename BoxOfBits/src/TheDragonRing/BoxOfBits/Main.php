@@ -248,5 +248,36 @@ class Main extends PluginBase implements Listener{
 												}
 													}
 													break;
+		if(strotolower($cmd->getName() == "xyz"));
+				if(!isset($args[0])){
+				if(!($sender instanceof Player)){
+				$sender->sendMessage(Colour::DARK_RED."$consoleMsg");
+				return true;
+				}
+						$player = $this->getServer()->getPlayer($sender->getName());
+						if($player->hasPermission("boxofbits.xyz")){
+								$sender->sendMessage(Colour::GOLD."Coordinates: \n".Colour::DARK_GREEN."X: ".Colour::WHITE."$player->getFloorX()".Colour::DARK_GREEN."Y: ".Colour::WHITE."$player->getFloorY()".Colour::DARK_GREEN."Z: ".Colour::WHITE."$player->getFloorZ()");
+						return true;
+							}else{
+								$player->sendMessage(Colour::DARK_RED."$this->$permMessage");
+									return true;
+											}else{
+										$player = $this->getServer()->getPlayer($args[0]);
+										if($player instanceof Player){
+												$sender->sendMessage(Colour::GOLD."Coordinates: \n".Colour::DARK_GREEN."X: ".Colour::WHITE."$player->getFloorX()".Colour::DARK_GREEN."Y: ".Colour::WHITE."$player->getFloorY()".Colour::DARK_GREEN."Z: ".Colour::WHITE."$player->getFloorZ()");
+											return true;
+										}else{
+											$sender->sendMessage(Colour::DARK_RED."Player Not Found");
+											return true;
+
+								}
+
+						}
+
+				break;
+
+
+
+								
 														}
 }
