@@ -1,0 +1,47 @@
+name: BoxOfBits
+main: TheDragonRing\BoxOfBits\Main
+version: 0.0.2
+api: 1.13.2
+description: A plugin full of bits of use
+author: TheDragonRing
+commands:
+    boxofbits:
+        usage: /boxofbits 1|2
+        description: Shows plugin info and help
+    gms:
+        usage: /gms [playername]
+        description: Changes gamemode to Survival 
+    gmc:
+        usage: /gmc [playername]
+        description: Changes gamemode to Creative
+    gma:
+        usage: /gma [playername]
+        description: Changes gamemode to Adventure
+    gmsp:
+        usage: /gmsp [playername]
+        description: Changes gamemode to Spectator
+    xyz:
+        usage: /xyz [playername]
+        description: Get player Coordinates
+    rules:
+        usage: /rules
+        description: Shows server rules
+permissions:
+    boxofbits.gms:
+        default: op
+        description: Allows use of /gms
+    boxofbits.gmc:
+        default: op
+        description: Allows use of /gmc
+    boxofbits.gma:
+        default: op
+        description: Allows use of /gma
+    boxofbits.gmsp:
+        default: op
+        description: Allows use of /gmsp
+    boxofbits.xyz:
+        default: true
+        description: Allows use of /xyz
+    boxofbits.rules:
+        default: true
+        description: Allows use of /rules
