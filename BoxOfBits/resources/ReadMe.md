@@ -12,7 +12,7 @@
         /xyz shows player coordinates.
         /rules show server rules.
         /sendbroadcast & /sendpopup send broadcasted messages or popups to either the whole server or a specified player.
-        /boxofbits shows the plugin help menu with all the commands stored inside.
+        /boxofbits shows the plugin help menu with all the commands stored inside, but does not use a permission so anyone can use it.
 
 
     Planned Features:
@@ -43,7 +43,6 @@
 
     Permissions:
 
-        boxofbits.help - For /boxofbits
         boxofbits.gms - For /gms
         boxofbits.gmc - For /gmc
         boxofbits.gma - For /gma
