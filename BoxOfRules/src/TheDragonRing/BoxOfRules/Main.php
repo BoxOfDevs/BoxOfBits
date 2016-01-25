@@ -1,3 +1,5 @@
+<?php
+
 namespace TheDragonRing\BoxOfRules;
 
 use pocketmine\plugin\PluginBase;
