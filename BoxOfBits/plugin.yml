@@ -1,9 +1,10 @@
 name: BoxOfBits
-main: TheDragonRing\BoxOfBits\Main
-version: 0.0.2
-api: 1.13.2
-description: A plugin full of bits of use
 author: TheDragonRing
+version: 0.0.2
+description: A plugin full of bits of use
+api: 1.13.2
+main: TheDragonRing\BoxOfBits\Main
+load: STARTUP
 commands:
     boxofbits:
         usage: /boxofbits 1|2
