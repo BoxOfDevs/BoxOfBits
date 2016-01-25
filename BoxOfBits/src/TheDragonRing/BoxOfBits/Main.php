@@ -77,6 +77,7 @@ class Main extends PluginBase implements Listener{
 
 //Commands
 	public function onCommand(CommandSender $sender,Command $cmd,$label,array $args){
+//boxofbits
 		if(strtolower($cmd->getName() == "boxofbits"));
 			if(!isset($args[0])){
 				$sender->sendMessage(Colour::BLACK. "---[".Colour::DARK_PURPLE."BoxOfBits".Colour::BLACK."]---");
@@ -103,6 +104,7 @@ class Main extends PluginBase implements Listener{
 							break;
 						}
 				}
+//gms
 		if(strtolower($cmd->getName() == "gms"));
 			if(!isset($args[0])){
 			if (!($sender instanceof Player)){
@@ -138,6 +140,7 @@ class Main extends PluginBase implements Listener{
 								}
 						}
 				break;
+//gmc
 		if(strtolower($cmd->getName() == "gmc"));
 			if(!isset($args[0])){
 			if (!($sender instanceof Player)){
@@ -173,6 +176,7 @@ class Main extends PluginBase implements Listener{
 								}
 						}
 				break;
+//gma
 		$if(strtolower($cmd->getName() == "gma"));
 			if(!isset($args[0])){
 			if (!($sender instanceof Player)){
@@ -208,6 +212,7 @@ class Main extends PluginBase implements Listener{
 								}
 						}
 				break;
+//gmsp
 		if(strtolower($cmd->getName() == "gmsp"));
 			if(!isset($args[0])){
 			if (!($sender instanceof Player)){
