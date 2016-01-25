@@ -1,1 +1,20 @@
 
+---
+#######################################
+# BoxOfRules version 0.0.1 config file #
+# Created by TheDragonRing    :)      #
+#######################################
+
+# Custom rules which show up when /rules 1|2 is run
+# Use § to colour the text
+Rule1: "No Swearing"
+Rule2: "No Using Mods"
+Rule3: "No Advertising"
+Rule4: "No Asking For OP"
+Rule5: "No Asking For Creative"
+Rule6: "Have Fun :)"
+Rule7: "No Griefing"
+Rule8: "Another Rule"
+Rule9: "Another Rule"
+Rule10: "Another Rule"
+...
