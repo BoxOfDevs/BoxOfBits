@@ -5,3 +5,11 @@ description: A simple rules plugin
 api: 1.13.2
 main: TheDragonRing\BoxOfRules\Main
 load: STARTUP
+commands:
+    rules:
+        usage: /rules 1|2
+        description: Shows server rules
+permissions:
+    boxofrules.rules:
+        default: true
+        description: Allows /rules
