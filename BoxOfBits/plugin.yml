@@ -28,6 +28,9 @@ commands:
         usage: /rules
         description: Shows server rules
 permissions:
+    boxofbits.help:
+        default: op
+        description: Allows use of /boxofbits
     boxofbits.gms:
         default: op
         description: Allows use of /gms
