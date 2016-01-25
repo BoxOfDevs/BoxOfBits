@@ -27,6 +27,14 @@ commands:
     rules:
         usage: /rules
         description: Shows server rules
+    sendpopup:
+        usage: /sendpopup [player]
+        aliases: sendp
+        description: Broadcasts specified popup
+    sendbroadcast:
+        usage: /sendbroadcast [player]
+        aliases: sendb
+        description: Broadcasts specified message
 permissions:
     boxofbits.help:
         default: op
@@ -49,3 +57,9 @@ permissions:
     boxofbits.rules:
         default: true
         description: Allows use of /rules
+    boxofbits.popup:
+        default: op
+        description: Allows use of /sendpopup
+    boxofbits.broadcast:
+        default: op
+        description: Allows use of /sendbroadcast
