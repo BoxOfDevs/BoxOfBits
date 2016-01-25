@@ -12,4 +12,4 @@ commands:
 permissions:
     boxofrules.rules:
         default: true
-        description: Allows /rules
+        description: Allows use of /rules
