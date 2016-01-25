@@ -77,7 +77,7 @@ class Main extends PluginBase implements Listener{
 
 //Commands
 	public function onCommand(CommandSender $sender,Command $cmd,$label,array $args){
-		$cmd = (strtolower($cmd->getName() == "boxofbits"));
+		if(strtolower($cmd->getName() == "boxofbits"));
 			if(!isset($args[0])){
 				$sender->sendMessage(Colour::BLACK. "---[".Colour::DARK_PURPLE."BoxOfBits".Colour::BLACK."]---");
 				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."Plugin Maker §o§2The§4Dragon§1Ring");
@@ -103,7 +103,7 @@ class Main extends PluginBase implements Listener{
 							break;
 						}
 				}
-		$cmd = (strtolower($cmd->getName() == "gms"));
+		if(strtolower($cmd->getName() == "gms"));
 			if(!isset($args[0])){
 			if (!($sender instanceof Player)){
 			$sender->sendMessage(Colour::DARK_RED."$this->consoleMsg");
@@ -138,7 +138,7 @@ class Main extends PluginBase implements Listener{
 								}
 						}
 				break;
-		$cmd = (strtolower($cmd->getName() == "gmc"));
+		if(strtolower($cmd->getName() == "gmc"));
 			if(!isset($args[0])){
 			if (!($sender instanceof Player)){
 			$sender->sendMessage(Colour::DARK_RED."$this->consoleMsg");
@@ -173,7 +173,7 @@ class Main extends PluginBase implements Listener{
 								}
 						}
 				break;
-		$cmd = (strtolower($cmd->getName() == "gma"));
+		$if(strtolower($cmd->getName() == "gma"));
 			if(!isset($args[0])){
 			if (!($sender instanceof Player)){
 			$sender->sendMessage(Colour::DARK_RED."$this->consoleMsg");
@@ -208,7 +208,7 @@ class Main extends PluginBase implements Listener{
 								}
 						}
 				break;
-		$cmd = (strtolower($cmd->getName() == "gmsp"));
+		if(strtolower($cmd->getName() == "gmsp"));
 			if(!isset($args[0])){
 			if (!($sender instanceof Player)){
 			$sender->sendMessage(Colour::DARK_RED."$this->consoleMsg");
