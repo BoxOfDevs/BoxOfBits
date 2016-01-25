@@ -1,0 +1,7 @@
+name: BoxOfRules
+author: TheDragonRing
+version: 0.0.1
+description: A simple rules plugin
+api: 1.13.2
+main: TheDragonRing\BoxOfRules\Main
+load: STARTUP
