@@ -1,0 +1,14 @@
+---
+#######################################
+# BoxOfBits version 0.0.2 config file #
+# Created by TheDragonRing    :)      #
+#######################################
+
+# Custom messages which either get sent in chat or popup on the bottom of the screen when certain events occur
+# Use #playername as the name of the player and § to colour the text
+JoinPopup: "#playername §bJoined the Server"
+LeavePopup: "#playername §4Left the Server"
+KickPopup: "#playername §4Got Kicked from the Server"
+GamemodeChangePopup: "#playername §2Changed Gamemode"
+DeathPopup: "#playername §4Just Died"
+...
