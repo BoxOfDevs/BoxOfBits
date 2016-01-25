@@ -34,6 +34,15 @@ class Main extends PluginBase implements Listener{
 				"DeathPopup" => "#playername §4Just Died",
 				"GamemodeChangePopup" => "#playername §2Changed Gamemode",
 				"Rule1" => "No Swearing",
+				"Rule2" => "No Using Mods",
+				"Rule3" => "No Advertising",
+				"Rule4" => "No Asking For OP",
+				"Rule5" => "No Asking For Creative",
+				"Rule6" => "Have Fun :)",
+				"Rule7" => "No Griefing",
+				"Rule8" => "Another Rule",
+				"Rule9" => "Another Rule",
+				"Rule10" => "Another Rule",
 			));
 	}
 	public function onDisable(){
