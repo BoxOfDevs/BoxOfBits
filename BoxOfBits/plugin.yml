@@ -36,9 +36,6 @@ commands:
         aliases: sendb
         description: Broadcasts specified message
 permissions:
-    boxofbits.help:
-        default: op
-        description: Allows use of /boxofbits
     boxofbits.gms:
         default: op
         description: Allows use of /gms
