@@ -33,6 +33,7 @@ class Main extends PluginBase implements Listener{
 				"KickPopup" => "#playername §4Got Kicked from the Server",
 				"DeathPopup" => "#playername §4Just Died",
 				"GamemodeChangePopup" => "#playername §2Changed Gamemode",
+				"Rule1" => "No Swearing",
 			));
 	}
 	public function onDisable(){
