@@ -8,6 +8,10 @@
         When a player dies a popup appears saying "<playername> Just died".
         When a player leaves the server a popup appears saying "<playername> left the server".
         When a player is kicked a popup appears saying "<playername> just got kicked".
+        All popups and messages are configurable.
+        /xyz shows player coordinates.
+        /rules show server rules.
+        /sendbroadcast & /sendpopup send broadcasted messages or popups to either the whole server or a specified player.
         /boxofbits shows the plugin help menu with all the commands stored inside.
 
 
@@ -16,7 +20,6 @@
         Various teleport features like Warps, TPA, Homes, and Portals.
         Heal command.
         Slay & Suicide commands.
-        Compass & Coordinates commands.
         Jail & Timer-Ban commands.
         Possibly Permission features.
         Possibly Economy features.
@@ -32,16 +35,23 @@
         /gmc - Changes gamemode to Creative.
         /gma - Changes gamemode to Adventure mode.
         /gmsp - Changes gamemode to Spectator mode.
+        /xyz - Shows player coordinates.
+        /rules - Shows server rules.
+        /sendbroadcast - Broadcast message.
+        /sendpopup - Broadcast popup.
 
 
     Permissions:
 
-        boxofbits.boxofbits - For /boxofbits
+        boxofbits.help - For /boxofbits
         boxofbits.gms - For /gms
         boxofbits.gmc - For /gmc
         boxofbits.gma - For /gma
         boxofbits.gmsp - For /gmsp
-
+        boxofbits.rules - For /rules
+        boxofbits.xyz - For /xyz
+        boxofbits.popup - For /sendpopup
+        boxofbits.broadcast - For /sendbroadcast
 
     _______________________________________________________________________________________________________________________________
 
