@@ -9,7 +9,6 @@ use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\command\CommandExecutor;
 use pocketmine\command\PluginCommand;
-use pocketmine\permission\Permission;
 use pocketmine\Player;
 use pocketmine\Server;
 use pocketmine\utils\Config;
@@ -50,7 +49,6 @@ class Main extends PluginBase implements Listener{
 	public function onCommand(CommandSender $sender,Command $cmd,$label,array $args){
 		if(strtolower($cmd->getName() == "rules"));
 			$player = $this->getServer()->getPlayer($sender->getName());
-			if($player->hasPermission("rulekit.rules")){
 			if(!isset($args[0])){
 				$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."RuleKit v0.0.1".Colour::BLACK."]---");
 				$sender->sendMessage(Colour::DARK_RED. "Usage: " .Colour::WHITE."/rules 1|2".Colour::DARK_RED." Shows page 1 or 2 of server rules");
@@ -73,14 +71,9 @@ class Main extends PluginBase implements Listener{
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE($this->config->get("Rule8")));
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE($this->config->get("Rule9")));
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE($this->config->get("Rule10")));
-						return true;
-							break;
-								}
-									}
-										}else{
-											$sender->sendMessage(Colour::DARK_RED."$this->permMessage");
-									return true;
-								}
-							break;
+							return true;
+						}
+					}
+				break;
 			}
 }
