@@ -46,7 +46,7 @@ class Main extends PluginBase implements Listener{
 		$player = $event->getPlayer();
 		$name = $player->getName();
 		$sender->sendMessage(Colour::GOLD."Please run /rules to view server rules");
-
+	}
 	public function onCommand(CommandSender $sender,Command $cmd,$label,array $args){
 		if(strtolower($cmd->getName() == "rules"));
 			$player = $this->getServer()->getPlayer($sender->getName());
