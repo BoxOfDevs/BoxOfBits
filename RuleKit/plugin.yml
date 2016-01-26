@@ -9,7 +9,3 @@ commands:
     rules:
         usage: /rules 1|2
         description: Shows server rules
-permissions:
-    rulekit.rules:
-        default: true
-        description: Allows use of /rules
