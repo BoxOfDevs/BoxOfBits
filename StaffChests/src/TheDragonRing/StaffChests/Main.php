@@ -34,3 +34,14 @@ class Main extends PluginBase implements Listener{
 			$player = $this->getServer()->getPlayer($sender->getName());
 			if($player->hasPermission("staffchests.main")){
 			if(!isset($args[0])){
+			if(!($sender instanceof Player)){
+			$sender->sendMessage(Colour::DARK_RED."$this->consoleMsg");
+			return true;
+			}
+				$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."StaffChests".Colour::BLACK."]---");
+				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/staffchests key".Colour::DARK_GREEN." Get key to open StaffChest");
+				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/staffchests chest".Colour::DARK_GREEN." Get StaffChest");
+
+		}else{
+				switch ($args[0]){
+					case "1":
