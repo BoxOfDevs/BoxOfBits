@@ -307,7 +307,7 @@ class Main extends PluginBase implements Listener{
 							}else{
 								$player->sendMessage(Colour::DARK_RED."$this->$permMessage");
 									return true;
-											}else{
+											}else{ 
 										$player = $this->getServer()->getPlayer($args[0]);
 										if($player instanceof Player){
 												$sender->sendMessage(Colour::GOLD."Coordinates: \n".Colour::DARK_GREEN."X: ".Colour::WHITE."$player->getFloorX()".Colour::DARK_GREEN."Y: ".Colour::WHITE."$player->getFloorY()".Colour::DARK_GREEN."Z: ".Colour::WHITE."$player->getFloorZ()");
