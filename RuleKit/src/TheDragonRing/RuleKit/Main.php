@@ -52,7 +52,7 @@ class Main extends PluginBase implements Listener{
 			$player = $this->getServer()->getPlayer($sender->getName());
 			if($player->hasPermission("rulekit.rules")){
 			if(!isset($args[0])){
-				$sender->sendMessage(Colour::BLACK. "---[".Colour::DARK_PURPLE."RuleKit v0.0.1".Colour::BLACK."]---");
+				$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."RuleKit v0.0.1".Colour::BLACK."]---");
 				$sender->sendMessage(Colour::DARK_RED. "Usage: " .Colour::WHITE."/rules 1|2".Colour::DARK_RED." Shows page 1 or 2 of server rules");
 				return true;
 			}else{
