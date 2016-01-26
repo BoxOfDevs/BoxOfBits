@@ -5,3 +5,19 @@ description: A special chest plugin with a funny feature
 api: 1.13.2
 main: TheDragonRing\StaffChests\Main
 load: STARTUP
+commands:
+    staffchests:
+        usage: /staffchests chest|key
+        aliases: schest
+        description: The command to get StaffChests & StaffKeys with
+    loopychest:
+        usage: /loopychest
+        aliases: lchest
+        description: A loopy chest command for anyone to try out
+permissions:
+    staffchests.staffchests:
+        default: OP
+        description: Allows /staffchests
+    staffchests.loopychest:
+        default: true
+        description: Allows /loopychest
