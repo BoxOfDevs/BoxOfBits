@@ -10,6 +10,6 @@ commands:
         usage: /rules 1|2
         description: Shows server rules
 permissions:
-    boxofrules.rules:
+    rulekit.rules:
         default: true
         description: Allows use of /rules
