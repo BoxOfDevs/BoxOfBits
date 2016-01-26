@@ -340,15 +340,15 @@ class Main extends PluginBase implements Listener{
     								}
     							}	
     						}else{
-    							if($this->plugin->getServer()->getPlayerExact($args[0])){
-    								$receiver = $this->plugin->getServer()->getPlayerExact($args[0])
+    							if($this->getServer()->getPlayer($args[0])){
+    								$reciever = $this->getServer()->getPlayer($args[0]);
     								if($sender instanceof CommandSender){
     									$receiver->sendMessage($this->plugin->messagebyConsole($sender, $this->temp, $this->plugin->getMessagefromArray($args)));
     								}elseif($sender instanceof Player){
     									$receiver->sendMessage($this->plugin->messagebyPlayer($sender, $this->temp, $this->plugin->getMessagefromArray($args)));
     								}
     							}else{
-    								$sender->sendMessage("&cPlayer not found"));
+    								$sender->sendMessage(Color::DARK_RED."Player not found"));
     							}
     						}
     				}else{
