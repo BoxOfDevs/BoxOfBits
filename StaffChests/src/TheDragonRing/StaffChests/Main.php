@@ -11,6 +11,7 @@ use pocketmine\command\PluginCommand;
 use pocketmine\permission\Permission;
 use pocketmine\Player;
 use pocketmine\Server;
+use pocketmine\item\Item;
 use pocketmine\utils\Config;
 use pocketmine\event\Listener;
 
