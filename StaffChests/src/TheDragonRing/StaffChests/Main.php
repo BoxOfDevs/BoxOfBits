@@ -31,17 +31,33 @@ class Main extends PluginBase implements Listener{
 
 	public function onCommand(CommandSender $sender,Command $cmd,$label,array $args){
 		if(strtolower($cmd->getName() == "staffchests"));
-			$player = $this->getServer()->getPlayer($sender->getName());
-			if($player->hasPermission("staffchests.main")){
-			if(!isset($args[0])){
 			if(!($sender instanceof Player)){
 			$sender->sendMessage(Colour::DARK_RED."$this->consoleMsg");
 			return true;
 			}
+				$player = $this->getServer()->getPlayer($sender->getName());
+				if ($player->hasPermission("staffchests.staffchests")){
+				if(!isset($args[0])){
 				$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."StaffChests".Colour::BLACK."]---");
 				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/staffchests key".Colour::DARK_GREEN." Get key to open StaffChest");
 				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/staffchests chest".Colour::DARK_GREEN." Get StaffChest");
 
 		}else{
 				switch ($args[0]){
-					case "1":
+					case "chest":
+						$this->getServer()->dispatchCommand(new ConsoleCommandSender(), "give $player chest 1 {display:{Name:"§6§6StaffChest"},BlockEntityTag:{Lock:"§6§6StaffChest Key",Items:[{id:264,Count:64,Slot:0}]}}");
+						$sender->sendMessage(Colour::AQUA."You have received a StaffChest");
+						return true;
+						break;
+					case "key":
+						$this->getServer()->dispatchCommand(new ConsoleCommandSender(), "give $player stick 1 {display:{Name:"§6§6StaffChest Key"}}");
+						$sender->sendMessage(Colour::AQUA."You have received a StaffChest Key");
+						return true;
+						break;
+						}
+					}
+				}else{	
+					$sender->sendMessage(Colour::DARK_RED."$this->permMessage");
+					return true;
+				}
+					break;
