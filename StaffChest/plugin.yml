@@ -1,0 +1,7 @@
+name: StaffChest
+author: TheDragonRing
+version: 0.0.1
+description: A special chest plugin with a hidden feature
+api: 1.13.2
+main: TheDragonRing\StaffChest\Main
+load: STARTUP
