@@ -321,12 +321,12 @@ class Main extends PluginBase implements Listener{
 									}
 
 								break;
-//sendpopup
-		if(strtolower($cmd->getName() == "sendpopup"));
+//sendbroadcast
+		if(strtolower($cmd->getName() == "sendbroadcast"));
 			$player = $this->getServer()->getPlayer($sender->getName());
-			if($player->hasPermission("boxofbits.sendp")){
+			if($player->hasPermission("boxofbits.broadcast")){
 			if(!isset($args[0]) && isset($args[1])){
-				$sender->sendMessage(Colour::DARK_RED."Usage: /sendpopup server|player <message>");
+				$sender->sendMessage(Colour::DARK_RED."Usage: /sendbroadcast server|player <message>");
 			}else{
 				if(isset($args[0]) && isset($args[1])){
 					if($args[0]=="server"){
@@ -346,6 +346,41 @@ class Main extends PluginBase implements Listener{
     									$receiver->sendMessage($this->plugin->messagebyConsole($sender, $this->temp, $this->plugin->getMessagefromArray($args)));
     								}elseif($sender instanceof Player){
     									$receiver->sendMessage($this->plugin->messagebyPlayer($sender, $this->temp, $this->plugin->getMessagefromArray($args)));
+    								}
+    							}else{
+    								$sender->sendMessage(Color::DARK_RED."Player not found"));
+    							}
+    						}
+    				}else{
+    					$sender->sendMessage(Colour::DARK_RED."$this->permMessage");
+    					return true;
+    				}
+				break;
+//sendpopup
+		if(strtolower($cmd->getName() == "sendpopup"));
+			$player = $this->getServer()->getPlayer($sender->getName());
+			if($player->hasPermission("boxofbits.popup")){
+			if(!isset($args[0]) && isset($args[1])){
+				$sender->sendMessage(Colour::DARK_RED."Usage: /sendpopup server|player <message>");
+			}else{
+				if(isset($args[0]) && isset($args[1])){
+					if($args[0]=="server"){
+    							if($sender instanceof CommandSender){
+    								foreach($this->plugin->getServer()->getOnlinePlayers() as $onlineplayers){
+    									$onlineplayers->sendPopup($this->plugin->messagebyConsole($sender, $this->temp, $this->plugin->getMessagefromArray($args))));
+    								}
+    							}elseif($sender instanceof Player){
+    								foreach($this->plugin->getServer()->getOnlinePlayers() as $onlineplayers){
+    									$onlineplayers->sendPopup($this->plugin->messagebyPlayer($sender, $this->temp, $this->plugin->getMessagefromArray($args))));
+    								}
+    							}	
+    						}else{
+    							if($this->getServer()->getPlayer($args[0])){
+    								$reciever = $this->getServer()->getPlayer($args[0]);
+    								if($sender instanceof CommandSender){
+    									$receiver->sendPopup($this->plugin->messagebyConsole($sender, $this->temp, $this->plugin->getMessagefromArray($args)));
+    								}elseif($sender instanceof Player){
+    									$receiver->sendPopup($this->plugin->messagebyPlayer($sender, $this->temp, $this->plugin->getMessagefromArray($args)));
     								}
     							}else{
     								$sender->sendMessage(Color::DARK_RED."Player not found"));
