@@ -44,6 +44,7 @@ class Main extends PluginBase implements Listener{
 				"Rule9" => "Another Rule",
 				"Rule10" => "Another Rule",
 			));
+		$this->config->save();
 	}
 	public function onDisable(){
 		$this->getLogger()->info(Colour::AQUA."BoxOfBits".Colour::GREEN." by TheDragonRing".Colour::DARK_RED." Disabled!");
