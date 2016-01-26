@@ -278,7 +278,7 @@ class Main extends PluginBase implements Listener{
 						return true;
 							break;
 					case "2":
-						$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD"Server Rules Page 2".Colour::BLACK."]---");
+						$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."Server Rules Page 2".Colour::BLACK."]---");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE($this->config->get("Rule6")));
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE($this->config->get("Rule7")));
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE($this->config->get("Rule8")));
