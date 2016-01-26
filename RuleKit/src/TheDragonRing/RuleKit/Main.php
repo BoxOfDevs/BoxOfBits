@@ -4,6 +4,7 @@ namespace TheDragonRing\RuleKit;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat as Colour;
+use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\command\CommandExecutor;
@@ -40,6 +41,11 @@ class Main extends PluginBase implements Listener{
 	}
     private $permMessage = Colour::DARK_RED."You do not have permission to run this command!";
     private $consoleMsg = Colour::DARK_RED."This command can only be executed in-game!";
+
+	public function onJoin(PlayerJoinEvent $event){
+		$player = $event->getPlayer();
+		$name = $player->getName();
+		$sender->sendMessage(Colour::GOLD."Please run /rules to view server rules");
 
 	public function onCommand(CommandSender $sender,Command $cmd,$label,array $args){
 		if(strtolower($cmd->getName() == "rules"));
