@@ -258,7 +258,7 @@ class Main extends PluginBase implements Listener{
 											return true;
 												}
 													}
-
+//rules
 		if(strtolower($cmd->getName() == "rules"));
 			$player = $this->getServer()->getPlayer($sender->getName());
 			if($player->hasPermission("boxofbits.rules")){
@@ -293,7 +293,7 @@ class Main extends PluginBase implements Listener{
 									return true;
 								}
 							break;													break;
-
+//xyz
 		if(strotolower($cmd->getName() == "xyz"));
 				if(!isset($args[0])){
 				if(!($sender instanceof Player)){
@@ -316,11 +316,16 @@ class Main extends PluginBase implements Listener{
 											$sender->sendMessage(Colour::DARK_RED."Player Not Found");
 											return true;
 
-								}
+										}
 
-						}
+									}
 
-				break;
-								
+								break;
+//sendpopup
+		if(strtolower($cmd->getName() == "sendpopup"));
+			$player = $this->getServer()->getPlayer($sender->getName());
+			if($player->hasPermission("boxofbits.sendp")){
+			if(!isset($args[0])){
+				$sender->sendMessage(Colour::DARK_RED."Usage: /sendpopup server|player <message>")
 		}
 }
