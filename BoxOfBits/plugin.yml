@@ -28,11 +28,11 @@ commands:
         usage: /rules
         description: Shows server rules
     sendpopup:
-        usage: /sendpopup [player]
+        usage: /sendpopup server|player <message>
         aliases: sendp
         description: Broadcasts specified popup
     sendbroadcast:
-        usage: /sendbroadcast [player]
+        usage: /sendbroadcast server|player <messsage>
         aliases: sendb
         description: Broadcasts specified message
 permissions:
