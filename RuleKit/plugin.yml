@@ -13,4 +13,3 @@ permissions:
     rulekit.rules:
         default: true
         description: Allows use of /rules
-
