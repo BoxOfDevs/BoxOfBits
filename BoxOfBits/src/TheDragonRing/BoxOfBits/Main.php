@@ -91,26 +91,26 @@ class Main extends PluginBase implements Listener{
 //boxofbits
 		if(strtolower($cmd->getName() == "boxofbits"));
 			if(!isset($args[0])){
-				$sender->sendMessage(Colour::BLACK. "---[".Colour::DARK_PURPLE."BoxOfBits".Colour::BLACK."]---");
+				$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits".Colour::BLACK."]---");
 				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."Plugin Maker §o§2The§4Dragon§1Ring");
 				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."Plugin Version §60.0.2");
-				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/boxofbits 1|2".Colour::GREEN." Shows page 1 or 2 of help");
+				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/boxofbits 1|2".Colour::DARK_GREEN." Shows page 1 or 2 of help");
 				return true;
 			}else{
 				switch ($args[0]){
 					case "1":
-						$sender->sendMessage(Colour::BLACK. "---[".Colour::DARK_PURPLE."BoxOfBits v0.0.2 Help Page 1".Colour::BLACK."]---");
+						$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v0.0.2 Help Page 1".Colour::BLACK."]---");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/boxofbits 1|2".Colour::GREEN." Shows plugin help");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/rules".Colour::GREEN." Shows server rules");
-						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/gms [playername]".Colour::GREEN." Changes gamemode to Survival");
-						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/gmc [playername]".Colour::GREEN." Changes gamemode to Creative");
-						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/gma [playername]".Colour::GREEN." Changes gamemode to Adventure");
+						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/gms [playername]".Colour::DARK_GREEN." Changes gamemode to Survival");
+						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/gmc [playername]".Colour::DARK_GREEN." Changes gamemode to Creative");
+						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/gma [playername]".Colour::DARK_GREEN." Changes gamemode to Adventure");
 						return true;
 							break;
 					case "2":
-						$sender->sendMessage(Colour::BLACK. "---[".Colour::DARK_PURPLE."BoxOfBits v0.0.2 Help Page 2".Colour::BLACK."]---");
-						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/gmsp [playername]".Colour::GREEN." Changes gamemode to Spectator");
-						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/xyz [playername]".Colour::GREEN." Get player coordinates");
+						$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v0.0.2 Help Page 2".Colour::BLACK."]---");
+						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/gmsp [playername]".Colour::DARK_GREEN." Changes gamemode to Spectator");
+						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/xyz [playername]".Colour::DARK_GREEN." Get player coordinates");
 						return true;
 							break;
 						}
