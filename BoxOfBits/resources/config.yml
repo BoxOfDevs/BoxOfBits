@@ -1,8 +1,8 @@
 ---
-#######################################
-# BoxOfBits version 0.0.2 config file #
-# Created by TheDragonRing    :)      #
-#######################################
+#-------------------------------------|
+# BoxOfBits version 0.0.2 config file |
+# Created by TheDragonRing    :)      |
+#-------------------------------------|
 
 # Custom messages which either get sent in chat or popup on the bottom of the screen when certain events occur
 # Use #playername as the name of the player and § to colour the text
