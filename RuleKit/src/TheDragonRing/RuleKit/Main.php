@@ -1,6 +1,6 @@
 <?php
 
-namespace TheDragonRing\BoxOfRules;
+namespace TheDragonRing\RuleKit;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat as Colour;
@@ -18,7 +18,7 @@ class Main extends PluginBase implements Listener{
 
 	public function onEnable(){
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
-		$this->getLogger()->info(Colour::AQUA."BoxOfRules".Colour::DARK_RED." by TheDragonRing".Colour::GREEN." Enabled!");	
+		$this->getLogger()->info(Colour::AQUA."RuleKit".Colour::DARK_RED." by TheDragonRing".Colour::GREEN." Enabled!");	
 			if(!is_dir($this->getDataFolder())){	
 			@mkdir($this->getDataFolder());
 			}
@@ -36,7 +36,7 @@ class Main extends PluginBase implements Listener{
 			));
 	}
 	public function onDisable(){
-		$this->getLogger()->info(Colour::AQUA."BoxOfRules".Colour::GREEN." by TheDragonRing".Colour::DARK_RED." Disabled!");
+		$this->getLogger()->info(Colour::AQUA."RuleKit".Colour::GREEN." by TheDragonRing".Colour::DARK_RED." Disabled!");
 	}
     private $permMessage = Colour::DARK_RED."You do not have permission to run this command!";
     private $consoleMsg = Colour::DARK_RED."This command can only be executed in-game!";
@@ -44,9 +44,9 @@ class Main extends PluginBase implements Listener{
 	public function onCommand(CommandSender $sender,Command $cmd,$label,array $args){
 		if(strtolower($cmd->getName() == "rules"));
 			$player = $this->getServer()->getPlayer($sender->getName());
-			if($player->hasPermission("boxofbits.rules")){
+			if($player->hasPermission("rulekit.rules")){
 			if(!isset($args[0])){
-				$sender->sendMessage(Colour::BLACK. "---[".Colour::DARK_PURPLE."BoxOfRules v0.0.1".Colour::BLACK."]---");
+				$sender->sendMessage(Colour::BLACK. "---[".Colour::DARK_PURPLE."RuleKit v0.0.1".Colour::BLACK."]---");
 				$sender->sendMessage(Colour::DARK_RED. "Usage: " .Colour::WHITE."/rules 1|2".Colour::DARK_RED." Shows page 1 or 2 of server rules");
 				return true;
 			}else{
