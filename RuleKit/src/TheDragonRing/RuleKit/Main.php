@@ -49,6 +49,7 @@ class Main extends PluginBase implements Listener{
 	}
 	public function onCommand(CommandSender $sender,Command $cmd,$label,array $args){
 		if(strtolower($cmd->getName() == "rules"));
+			if(!($sender instanceof Player)){
 			$player = $this->getServer()->getPlayer($sender->getName());
 			if(!isset($args[0])){
 				$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."RuleKit v0.0.1".Colour::BLACK."]---");
