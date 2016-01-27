@@ -20,7 +20,7 @@ class Main extends PluginBase implements Listener{
 	public function onEnable(){
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		$this->getLogger()->info(Colour::AQUA."StaffChests".Colour::DARK_RED." by TheDragonRing".Colour::GREEN." Enabled!");
-
+	}
 
 	public function onDisable(){
 		$this->getLogger()->info(Colour::AQUA."StaffChests".Colour::GREEN." by TheDragonRing".Colour::DARK_RED." Disabled!");
