@@ -24,6 +24,14 @@ class Main extends PluginBase implements Listener{
 			@mkdir($this->getDataFolder());
 			}
 			$this->config = new Config($this->getDataFolder()."config.yml",Config::YAML, array(
+				#-------------------------------------|
+				# RuleKit version 0.0.1 config file   |
+				# Created by TheDragonRing    :)      |
+				#-------------------------------------|
+
+				# Custom rules which show up when /rules 1|2 is run
+				# Use § to colour the text
+
 				"Rule1" => "No Swearing",
 				"Rule2" => "No Using Mods",
 				"Rule3" => "No Advertising",
