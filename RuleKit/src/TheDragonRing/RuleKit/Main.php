@@ -9,6 +9,7 @@ use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\command\CommandExecutor;
 use pocketmine\command\PluginCommand;
+use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\Player;
 use pocketmine\Server;
 use pocketmine\permission\Permission;
@@ -31,7 +32,6 @@ class Main extends PluginBase implements Listener{
 
 				# Custom rules which show up when /rules 1|2 is run
 				# Use § to colour the text
-
 				"Rule1" => "No Swearing",
 				"Rule2" => "No Using Mods",
 				"Rule3" => "No Advertising",

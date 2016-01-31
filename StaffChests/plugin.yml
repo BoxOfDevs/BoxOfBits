@@ -2,7 +2,7 @@ name: StaffChests
 author: TheDragonRing
 version: 0.0.1
 description: A special chest plugin with a funny feature
-api: 1.13.2
+api: 1.13.2, 1.14.0, 2.0.0
 main: TheDragonRing\StaffChests\Main
 load: STARTUP
 commands:

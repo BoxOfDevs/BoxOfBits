@@ -9,6 +9,7 @@ use pocketmine\command\CommandSender;
 use pocketmine\command\CommandExecutor;
 use pocketmine\command\PluginCommand;
 use pocketmine\permission\Permission;
+use pocketmine\command\ConsoleCommandSender;
 use pocketmine\Player;
 use pocketmine\Server;
 use pocketmine\item\Item;
