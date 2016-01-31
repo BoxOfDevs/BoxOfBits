@@ -43,6 +43,7 @@
 
     Permissions:
 
+        boxofbits.info - For /boxofbits
         boxofbits.gms - For /gms
         boxofbits.gmc - For /gmc
         boxofbits.gma - For /gma

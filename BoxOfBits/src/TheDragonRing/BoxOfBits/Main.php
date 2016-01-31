@@ -28,11 +28,21 @@ class Main extends PluginBase implements Listener{
 			@mkdir($this->getDataFolder());
 			}
 			$this->config = new Config($this->getDataFolder()."config.yml",Config::YAML, array(
+				#-------------------------------------|
+				# BoxOfBits version 0.0.2 config file |
+				# Created by TheDragonRing    :)      |
+				#-------------------------------------|
+
+				# Custom messages which either get sent in chat or popup on the bottom of the screen when certain events occur
+				# Use #playername as the name of the player and § to colour the text
 				"JoinPopup" => "#playername §bJoined the Server",
 				"LeavePopup" => "#playername §4Left the Server",
 				"KickPopup" => "#playername §4Got Kicked from the Server",
 				"DeathPopup" => "#playername §4Just Died",
 				"GamemodeChangePopup" => "#playername §2Changed Gamemode",
+
+				# Custom rules which show up when /rules 1|2 is run
+				# Use § to colour the text
 				"Rule1" => "No Swearing",
 				"Rule2" => "No Using Mods",
 				"Rule3" => "No Advertising",
