@@ -2,7 +2,7 @@ name: RuleKit
 author: TheDragonRing
 version: 0.0.1
 description: A simple rules plugin
-api: 1.13.2
+api: 2.0.0
 main: TheDragonRing\RuleKit\Main
 load: STARTUP
 commands:
