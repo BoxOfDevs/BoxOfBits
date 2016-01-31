@@ -270,39 +270,61 @@ class Main extends PluginBase implements Listener{
 													}
 //rules
 		if(strtolower($cmd->getName() == "rules"));
-			$player = $this->getServer()->getPlayer($sender->getName());
-			if($player->hasPermission("boxofbits.rules")){
+			if(!($sender instanceof Player)){
 			if(!isset($args[0])){
-				$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v0.0.1".Colour::BLACK."]---");
+				$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v0.0.2".Colour::BLACK."]---");
 				$sender->sendMessage(Colour::DARK_RED. "Usage: " .Colour::WHITE."/rules 1|2".Colour::DARK_RED." Shows page 1 or 2 of server rules");
 				return true;
 			}else{
 				switch ($args[0]){
 					case "1":
-						$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."Server Rules Page 1".Colour::BLACK."]---");
-						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE($this->config->get("Rule1")));
-						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE($this->config->get("Rule2")));
-						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE($this->config->get("Rule3")));
-						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE($this->config->get("Rule4")));
-						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE($this->config->get("Rule5")));
+						$sender->sendMessage(Colour::BLACK. "---[".Colour::DARK_PURPLE."Server Rules Page 1".Colour::BLACK."]---");
+						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule1")));
+						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule2")));
+						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule3")));
+						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule4")));
+						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule5")));
 						return true;
 							break;
 					case "2":
-						$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."Server Rules Page 2".Colour::BLACK."]---");
-						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE($this->config->get("Rule6")));
-						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE($this->config->get("Rule7")));
-						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE($this->config->get("Rule8")));
-						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE($this->config->get("Rule9")));
-						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE($this->config->get("Rule10")));
+						$sender->sendMessage(Colour::BLACK. "---[".Colour::DARK_PURPLE."Server Rules Page 2".Colour::BLACK."]---");
+						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule6")));
+						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule7")));
+						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule8")));
+						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule9")));
+						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule10")));
+							return true;
+						}
+					}
+				break;
+			}
+			if(!isset($args[0])){
+				$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v0.0.2".Colour::BLACK."]---");
+				$sender->sendMessage(Colour::DARK_RED. "Usage: " .Colour::WHITE."/rules 1|2".Colour::DARK_RED." Shows page 1 or 2 of server rules");
+				return true;
+			}else{
+				switch ($args[0]){
+					case "1":
+						$sender->sendMessage(Colour::BLACK. "---[".Colour::DARK_PURPLE."Server Rules Page 1".Colour::BLACK."]---");
+						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule1")));
+						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule2")));
+						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule3")));
+						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule4")));
+						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule5")));
 						return true;
 							break;
-								}
-									}
-										}else{
-											$sender->sendMessage(Colour::DARK_RED."$this->permMessage");
-									return true;
-								}
-							break;													break;
+					case "2":
+						$sender->sendMessage(Colour::BLACK. "---[".Colour::DARK_PURPLE."Server Rules Page 2".Colour::BLACK."]---");
+						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule6")));
+						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule7")));
+						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule8")));
+						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule9")));
+						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule10")));
+
+							return true;
+						}
+					}
+				break;
 //xyz
 		if(strotolower($cmd->getName() == "xyz"));
 				if(!isset($args[0])){

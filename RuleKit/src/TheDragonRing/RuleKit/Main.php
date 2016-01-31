@@ -74,7 +74,7 @@ class Main extends PluginBase implements Listener{
 						return true;
 							break;
 					case "2":
-						$sender->sendMessage(Colour::BLACK. "---[".Colour::DARK_PURPLE."Server Rules Page 1".Colour::BLACK."]---");
+						$sender->sendMessage(Colour::BLACK. "---[".Colour::DARK_PURPLE."Server Rules Page 2".Colour::BLACK."]---");
 						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule6")));
 						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule7")));
 						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule8")));
@@ -101,7 +101,7 @@ class Main extends PluginBase implements Listener{
 						return true;
 							break;
 					case "2":
-						$sender->sendMessage(Colour::BLACK. "---[".Colour::DARK_PURPLE."Server Rules Page 1".Colour::BLACK."]---");
+						$sender->sendMessage(Colour::BLACK. "---[".Colour::DARK_PURPLE."Server Rules Page 2".Colour::BLACK."]---");
 						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule6")));
 						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule7")));
 						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule8")));
