@@ -34,8 +34,11 @@ class Main extends PluginBase implements Listener{
 				#-------------------------------------|
 
 				# Custom messages which either get sent in chat or popup on the bottom of the screen when certain events occur
+				# Please note that the JoinMessage and LeaveMessage replace the default join and leave/quit messages
 				# Use #playername as the name of the player and § to colour the text
+				"JoinMessage" => "#playername §bJoined the Server",
 				"JoinPopup" => "#playername §bJoined the Server",
+				"LeaveMessage" => "#playername §4Left the Server",
 				"LeavePopup" => "#playername §4Left the Server",
 				"KickPopup" => "#playername §4Got Kicked from the Server",
 				"DeathPopup" => "#playername §4Just Died",
@@ -66,15 +69,19 @@ class Main extends PluginBase implements Listener{
 	public function onJoin(PlayerJoinEvent $event){
 		$player = $event->getPlayer();
 		$name = $player->getName();
-		$message = str_replace("#playername", $name, $this->config->get("JoinPopup"));
-		$this->getServer()->broadcastPopup($message);
+		$popup = str_replace("#playername", $name, $this->config->get("JoinPopup"));
+		$this->getServer()->broadcastPopup($popup);
+		$message = str_replace("#playername", $name, $this->config->get("JoinMessage"));
+		$event->setJoinMessage($message);
 		$player->sendTip(Colour::GOLD."Welcome,".Colour::WHITE."$name");
 	}
 	public function onQuit(PlayerQuitEvent $event){
 		$$player = $event->getPlayer();
 		$name = $player->getName();
-		$message = str_replace("#playername", $name, $this->config->get("LeavePopup"));
-		$this->getServer()->broadcastPopup($message);
+		$popup = str_replace("#playername", $name, $this->config->get("LeavePopup"));
+		$this->getServer()->broadcastPopup($popup);
+		$message = str_replace("#playername", $name, $this->config->get("LeaveMessage"));
+		$event->setQuitMessage($message);
 	}
 	public function onKick(PlayerKickEvent $event){
 		$$player = $event->getPlayer();
