@@ -1,5 +1,13 @@
 <?php
 
+#  ____             ____   __ ____  _ _              __   ___   ___  
+# |  _ \           / __ \ / _|  _ \(_) |            /_ | / _ \ / _ \ 
+# | |_) | _____  _| |  | | |_| |_) |_| |_ ___  __   _| || | | | | | |
+# |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __| \ \ / / || | | | | | |
+# | |_) | (_) >  <| |__| | | | |_) | | |_\__ \  \ V /| || |_| | |_| |
+# |____/ \___/_/\_\\____/|_| |____/|_|\__|___/   \_/ |_(_)___(_)___/ 
+#                                                                    
+  
 namespace TheDragonRing\BoxOfBits;
 
 use pocketmine\plugin\PluginBase;
@@ -23,19 +31,20 @@ class Main extends PluginBase implements Listener{
 
 	public function onEnable(){
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
-		$this->getLogger()->info(Colour::AQUA."BoxOfBits".Colour::DARK_RED." by TheDragonRing".Colour::GREEN." Enabled!");	
+		$this->getLogger()->info(Colour::AQUA."BoxOfBits".Colour::GOLD." by TheDragonRing".Colour::GREEN." Enabled!");	
 			if(!is_dir($this->getDataFolder())){	
 			@mkdir($this->getDataFolder());
 			}
 			$this->config = new Config($this->getDataFolder()."config.yml",Config::YAML, array(
 
-				# ____             ____   __ ____  _ _              ___    ___   ___   
- 				#|  _ \           / __ \ / _|  _ \(_) |            |__ \  / _ \ / _ \  
-				#| |_) | _____  _| |  | | |_| |_) |_| |_ ___  __   __ ) || | | | | | | 
-				#|  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __| \ \ / // / | | | | | | | 
-				#| |_) | (_) >  <| |__| | | | |_) | | |_\__ \  \ V // /_ | |_| | |_| | 
-				#|____/ \___/_/\_\\____/|_| |____/|_|\__|___/   \_/|____(_)___(_)___/  
-				#
+				#  ____             ____   __ ____  _ _              __   ___   ___  
+				# |  _ \           / __ \ / _|  _ \(_) |            /_ | / _ \ / _ \ 
+				# | |_) | _____  _| |  | | |_| |_) |_| |_ ___  __   _| || | | | | | |
+				# |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __| \ \ / / || | | | | | |
+				# | |_) | (_) >  <| |__| | | | |_) | | |_\__ \  \ V /| || |_| | |_| |
+				# |____/ \___/_/\_\\____/|_| |____/|_|\__|___/   \_/ |_(_)___(_)___/ 
+				#                                                                    
+  
 
 				# Custom messages which either get sent in chat or popup on the bottom of the screen when certain events occur
 				# Please note that the JoinMessage and LeaveMessage replace the default join and leave/quit messages
@@ -64,7 +73,7 @@ class Main extends PluginBase implements Listener{
 		$this->config->save();
 	}
 	public function onDisable(){
-		$this->getLogger()->info(Colour::AQUA."BoxOfBits".Colour::GREEN." by TheDragonRing".Colour::DARK_RED." Disabled!");
+		$this->getLogger()->info(Colour::AQUA."BoxOfBits".Colour::GOLD." by TheDragonRing".Colour::DARK_RED." Disabled!");
 	}
     private $permMessage = Colour::DARK_RED."You do not have permission to run this command!";
     private $consoleMsg = Colour::DARK_RED."This command can only be executed in-game!";
@@ -115,13 +124,13 @@ class Main extends PluginBase implements Listener{
 			if(!isset($args[0])){
 				$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits".Colour::BLACK."]---");
 				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."Plugin Maker §o§2The§4Dragon§1Ring");
-				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."Plugin Version §60.0.2");
+				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."Plugin Version §61.0.0");
 				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/boxofbits 1|2".Colour::DARK_GREEN." Shows page 1 or 2 of help");
 				return true;
 			}else{
 				switch ($args[0]){
 					case "1":
-						$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v0.0.2 Help Page 1".Colour::BLACK."]---");
+						$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v1.0.0 Help Page 1".Colour::BLACK."]---");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/boxofbits 1|2".Colour::GREEN." Shows plugin info and help");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/rules".Colour::GREEN." Shows server rules");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/gms [playername]".Colour::DARK_GREEN." Changes gamemode to Survival");
@@ -130,9 +139,11 @@ class Main extends PluginBase implements Listener{
 						return true;
 							break;
 					case "2":
-						$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v0.0.2 Help Page 2".Colour::BLACK."]---");
+						$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v1.0.0 Help Page 2".Colour::BLACK."]---");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/gmsp [playername]".Colour::DARK_GREEN." Changes gamemode to Spectator");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/xyz [playername]".Colour::DARK_GREEN." Get player coordinates");
+						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/sendpopup server|player <message>".Colour::DARK_GREEN." Broadcasts specified popup");
+						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/sendmessage server|player <message>".Colour::DARK_GREEN." Broadcasts specified message");
 						return true;
 							break;
 						}
@@ -141,13 +152,13 @@ class Main extends PluginBase implements Listener{
 			if(!isset($args[0])){
 				$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits".Colour::BLACK."]---");
 				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."Plugin Maker §o§2The§4Dragon§1Ring");
-				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."Plugin Version §60.0.2");
+				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."Plugin Version §61.0.0");
 				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/boxofbits 1|2".Colour::DARK_GREEN." Shows page 1 or 2 of help");
 				return true;
 			}else{
 				switch ($args[0]){
 					case "1":
-						$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v0.0.2 Help Page 1".Colour::BLACK."]---");
+						$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v1.0.0 Help Page 1".Colour::BLACK."]---");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/boxofbits 1|2".Colour::GREEN." Shows plugin info and help");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/rules".Colour::GREEN." Shows server rules");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/gms [playername]".Colour::DARK_GREEN." Changes gamemode to Survival");
@@ -156,9 +167,11 @@ class Main extends PluginBase implements Listener{
 						return true;
 							break;
 					case "2":
-						$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v0.0.2 Help Page 2".Colour::BLACK."]---");
+						$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v1.0.0 Help Page 2".Colour::BLACK."]---");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/gmsp [playername]".Colour::DARK_GREEN." Changes gamemode to Spectator");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/xyz [playername]".Colour::DARK_GREEN." Get player coordinates");
+						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/sendpopup server|player <message>".Colour::DARK_GREEN." Broadcasts specified popup");
+						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/sendmessage server|player <message>".Colour::DARK_GREEN." Broadcasts specified message");
 						return true;
 							break;
 						}
@@ -311,7 +324,6 @@ class Main extends PluginBase implements Listener{
 		if(strtolower($cmd->getName() == "rules"));
 			if(!($sender instanceof Player)){
 			if(!isset($args[0])){
-				$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v0.0.2".Colour::BLACK."]---");
 				$sender->sendMessage(Colour::DARK_RED. "Usage: " .Colour::WHITE."/rules 1|2".Colour::DARK_RED." Shows page 1 or 2 of server rules");
 				return true;
 			}else{
