@@ -161,13 +161,13 @@ class Main extends PluginBase implements Listener{
 				}
 //gms
 		if(strtolower($cmd->getName() == "gms"));
+			if ($sender->hasPermission("boxofbits.gms")){
 			if(!isset($args[0])){
 			if (!($sender instanceof Player)){
 			$sender->sendMessage(Colour::DARK_RED."$this->consoleMsg");
 			return true;
 			}
 				$player = $this->getServer()->getPlayer($sender->getName());
-				if ($player->hasPermission("boxofbits.gms")){
 				if ($player->getGamemode() == 0){
 				$player->sendMessage(Colour::DARK_RED."You are already in Survival");
 					} else {
@@ -177,10 +177,6 @@ class Main extends PluginBase implements Listener{
 						$this->getServer()->broadcastPopup(Colour::WHITE."$name".Colour::DARK_GREEN." Just changed Gamemode");
 						}
 						return true;
-							} else {
-								$player->sendMessage(Colour::DARK_RED."$this->permMessage");
-								return true;
-								}
 									}else{
 										$player = $this->getServer()->getPlayer($args[0]);
 										if($player instanceof Player){
@@ -194,16 +190,20 @@ class Main extends PluginBase implements Listener{
 											return true;
 								}
 						}
+					}else{
+						$sender->sendMessage(Colour::DARK_RED."$this->permMessage");
+						return true;
+					}
 				break;
 //gmc
 		if(strtolower($cmd->getName() == "gmc"));
+			if ($sender->hasPermission("boxofbits.gmc")){
 			if(!isset($args[0])){
 			if (!($sender instanceof Player)){
 			$sender->sendMessage(Colour::DARK_RED."$this->consoleMsg");
 			return true;
 			}
 				$player = $this->getServer()->getPlayer($sender->getName());
-				if ($player->hasPermission("boxofbits.gmc")){
 				if ($player->getGamemode() == 1){
 				$player->sendMessage(Colour::DARK_RED."You are already in Creative");
 					} else {
@@ -213,10 +213,6 @@ class Main extends PluginBase implements Listener{
 						$this->getServer()->broadcastPopup(Colour::WHITE."$name".Colour::DARK_GREEN." Just changed Gamemode");
 						}
 						return true;
-							} else {
-								$player->sendMessage(Colour::DARK_RED."$this->permMessage!");
-								return true;
-								}
 									}else{
 										$player = $this->getServer()->getPlayer($args[0]);
 										if($player instanceof Player){
@@ -230,16 +226,20 @@ class Main extends PluginBase implements Listener{
 											return true;
 								}
 						}
+					}else{
+						$sender->sendMessage(Colour::DARK_RED."$this->permMessage");
+						return true;
+					}
 				break;
 //gma
 		$if(strtolower($cmd->getName() == "gma"));
+			if ($sender->hasPermission("boxofbits.gma")){
 			if(!isset($args[0])){
 			if (!($sender instanceof Player)){
 			$sender->sendMessage(Colour::DARK_RED."$this->consoleMsg");
 			return true;
 			}
 				$player = $this->getServer()->getPlayer($sender->getName());
-				if ($player->hasPermission("boxofbits.gma")){
 				if ($player->getGamemode() == 2){
 				$player->sendMessage(Colour::DARK_RED."You are already in Adventure mode");
 					} else {
@@ -249,10 +249,6 @@ class Main extends PluginBase implements Listener{
 						$this->getServer()->broadcastPopup(Colour::WHITE."$name".Colour::DARK_GREEN." Just changed Gamemode");
 						}
 						return true;
-							} else {
-								$player->sendMessage(Colour::DARK_RED."$this->permMessage");
-								return true;
-								}
 									}else{
 										$player = $this->getServer()->getPlayer($args[0]);
 										if($player instanceof Player){
@@ -266,16 +262,20 @@ class Main extends PluginBase implements Listener{
 											return true;
 								}
 						}
+					}else{
+						$sender->sendMessage(Colour::DARK_RED."$this->permMessage");
+						return true;
+					}
 				break;
 //gmsp
-		if(strtolower($cmd->getName() == "gmsp"));
+		$if(strtolower($cmd->getName() == "gmsp"));
+		if ($sender->hasPermission("boxofbits.gmsp")){
 			if(!isset($args[0])){
 			if (!($sender instanceof Player)){
 			$sender->sendMessage(Colour::DARK_RED."$this->consoleMsg");
 			return true;
 			}
 				$player = $this->getServer()->getPlayer($sender->getName());
-				if ($player->hasPermission("boxofbits.gmsp")){
 				if ($player->getGamemode() == 3){
 				$player->sendMessage(Colour::DARK_RED."You are already in Spectator mode");
 					} else {
@@ -285,10 +285,6 @@ class Main extends PluginBase implements Listener{
 						$this->getServer()->broadcastPopup(Colour::WHITE."$name".Colour::DARK_GREEN." Just changed Gamemode");
 						}
 						return true;
-							} else {
-								$player->sendMessage(Colour::DARK_RED."$this->permMessage");
-								return true;
-								}
 									}else{
 										$player = $this->getServer()->getPlayer($args[0]);
 										if($player instanceof Player){
@@ -300,8 +296,13 @@ class Main extends PluginBase implements Listener{
 										}else{
 											$sender->sendMessage(Colour::DARK_RED."Player Not Found");
 											return true;
-												}
-													}
+								}
+						}
+					}else{
+						$sender->sendMessage(Colour::DARK_RED."$this->permMessage");
+						return true;
+					}
+				break;
 //rules
 		if(strtolower($cmd->getName() == "rules"));
 			if(!($sender instanceof Player)){
@@ -332,6 +333,8 @@ class Main extends PluginBase implements Listener{
 					}
 				break;
 			}
+			$player = $this->getServer()->getPlayer($sender->getName());
+			if ($player->hasPermission("boxofbits.rules")){
 			if(!isset($args[0])){
 				$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v0.0.2".Colour::BLACK."]---");
 				$sender->sendMessage(Colour::DARK_RED. "Usage: " .Colour::WHITE."/rules 1|2".Colour::DARK_RED." Shows page 1 or 2 of server rules");
@@ -358,6 +361,7 @@ class Main extends PluginBase implements Listener{
 						}
 					}
 				break;
+
 //xyz
 		if(strotolower($cmd->getName() == "xyz"));
 				if(!isset($args[0])){
