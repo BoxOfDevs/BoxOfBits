@@ -1,4 +1,12 @@
-     This plugin is just what its name suggests, a box full of features which will make using your server easier and more fun. This plugin is still under development though so there are not many features yet.
+
+  ____             ____   __ ____  _ _              ___    ___   ___   
+ |  _ \           / __ \ / _|  _ \(_) |            |__ \  / _ \ / _ \  
+ | |_) | _____  _| |  | | |_| |_) |_| |_ ___  __   __ ) || | | | | | | 
+ |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __| \ \ / // / | | | | | | | 
+ | |_) | (_) >  <| |__| | | | |_) | | |_\__ \  \ V // /_ | |_| | |_| | 
+ |____/ \___/_/\_\\____/|_| |____/|_|\__|___/   \_/|____(_)___(_)___/  
+
+This plugin is just what its name suggests, a box full of features which will make using your server easier and more fun. This plugin is still under development though so there are not many features yet.
 
     Completed Features:
 
@@ -53,7 +61,7 @@
        • boxofbits.popup - For /sendpopup
        • boxofbits.broadcast - For /sendbroadcast
 
-    _______________________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________________________
 
-    This is my first plugin so if there are any glitches I missed when i tested, please report them to me and i will try to release a bug-fix update or fix it in the next full update. Also sorry if updates take a long time to come out, school and many other things get in the way a lot of the time :(
+This is my first plugin so if there are any glitches I missed when i tested, please report them to me and i will try to release a bug-fix update or fix it in the next full update. Also sorry if updates take a long time to come out, school and many other things get in the way a lot of the time :(
 
