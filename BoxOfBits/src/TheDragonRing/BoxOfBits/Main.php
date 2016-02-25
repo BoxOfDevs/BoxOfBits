@@ -206,6 +206,14 @@ class Main extends PluginBase implements Listener{
 										$sender->sendMessage("$this->$permMessage");
 										return true;
 									}}else{
+										if(!($sender instanceof Player)){
+											$player = $this->getServer()->getPlayer($args[0]);
+											if($player instanceof Player){
+												$player->setGamemode(0);
+												$player->sendMessage("You are now in Survival");
+												$name = $player->getName();
+												$this->getServer()->broadcastPopup(Colour::WHITE."$name".Colour::DARK_GREEN." Just changed Gamemode");
+											}
 										$runner = $this->getServer()->getPlayer($sender->getName());
 										if($runner->hasPermission("boxofbits.gms")){
 										$player = $this->getServer()->getPlayer($args[0]);

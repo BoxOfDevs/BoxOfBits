@@ -63,7 +63,7 @@ This plugin is just what its name suggests, a box full of features which will ma
 
     IMPORTANT CONTRIBUTING/REDISTRIBUTING NOTE:
 
-        Anyone may contribute and/or redistribe this plugin as long as my permission is given when i will then give further details.
+        Anyone may contribute to and/or redistribe this plugin as long as my permission is given when i will then give further details.
 
 _______________________________________________________________________________________________________________________________
 
