@@ -61,6 +61,10 @@ This plugin is just what its name suggests, a box full of features which will ma
        • boxofbits.popup - For /sendpopup
        • boxofbits.broadcast - For /sendbroadcast
 
+    IMPORTANT CONTRIBUTING/REDISTRIBUTING NOTE:
+
+        Anyone may contribute and/or redistribe this plugin as long as my permission is given when i will then give further details.
+
 _______________________________________________________________________________________________________________________________
 
 This is my first plugin so if there are any glitches I missed when i tested, please report them to me and i will try to release a bug-fix update or fix it in the next full update. Also sorry if updates take a long time to come out, school and many other things get in the way a lot of the time :(
