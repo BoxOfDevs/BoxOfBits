@@ -2,7 +2,7 @@ name: BoxOfBits
 author: TheDragonRing
 version: 1.0.0
 description: A plugin full of bits of use
-api: 1.13.2, 1.14.0, 2.0.0
+api: 1.14.0, 2.0.0
 main: TheDragonRing\BoxOfBits\Main
 load: STARTUP
 commands:

@@ -149,6 +149,8 @@ class Main extends PluginBase implements Listener{
 						}
 				}
 		}
+			$player = $this->getServer()->getPlayer($sender->getName());
+			if($player->hasPermission("boxofbits.info")){
 			if(!isset($args[0])){
 				$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits".Colour::BLACK."]---");
 				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."Plugin Maker §o§2The§4Dragon§1Ring");
@@ -176,18 +178,24 @@ class Main extends PluginBase implements Listener{
 							break;
 						}
 				}
+		}else{
+			$sender->sendMessage("$this->permMessage");
+			return true;
+				}
+		break;
 //gms
 		if(strtolower($cmd->getName() == "gms"));
-			if ($sender->hasPermission("boxofbits.gms")){
 			if(!isset($args[0])){
-			if (!($sender instanceof Player)){
+			if(!($sender instanceof Player)){
 			$sender->sendMessage(Colour::DARK_RED."$this->consoleMsg");
 			return true;
 			}
 				$player = $this->getServer()->getPlayer($sender->getName());
-				if ($player->getGamemode() == 0){
+				if($player->hasPermission("boxofbits.gms")){
+				if($player->getGamemode() == 0){
 				$player->sendMessage(Colour::DARK_RED."You are already in Survival");
-					} else {
+				return true;
+					}else{
 						$player->setGamemode(0);
 						$player->sendMessage("You are now in Survival");
 						$name = $player->getName();
@@ -195,6 +203,11 @@ class Main extends PluginBase implements Listener{
 						}
 						return true;
 									}else{
+										$sender->sendMessage("$this->$permMessage");
+										return true;
+									}}else{
+										$runner = $this->getServer()->getPlayer($sender->getName());
+										if($runner->hasPermission("boxofbits.gms")){
 										$player = $this->getServer()->getPlayer($args[0]);
 										if($player instanceof Player){
 											$player->setGamemode(0);
@@ -206,11 +219,10 @@ class Main extends PluginBase implements Listener{
 											$sender->sendMessage(Colour::DARK_RED."Player Not Found");
 											return true;
 								}
+						}else{
+							$sender->sendMessage("$this->$permMessage");
+							}
 						}
-					}else{
-						$sender->sendMessage(Colour::DARK_RED."$this->permMessage");
-						return true;
-					}
 				break;
 //gmc
 		if(strtolower($cmd->getName() == "gmc"));
