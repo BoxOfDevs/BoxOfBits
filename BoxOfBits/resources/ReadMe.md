@@ -11,6 +11,7 @@ This plugin is just what its name suggests, a box full of features which will ma
     Completed Features:
 
        • /gms, /gmc, /gma, and /gmsp are shortcut commands for changing gamemode to survival, creative, adventure mode, or spectator mode.
+       • The default join/leave broadcasts are now customable in config.
        • When a player joins the server a popup appears saying "<playername> Joined the server".
        • When a player changes gamemode a popup appears saying "<playername> Changed gamemode".
        • When a player dies a popup appears saying "<playername> Just died".
