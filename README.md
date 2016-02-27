@@ -19,5 +19,5 @@ All my released and in-dev plugins for ImagicalMine MCPE Server Software
 
  • [Minecraft Forums](https://www.minecraftforum.net/members/1BombersRevenge1)
 
- • [ImagicalMine Forums](https://forums.imagicalmine.net/members/thedragonring.74/)
+ • [ImagicalMine Forums](https://forums.imagicalmine.net/index.php?members/thedragonring.74/)
  
