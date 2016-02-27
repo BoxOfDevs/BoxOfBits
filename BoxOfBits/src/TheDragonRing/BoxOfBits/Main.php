@@ -105,7 +105,7 @@ class Main extends PluginBase implements Listener{
 	public function onGameModeChange(PlayerGameModeChangeEvent $event){
 		$$player = $event->getPlayer();
 		$name = $player->getName();
-		$message = str_replace("#playername", $name, $this->config->get("GameModeChangePopup"));
+		$message = str_replace("#playername", $name, $this->config->get("GamemodeChangePopup"));
 		$this->getServer()->broadcastPopup($message);
 
 	}
@@ -185,11 +185,30 @@ class Main extends PluginBase implements Listener{
 		break;
 //gms
 		if(strtolower($cmd->getName() == "gms"));
-			if(!isset($args[0])){
 			if(!($sender instanceof Player)){
-			$sender->sendMessage(Colour::DARK_RED."$this->consoleMsg");
-			return true;
-			}
+				if(!isset($args[0])){
+					$sender->sendMessage(Colour::DARK_RED."$this->consoleMsg");
+					return true;
+						}else{
+							$player = $this->getServer()->getPlayer($args[0]);
+							if($player instanceof Player){
+							if($player->getGamemode() == 0){
+							$name = $player->getName();
+							$sender->sendMessage(Colour::DARK_RED."$name is already in Survival");
+							return true;
+							}else{
+							$player->setGamemode(0);
+							$player->sendMessage("You are now in Survival");
+							$name = $player->getName();
+							$sender->sendMessage("$name is now in Survival");
+							$message = str_replace("#playername", $name, $this->config->get("GamemodeChangePopup"));
+							$this->getServer()->broadcastPopup($message);
+								}}else{
+									$sender->sendMessage(Colour::DARK_RED."Player Not Found");
+										}
+			 					}
+						}else{
+				if(!isset($args[0])){
 				$player = $this->getServer()->getPlayer($sender->getName());
 				if($player->hasPermission("boxofbits.gms")){
 				if($player->getGamemode() == 0){
@@ -199,31 +218,31 @@ class Main extends PluginBase implements Listener{
 						$player->setGamemode(0);
 						$player->sendMessage("You are now in Survival");
 						$name = $player->getName();
-						$this->getServer()->broadcastPopup(Colour::WHITE."$name".Colour::DARK_GREEN." Just changed Gamemode");
+						$message = str_replace("#playername", $name, $this->config->get("GamemodeChangePopup"));
+						$this->getServer()->broadcastPopup($message);
 						}
 						return true;
 									}else{
 										$sender->sendMessage("$this->$permMessage");
 										return true;
 									}}else{
-										if(!($sender instanceof Player)){
-											$player = $this->getServer()->getPlayer($args[0]);
-											if($player instanceof Player){
-												$player->setGamemode(0);
-												$player->sendMessage("You are now in Survival");
-												$name = $player->getName();
-												$this->getServer()->broadcastPopup(Colour::WHITE."$name".Colour::DARK_GREEN." Just changed Gamemode");
-											}
 										$runner = $this->getServer()->getPlayer($sender->getName());
 										if($runner->hasPermission("boxofbits.gms")){
 										$player = $this->getServer()->getPlayer($args[0]);
 										if($player instanceof Player){
+										if($player->getGamemode() == 0){
+										$name = $player->getName();
+										$sender->sendMessage(Colour::DARK_RED."$name is already in Survival");
+										return true;
+										}else{
 											$player->setGamemode(0);
 											$player->sendMessage("You are now in Survival");
 											$name = $player->getName();
-											$this->getServer()->broadcastPopup(Colour::WHITE."$name".Colour::DARK_GREEN." Just changed Gamemode");
+											$sender->sendMessage("$name is now in Survival");
+											$message = str_replace("#playername", $name, $this->config->get("GamemodeChangePopup"));
+											$this->getServer()->broadcastPopup($message);
 											return true;
-										}else{
+										}}else{
 											$sender->sendMessage(Colour::DARK_RED."Player Not Found");
 											return true;
 								}
@@ -234,111 +253,207 @@ class Main extends PluginBase implements Listener{
 				break;
 //gmc
 		if(strtolower($cmd->getName() == "gmc"));
-			if ($sender->hasPermission("boxofbits.gmc")){
-			if(!isset($args[0])){
-			if (!($sender instanceof Player)){
-			$sender->sendMessage(Colour::DARK_RED."$this->consoleMsg");
-			return true;
-			}
+			if(!($sender instanceof Player)){
+				if(!isset($args[0])){
+					$sender->sendMessage(Colour::DARK_RED."$this->consoleMsg");
+					return true;
+						}else{
+							$player = $this->getServer()->getPlayer($args[0]);
+							if($player instanceof Player){
+							if($player->getGamemode() == 1){
+							$name = $player->getName();
+							$sender->sendMessage(Colour::DARK_RED."$name is already in Survival");
+							return true;
+							}else{
+							$player->setGamemode(1);
+							$player->sendMessage("You are now in Creative");
+							$name = $player->getName();
+							$sender->sendMessage("$name is now in Creative");
+							$message = str_replace("#playername", $name, $this->config->get("GamemodeChangePopup"));
+							$this->getServer()->broadcastPopup($message);
+								}}else{
+									$sender->sendMessage(Colour::DARK_RED."Player Not Found");
+										}
+			 					}
+						}else{
+				if(!isset($args[0])){
 				$player = $this->getServer()->getPlayer($sender->getName());
-				if ($player->getGamemode() == 1){
+				if($player->hasPermission("boxofbits.gmc")){
+				if($player->getGamemode() == 1){
 				$player->sendMessage(Colour::DARK_RED."You are already in Creative");
-					} else {
+				return true;
+					}else{
 						$player->setGamemode(1);
 						$player->sendMessage("You are now in Creative");
 						$name = $player->getName();
-						$this->getServer()->broadcastPopup(Colour::WHITE."$name".Colour::DARK_GREEN." Just changed Gamemode");
+						$message = str_replace("#playername", $name, $this->config->get("GamemodeChangePopup"));
+						$this->getServer()->broadcastPopup($message);
 						}
 						return true;
 									}else{
+										$sender->sendMessage("$this->$permMessage");
+										return true;
+									}}else{
+										$runner = $this->getServer()->getPlayer($sender->getName());
+										if($runner->hasPermission("boxofbits.gmc")){
 										$player = $this->getServer()->getPlayer($args[0]);
 										if($player instanceof Player){
+										if($player->getGamemode() == 1){
+										$name = $player->getName();
+										$sender->sendMessage(Colour::DARK_RED."$name is already in Creative");
+										return true;
+										}else{
 											$player->setGamemode(1);
 											$player->sendMessage("You are now in Creative");
 											$name = $player->getName();
-											$this->getServer()->broadcastPopup(Colour::WHITE."$name".Colour::DARK_GREEN." Just changed Gamemode");
+											$sender->sendMessage("$name is now in Creative");
+											$message = str_replace("#playername", $name, $this->config->get("GamemodeChangePopup"));
+											$this->getServer()->broadcastPopup($message);
 											return true;
-										}else{
+										}}else{
 											$sender->sendMessage(Colour::DARK_RED."Player Not Found");
 											return true;
 								}
+						}else{
+							$sender->sendMessage("$this->$permMessage");
+							}
 						}
-					}else{
-						$sender->sendMessage(Colour::DARK_RED."$this->permMessage");
-						return true;
-					}
 				break;
 //gma
-		$if(strtolower($cmd->getName() == "gma"));
-			if ($sender->hasPermission("boxofbits.gma")){
-			if(!isset($args[0])){
-			if (!($sender instanceof Player)){
-			$sender->sendMessage(Colour::DARK_RED."$this->consoleMsg");
-			return true;
-			}
+		if(strtolower($cmd->getName() == "gma"));
+			if(!($sender instanceof Player)){
+				if(!isset($args[0])){
+					$sender->sendMessage(Colour::DARK_RED."$this->consoleMsg");
+					return true;
+						}else{
+							$player = $this->getServer()->getPlayer($args[0]);
+							if($player instanceof Player){
+							if($player->getGamemode() == 2){
+							$name = $player->getName();
+							$sender->sendMessage(Colour::DARK_RED."$name is already in Adventure mode");
+							return true;
+							}else{
+							$player->setGamemode(2);
+							$player->sendMessage("You are now in Adventure mode");
+							$name = $player->getName();
+							$sender->sendMessage("$name is now in Adventure mode");
+							$message = str_replace("#playername", $name, $this->config->get("GamemodeChangePopup"));
+							$this->getServer()->broadcastPopup($message);
+								}}else{
+									$sender->sendMessage(Colour::DARK_RED."Player Not Found");
+										}
+			 					}
+						}else{
+				if(!isset($args[0])){
 				$player = $this->getServer()->getPlayer($sender->getName());
-				if ($player->getGamemode() == 2){
+				if($player->hasPermission("boxofbits.gma")){
+				if($player->getGamemode() == 2){
 				$player->sendMessage(Colour::DARK_RED."You are already in Adventure mode");
-					} else {
+				return true;
+					}else{
 						$player->setGamemode(2);
 						$player->sendMessage("You are now in Adventure mode");
 						$name = $player->getName();
-						$this->getServer()->broadcastPopup(Colour::WHITE."$name".Colour::DARK_GREEN." Just changed Gamemode");
+						$message = str_replace("#playername", $name, $this->config->get("GamemodeChangePopup"));
+						$this->getServer()->broadcastPopup($message);
 						}
 						return true;
 									}else{
+										$sender->sendMessage("$this->$permMessage");
+										return true;
+									}}else{
+										$runner = $this->getServer()->getPlayer($sender->getName());
+										if($runner->hasPermission("boxofbits.gma")){
 										$player = $this->getServer()->getPlayer($args[0]);
 										if($player instanceof Player){
+										if($player->getGamemode() == 2){
+										$name = $player->getName();
+										$sender->sendMessage(Colour::DARK_RED."$name is already in Adventure mode");
+										return true;
+										}else{
 											$player->setGamemode(2);
 											$player->sendMessage("You are now in Adventure mode");
 											$name = $player->getName();
-											$this->getServer()->broadcastPopup(Colour::WHITE."$name".Colour::DARK_GREEN." Just changed Gamemode");
+											$sender->sendMessage("$name is now in Adventure mode");
+											$message = str_replace("#playername", $name, $this->config->get("GamemodeChangePopup"));
+											$this->getServer()->broadcastPopup($message);
 											return true;
-										}else{
+										}}else{
 											$sender->sendMessage(Colour::DARK_RED."Player Not Found");
 											return true;
 								}
+						}else{
+							$sender->sendMessage("$this->$permMessage");
+							}
 						}
-					}else{
-						$sender->sendMessage(Colour::DARK_RED."$this->permMessage");
-						return true;
-					}
 				break;
 //gmsp
-		$if(strtolower($cmd->getName() == "gmsp"));
-		if ($sender->hasPermission("boxofbits.gmsp")){
-			if(!isset($args[0])){
-			if (!($sender instanceof Player)){
-			$sender->sendMessage(Colour::DARK_RED."$this->consoleMsg");
-			return true;
-			}
+		if(strtolower($cmd->getName() == "gmsp"));
+			if(!($sender instanceof Player)){
+				if(!isset($args[0])){
+					$sender->sendMessage(Colour::DARK_RED."$this->consoleMsg");
+					return true;
+						}else{
+							$player = $this->getServer()->getPlayer($args[0]);
+							if($player instanceof Player){
+							if($player->getGamemode() == 3){
+							$name = $player->getName();
+							$sender->sendMessage(Colour::DARK_RED."$name is already in Spectator mode");
+							return true;
+							}else{
+							$player->setGamemode(3);
+							$player->sendMessage("You are now in Spectator mode");
+							$name = $player->getName();
+							$sender->sendMessage("$name is now in Spectator mode");
+							$message = str_replace("#playername", $name, $this->config->get("GamemodeChangePopup"));
+							$this->getServer()->broadcastPopup($message);
+								}}else{
+									$sender->sendMessage(Colour::DARK_RED."Player Not Found");
+										}
+			 					}
+						}else{
+				if(!isset($args[0])){
 				$player = $this->getServer()->getPlayer($sender->getName());
-				if ($player->getGamemode() == 3){
+				if($player->hasPermission("boxofbits.gmsp")){
+				if($player->getGamemode() == 3){
 				$player->sendMessage(Colour::DARK_RED."You are already in Spectator mode");
-					} else {
+				return true;
+					}else{
 						$player->setGamemode(3);
 						$player->sendMessage("You are now in Spectator mode");
 						$name = $player->getName();
-						$this->getServer()->broadcastPopup(Colour::WHITE."$name".Colour::DARK_GREEN." Just changed Gamemode");
+						$message = str_replace("#playername", $name, $this->config->get("GamemodeChangePopup"));
+						$this->getServer()->broadcastPopup($message);
 						}
 						return true;
 									}else{
+										$sender->sendMessage("$this->$permMessage");
+										return true;
+									}}else{
+										$runner = $this->getServer()->getPlayer($sender->getName());
+										if($runner->hasPermission("boxofbits.gmsp")){
 										$player = $this->getServer()->getPlayer($args[0]);
 										if($player instanceof Player){
+										if($player->getGamemode() == 3){
+										$name = $player->getName();
+										$sender->sendMessage(Colour::DARK_RED."$name is already in Spectator mode");
+										return true;
+										}else{
 											$player->setGamemode(3);
 											$player->sendMessage("You are now in Spectator mode");
 											$name = $player->getName();
-											$this->getServer()->broadcastPopup(Colour::WHITE."$name".Colour::DARK_GREEN." Just changed Gamemode");
+											$sender->sendMessage("$name is now in Spectator mode");
+											$message = str_replace("#playername", $name, $this->config->get("GamemodeChangePopup"));
+											$this->getServer()->broadcastPopup($message);
 											return true;
-										}else{
+										}}else{
 											$sender->sendMessage(Colour::DARK_RED."Player Not Found");
 											return true;
 								}
+						}else{
+							$sender->sendMessage("$this->$permMessage");
+							}
 						}
-					}else{
-						$sender->sendMessage(Colour::DARK_RED."$this->permMessage");
-						return true;
-					}
 				break;
 //rules
 		if(strtolower($cmd->getName() == "rules"));
