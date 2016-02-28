@@ -1,72 +1,91 @@
-
-  ____             ____   __ ____  _ _              __   ___   ___  
- |  _ \           / __ \ / _|  _ \(_) |            /_ | / _ \ / _ \ 
- | |_) | _____  _| |  | | |_| |_) |_| |_ ___  __   _| || | | | | | |
- |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __| \ \ / / || | | | | | |
- | |_) | (_) >  <| |__| | | | |_) | | |_\__ \  \ V /| || |_| | |_| |
- |____/ \___/_/\_\\____/|_| |____/|_|\__|___/   \_/ |_(_)___(_)___/ 
-                                                                    
-This plugin is just what its name suggests, a box full of features which will make using your server easier and more fun. This plugin is still under development though so there are not many features yet.
-
-    Completed Features:
-
-       • /gms, /gmc, /gma, and /gmsp are shortcut commands for changing gamemode to survival, creative, adventure mode, or spectator mode.
-       • The default join/leave broadcasts are now customable in config.
-       • When a player joins the server a popup appears saying "<playername> Joined the server".
-       • When a player changes gamemode a popup appears saying "<playername> Changed gamemode".
-       • When a player dies a popup appears saying "<playername> Just died".
-       • When a player leaves the server a popup appears saying "<playername> left the server".
-       • When a player is kicked a popup appears saying "<playername> just got kicked".
-       • All popups and messages are configurable.
-       • /xyz shows player coordinates.
-       • /rules show server rules.
-       • /sendbroadcast & /sendpopup send broadcasted messages or popups to either the whole server or a specified player.
-       • /boxofbits shows the plugin help menu with all the commands + info stored inside.
+#What Is BoxOfBits???                                                                
+This plugin is just what its name suggests, a box full of features which will make using your server easier and more fun. 
+BoxOfBits is really just an EssentialsPE Lite although there are some features here which work much better than EssentialsPE and some features here that EssentialsPE does not have although EssentialsPE does have more features then BoxOfBits. Please keep in mind that this is my first plugin so if there are any glitches I missed when i tested, please report them to me and i will try to release a bug-fix update or fix it in the next full update. Also sorry if updates take a long time to come out, school and many other things get in the way a lot of the time :(
 
 
-    Planned Features:
+##Completed Features:
+    • /gms, /gmc, /gma, and /gmsp are shortcut commands for changing gamemode to survival, creative, adventure mode, or spectator mode. You can also change other players gamemodes with them as well as your own.
 
-       • Various teleport features like Warps, TPA, Homes, and Portals.
-       • Heal command.
-       • Slay & Suicide commands.
-       • Jail & Timer-Ban commands.
-       • Possibly Permission features.
-       • Possibly Economy features.
-       • Possibly Account features.
-       • Possibly World-Edit features.
-       • More, undecided on features.
+   • The default join/leave broadcasts are now customable in config.
 
+   • When a player joins, leaves, dies, is kicked, or changes gamemode customisable popups appear on the bottom of the screen.
 
-    Commands:
+   • /xyz shows player coordinates.
 
-       • /boxofbits - Shows plugin help menu.
-       • /gms - Changes gamemode to Survival.
-       • /gmc - Changes gamemode to Creative.
-       • /gma - Changes gamemode to Adventure mode.
-       • /gmsp - Changes gamemode to Spectator mode.
-       • /xyz - Shows player coordinates.
-       • /rules - Shows server rules.
-       • /sendbroadcast - Broadcast message.
-       • /sendpopup - Broadcast popup.
+   • /rules show server rules.
+
+   • /sendbroadcast & /sendpopup send broadcasted messages or popups to either the whole server or a specified player.
+
+   • /boxofbits shows the plugin help menu with all the commands + info stored inside.
 
 
-    Permissions:
+##Planned Features:
+   • Various teleport features like Warps, TPA, Homes, and Portals.
 
-       • boxofbits.info - For /boxofbits
-       • boxofbits.gms - For /gms
-       • boxofbits.gmc - For /gmc
-       • boxofbits.gma - For /gma
-       • boxofbits.gmsp - For /gmsp
-       • boxofbits.rules - For /rules
-       • boxofbits.xyz - For /xyz
-       • boxofbits.popup - For /sendpopup
-       • boxofbits.broadcast - For /sendbroadcast
+   • Heal command.
 
-    IMPORTANT CONTRIBUTING/REDISTRIBUTING NOTE:
+   • Slay & Suicide commands.
 
-        Anyone may contribute to and/or redistribe this plugin as long as my permission is given when I will then give further details.
+   • Jail & Timer-Ban commands.
 
-_______________________________________________________________________________________________________________________________
+   • Possibly Permission features.
 
-This is my first plugin so if there are any glitches I missed when i tested, please report them to me and i will try to release a bug-fix update or fix it in the next full update. Also sorry if updates take a long time to come out, school and many other things get in the way a lot of the time :(
+   • Possibly Economy features.
 
+   • Possibly Account features.
+
+   • Possibly World-Edit features.
+
+   • More, undecided on features.
+
+
+##Commands:
+   • /boxofbits - Shows plugin info/help menu.
+
+   • /gms - Changes gamemode to Survival.
+
+   • /gmc - Changes gamemode to Creative.
+
+   • /gma - Changes gamemode to Adventure mode.
+
+   • /gmsp - Changes gamemode to Spectator mode.
+
+   • /xyz - Shows player coordinates.
+
+   • /rules - Shows server rules.
+
+   • /sendbroadcast - Broadcast message.
+
+   • /sendpopup - Broadcast popup.
+
+
+##Permissions:
+   • boxofbits.info - For /boxofbits
+
+   • boxofbits.gms - For /gms
+
+   • boxofbits.gmc - For /gmc
+
+   • boxofbits.gma - For /gma
+
+   • boxofbits.gmsp - For /gmsp
+
+   • boxofbits.rules - For /rules
+
+   • boxofbits.xyz - For /xyz
+
+   • boxofbits.popup - For /sendpopup
+
+   • boxofbits.broadcast - For /sendbroadcast
+
+
+##IMPORTANT CONTRIBUTING/REDISTRIBUTING NOTE:
+Anyone may contribute to BoxOfBits but contributions will be reviewed by me and must be submitted as either a GitHub pull request or the code been sent to me somewhere. Redistributing is not allowed unless you have spoken to me and I have given permission, depending on what you are posting it on you will be given further terms.
+
+
+###Quick Links
+   • TheDragonRing's Main Site (Coming Soon)
+
+   • [GitHub Project] (https://github.com/TheDragonRing/BoxOfBits/)
+
+   • [ImagicalMine Forums] (http://forums.imagicalmine.net/)
