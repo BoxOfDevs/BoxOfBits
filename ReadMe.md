@@ -1,3 +1,10 @@
+ ____             ____   __ ____  _ _              __   ___   ___  
+|  _ \           / __ \ / _|  _ \(_) |            /_ | / _ \ / _ \ 
+| |_) | _____  _| |  | | |_| |_) |_| |_ ___  __   _| || | | | | | |
+|  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __| \ \ / / || | | | | | |
+| |_) | (_) >  <| |__| | | | |_) | | |_\__ \  \ V /| || |_| | |_| |
+|____/ \___/_/\_\\____/|_| |____/|_|\__|___/   \_/ |_(_)___(_)___/                                                                 
+
 #What Is BoxOfBits???                                                                
 This plugin is just what its name suggests, a box full of features which will make using your server easier and more fun. 
 BoxOfBits is really just an EssentialsPE Lite although there are some features here which work much better than EssentialsPE and some features here that EssentialsPE does not have although EssentialsPE does have more features then BoxOfBits. Please keep in mind that this is my first plugin so if there are any glitches I missed when i tested, please report them to me and i will try to release a bug-fix update or fix it in the next full update. Also sorry if updates take a long time to come out, school and many other things get in the way a lot of the time :(
