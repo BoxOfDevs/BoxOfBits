@@ -91,6 +91,7 @@ Anyone may contribute to BoxOfBits but contributions will be reviewed by me and 
 
 
 ###Quick Links
+   • [BoxOfBits Website] (https://TheDragonRing.github.io/BoxOfBits/)
    • TheDragonRing's Main Site (Coming Soon)
 
    • [GitHub Project] (https://github.com/TheDragonRing/BoxOfBits/)
