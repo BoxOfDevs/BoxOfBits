@@ -11,7 +11,7 @@ BoxOfBits is really just an EssentialsPE Lite although there are some features h
 
 
 ##Completed Features:
-    • /gms, /gmc, /gma, and /gmsp are shortcut commands for changing gamemode to survival, creative, adventure mode, or spectator mode. You can also change other players gamemodes with them as well as your own.
+   • /gms, /gmc, /gma, and /gmsp are shortcut commands for changing gamemode to survival, creative, adventure mode, or spectator mode. You can also change other players gamemodes with them as well as your own.
 
    • The default join/leave broadcasts are now customable in config.
 
