@@ -480,14 +480,13 @@ class Main extends PluginBase implements Listener{
 						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule9")));
 						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule10")));
 							return true;
+							break;
 						}
-					}
-				break;
-			}
+				}
+		}
 			$player = $this->getServer()->getPlayer($sender->getName());
-			if ($player->hasPermission("boxofbits.rules")){
+			if($player->hasPermission("boxofbits.rules")){
 			if(!isset($args[0])){
-				$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v0.0.2".Colour::BLACK."]---");
 				$sender->sendMessage(Colour::DARK_RED. "Usage: " .Colour::WHITE."/rules 1|2".Colour::DARK_RED." Shows page 1 or 2 of server rules");
 				return true;
 			}else{
@@ -508,18 +507,31 @@ class Main extends PluginBase implements Listener{
 						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule8")));
 						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule9")));
 						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule10")));
-							return true;
+							return true
+							break;
 						}
-					}
-				break;
-
+				}
+		}else{
+			$sender->sendMessage("$this->permMessage");
+			return true;
+				}
+		break;
 //xyz
 		if(strotolower($cmd->getName() == "xyz"));
-				if(!isset($args[0])){
 				if(!($sender instanceof Player)){
+				if(!isset($args[0])){
 				$sender->sendMessage(Colour::DARK_RED."$consoleMsg");
 				return true;
-				}
+				}else{
+					if(isset($args[0])){
+					if($this->getServer()->getPlayer($args[0])){
+    					$reciever = $this->getServer()->getPlayer($args[0]);
+							$reciever->sendMessage(Colour::GOLD."Coordinates: \n".Colour::DARK_GREEN."X: ".Colour::WHITE."$player->getFloorX()".Colour::DARK_GREEN."Y: ".Colour::WHITE."$player->getFloorY()".Colour::DARK_GREEN."Z: ".Colour::WHITE."$player->getFloorZ()");
+											return true;
+										}else{
+											$sender->sendMessage(Colour::DARK_RED."Player Not Found");
+											return true;
+										}}else{
 						$player = $this->getServer()->getPlayer($sender->getName());
 						if($player->hasPermission("boxofbits.xyz")){
 								$sender->sendMessage(Colour::GOLD."Coordinates: \n".Colour::DARK_GREEN."X: ".Colour::WHITE."$player->getFloorX()".Colour::DARK_GREEN."Y: ".Colour::WHITE."$player->getFloorY()".Colour::DARK_GREEN."Z: ".Colour::WHITE."$player->getFloorZ()");
@@ -540,8 +552,8 @@ class Main extends PluginBase implements Listener{
 										}
 
 									}
-
-								break;
+								}
+						break;
 //sendbroadcast
 		if(strtolower($cmd->getName() == "sendbroadcast"));
 			$player = $this->getServer()->getPlayer($sender->getName());
