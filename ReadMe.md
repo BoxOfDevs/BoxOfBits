@@ -91,9 +91,10 @@ Anyone may contribute to BoxOfBits but contributions will be reviewed by me and 
 
 
 ###Quick Links
+   • [ImagicalMine BoxOfBits Page] (http://forums.imagicalmine.net/plugins/BoxOfBits.19/)
    • [BoxOfBits Website] (https://TheDragonRing.github.io/BoxOfBits/)
 
-   • TheDragonRing's Main Site (Coming Soon)
+   • [TheDragonRing's Homepage] (https://TheDragonRing.github.io/BoxOfBits/)
 
    • [GitHub Project] (https://github.com/TheDragonRing/BoxOfBits/)
 
