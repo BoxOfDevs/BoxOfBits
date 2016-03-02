@@ -531,7 +531,8 @@ class Main extends PluginBase implements Listener{
 										}else{
 											$sender->sendMessage(Colour::DARK_RED."Player Not Found");
 											return true;
-										}}else{
+										}}}
+						if($sender instanceof Player){
 						$player = $this->getServer()->getPlayer($sender->getName());
 						if($player->hasPermission("boxofbits.xyz")){
 								$sender->sendMessage(Colour::GOLD."Coordinates: \n".Colour::DARK_GREEN."X: ".Colour::WHITE."$player->getFloorX()".Colour::DARK_GREEN."Y: ".Colour::WHITE."$player->getFloorY()".Colour::DARK_GREEN."Z: ".Colour::WHITE."$player->getFloorZ()");
@@ -539,7 +540,7 @@ class Main extends PluginBase implements Listener{
 							}else{
 								$player->sendMessage(Colour::DARK_RED."$this->$permMessage");
 									return true;
-											}}else{
+											}}
 										if(isset($args[0])){
 										if($this->getServer()->getPlayer($args[0])){
     								$reciever = $this->getServer()->getPlayer($args[0]);
@@ -552,7 +553,6 @@ class Main extends PluginBase implements Listener{
 										}
 
 									}
-								}
 						break;
 //sendbroadcast
 		if(strtolower($cmd->getName() == "sendbroadcast"));
@@ -565,11 +565,11 @@ class Main extends PluginBase implements Listener{
 					if($args[0]=="server"){
     							if($sender instanceof CommandSender){
     								foreach($this->plugin->getServer()->getOnlinePlayers() as $onlineplayers){
-    									$onlineplayers->sendMessage($this->plugin->messagebyConsole($sender, $this->temp, $this->plugin->getMessagefromArray($args))));
+    									$onlineplayers->sendMessage($this->plugin->messagebyConsole($sender, $this->temp, $this->plugin->getMessagefromArray($args)));
     								}
     							}elseif($sender instanceof Player){
     								foreach($this->plugin->getServer()->getOnlinePlayers() as $onlineplayers){
-    									$onlineplayers->sendMessage($this->plugin->messagebyPlayer($sender, $this->temp, $this->plugin->getMessagefromArray($args))));
+    									$onlineplayers->sendMessage($this->plugin->messagebyPlayer($sender, $this->temp, $this->plugin->getMessagefromArray($args)));
     								}
     							}	
     						}else{
@@ -600,11 +600,11 @@ class Main extends PluginBase implements Listener{
 					if($args[0]=="server"){
     							if($sender instanceof CommandSender){
     								foreach($this->plugin->getServer()->getOnlinePlayers() as $onlineplayers){
-    									$onlineplayers->sendPopup($this->plugin->messagebyConsole($sender, $this->temp, $this->plugin->getMessagefromArray($args))));
+    									$onlineplayers->sendPopup($this->plugin->messagebyConsole($sender, $this->temp, $this->plugin->getMessagefromArray($args)));
     								}
     							}elseif($sender instanceof Player){
     								foreach($this->plugin->getServer()->getOnlinePlayers() as $onlineplayers){
-    									$onlineplayers->sendPopup($this->plugin->messagebyPlayer($sender, $this->temp, $this->plugin->getMessagefromArray($args))));
+    									$onlineplayers->sendPopup($this->plugin->messagebyPlayer($sender, $this->temp, $this->plugin->getMessagefromArray($args)));
     								}
     							}	
     						}else{
