@@ -581,7 +581,7 @@ class Main extends PluginBase implements Listener{
     									$receiver->sendMessage($this->plugin->messagebyPlayer($sender, $this->temp, $this->plugin->getMessagefromArray($args)));
     								}
     							}else{
-    								$sender->sendMessage(Color::DARK_RED."Player not found"));
+    								$sender->sendMessage(Color::DARK_RED."Player not found");
     							}
     						}
     				}else{
@@ -616,7 +616,7 @@ class Main extends PluginBase implements Listener{
     									$receiver->sendPopup($this->plugin->messagebyPlayer($sender, $this->temp, $this->plugin->getMessagefromArray($args)));
     								}
     							}else{
-    								$sender->sendMessage(Color::DARK_RED."Player not found"));
+    								$sender->sendMessage(Color::DARK_RED."Player not found");
     							}
     						}
     				}else{
