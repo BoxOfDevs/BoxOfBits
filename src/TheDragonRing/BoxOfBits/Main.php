@@ -70,7 +70,7 @@ class Main extends PluginBase implements Listener{
 				"Rule9" => "Another Rule",
 				"Rule10" => "Another Rule",
 			));
-		$this->config->save();
+		$this->saveResource("config.yml");
 	}
 	public function onDisable(){
 		$this->getLogger()->info(Colour::AQUA."BoxOfBits".Colour::GOLD." by TheDragonRing".Colour::DARK_RED." Disabled!");
@@ -507,7 +507,7 @@ class Main extends PluginBase implements Listener{
 						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule8")));
 						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule9")));
 						$sender->sendMessage(Colour::BLACK. "- " ($this->config->get(Colour::WHITE."Rule10")));
-							return true
+							return true;
 							break;
 						}
 				}
