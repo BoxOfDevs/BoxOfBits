@@ -44,8 +44,7 @@ class Main extends PluginBase implements Listener{
 				#                                                                    
   
 
-				# 
-Custom messages which either get sent in chat or popup on the bottom of the screen when certain events occur
+				# Custom messages which either get sent in chat or popup on the bottom of the screen when certain events occur
 				# Please note that the JoinMessage and LeaveMessage replace the default join and leave/quit messages
 				# Use #playername as the name of the player and § to colour the text
 				"JoinMessage" => "#playername §bJoined the Server",
