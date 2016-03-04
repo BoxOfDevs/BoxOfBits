@@ -202,36 +202,36 @@ Custom messages which either get sent in chat or popup on the bottom of the scre
 		if(strtolower($cmd->getName() == "heal"));
 			if(!($sender instanceof Player)){
 				if(!isset($args[0])){
-					$sender->sendMessage(Colour::DARK_RED."$this->consoleMsg");
+					$sender->sendMessage(Colour::DARK_RED."Usage: /heal [playername] - [playername] required when run from console!");
 					return true;
 						}else{
 							$player = $this->getServer()->getPlayer($args[0]);
 							if($player instanceof Player){
 								$player->setHealth(20);
-								$sender->sendMessage("$player has been healed");
-								$player->sendMessage("You have been healed");
+								$sender->sendMessage(Colour::AQUA."$player has been healed");
+								$player->sendMessage(Colour::AQUA."You have been healed");
 								return true;
 									}else{
-										$sender->sendMessage("Player cannot be found");
+										$sender->sendMessage(Colour::DARK_RED."Player Not Found");
 										return true;
 											}}}else{
 				if($sender->hasPermission("boxofbits.heal")){
 				if(!isset($args[0])){
 					$player->setHealth(20);
-					$sender->sendMessage("You have been healed");
+					$sender->sendMessage(Colour::AQUA."You have been healed");
 					return true;
 						}else{
 							$player = $this->getServer()->getPlayer($args[0]);
 							if($player instanceof Player){
 								$player->setHealth(20);
-								$sender->sendMessage("$player has been healed");
-								$player->sendMessage("You have been healed");
+								$sender->sendMessage(Colour::AQUA."$player has been healed");
+								$player->sendMessage(Colour::AQUA."You have been healed");
 								return true;
 									}else{
-										$sender->sendMessage("Player cannot be found");
+										$sender->sendMessage(Colour::DARK_RED."Player Not Found");
 										return true;
 								}}}}else{
-									$sender->sendMessage("$this->permMessage");
+									$sender->sendMessage(Colour::DARK_RED."$this->permMessage");
 									return true;
 								}
 						break;
@@ -239,51 +239,85 @@ Custom messages which either get sent in chat or popup on the bottom of the scre
 		if(strtolower($cmd->getName() == "health"));
 			if(!($sender instanceof Player)){
 				if(!isset($args[1])){
-					$sender->sendMessage(Colour::DARK_RED."Usage: /health <amount> [player] - [player] required when run from console!");
+					$sender->sendMessage(Colour::DARK_RED."Usage: /health <amount> [playername] - [playername] required when run from console!");
 					return true;
 						}else{
 							$player = $this->getServer()->getPlayer($args[1]);
 							if($player instanceof Player){
 								$player->setHealth($args[0]);
-								$sender->sendMessage("$player 's health has been set");
-								$player->sendMessage("Your health has been set");
+								$sender->sendMessage(Colour::AQUA."$player health has been set");
+								$player->sendMessage(Colour::AQUA."Your health has been set");
 								return true;
 									}else{
-										$sender->sendMessage("Player cannot be found");
+										$sender->sendMessage(Colour::DARK_RED."Player Not Found");
 										return true;
 											}}}else{
 				if($sender->hasPermission("boxofbits.health")){
 				if(!isset($args[0])){
-					$sender->sendMessage(Colour::DARK_RED."Usage: /health <amount> [player]");
+					$sender->sendMessage(Colour::DARK_RED."Usage: /health <amount> [playername]");
 					return true;
 						}else{
 							$sender->setHealth($args[0]);
-							$sender->sendMessage("Your health has been set");
+							$sender->sendMessage(Colour::AQUA."Your health has been set");
 							}elseif(isset($args[0])){
 							$player = $this->getServer()->getPlayer($args[1]);
 							if($player instanceof Player){
 								$player->setHealth($args[0]);
-								$sender->sendMessage("$player 's health has been set");
-								$player->sendMessage("Your health has been set");
+								$sender->sendMessage(Colour::AQUA."$player health has been set");
+								$player->sendMessage(Colour::AQUA."Your health has been set");
 								return true;
 									}else{
-										$sender->sendMessage("Player cannot be found");
+										$sender->sendMessage(Colour::DARK_RED."Player Not Found");
 										return true;
 								}}}}else{
-									$sender->sendMessage("$this->permMessage");
+									$sender->sendMessage(Colour::DARK_RED."$this->permMessage");
 									return true;
 								}
 						break;
+//slay
+		if(strtolower($cmd->getName() == "slay"));
+			if(!($sender instanceof Player)){
+				if(!isset($args[0])){
+				$sender->sendMessage(Colour::DARK_RED."Usage: /slay <playername>");
+				return true;
+					}else{
+						$player = $this->getServer()->getPlayer($args[0]);
+							if($player instanceof Player){
+								$player->setHealth(0);
+									$player->sendMessage(Colour::DARK_RED."You were killed by the CONSOLE");
+									$sender->sendMessage(Colour::DARK_RED."$player has been killed");
+									return true;
+								}else{
+									$sender->sendMessage(DARK_RED."Player Not Found");
+					}}}else{
+						if($sender->hasPermission("boxofbits.slay")){
+							$player = $this->getServer()->getPlayer($args[0]);
+							if($player instanceof Player){
+								$player->setHealth(0);
+									$player->sendMessage(Colour::DARK_RED."You were killed by the CONSOLE");
+									$sender->sendMessage(Colour::DARK_RED."$player has been killed");
+									return true;
+							}else{
+								$sender->sendMessage(Colour::DARK_RED."Player Not Found");
+							}}else{
+								$sender->sendMessage(Colour::DARK_RED."$this->permMessage");
+							return true;
+					}}
+			break;		
 //suicide
 		if(strtolower($cmd->getName() == "suicide"));
 			if(!($sender instanceof Player)){
-				$sender->sendMessage("$this->consoleMsg");
+				$sender->sendMessage(Colour::DARK_RED."$this->consoleMsg");
 				return true;
 					}else{
+						if($sender->hasPermission("boxofbits.suicide")){
 						$sender->setHealth(0);
-						$sender->sendMessage("You have commited suicide!");
+						$sender->sendMessage(Colour::DARK_RED."You have commited suicide!");
 						return true;
-					}
+						}else{
+							$sender->sendMessage(Colour::DARK_RED."$this->permMessage");
+							return true;
+					}}
 			break;		
 //gms
 		if(strtolower($cmd->getName() == "gms"));
