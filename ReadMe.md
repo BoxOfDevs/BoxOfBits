@@ -1,15 +1,17 @@
- ____             ____   __ ____  _ _              __   ___   ___  
-|  _ \           / __ \ / _|  _ \(_) |            /_ | / _ \ / _ \ 
-| |_) | _____  _| |  | | |_| |_) |_| |_ ___  __   _| || | | | | | |
-|  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __| \ \ / / || | | | | | |
-| |_) | (_) >  <| |__| | | | |_) | | |_\__ \  \ V /| || |_| | |_| |
-|____/ \___/_/\_\\____/|_| |____/|_|\__|___/   \_/ |_(_)___(_)___/                                                                 
+  ____             ____   __ ____  _ _              __  __   ___  
+ |  _ \           / __ \ / _|  _ \(_) |            /_ |/_ | / _ \ 
+ | |_) | _____  _| |  | | |_| |_) |_| |_ ___  __   _| | | || | | |
+ |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __| \ \ / / | | || | | |
+ | |_) | (_) >  <| |__| | | | |_) | | |_\__ \  \ V /| |_| || |_| |
+ |____/ \___/_/\_\\____/|_| |____/|_|\__|___/   \_/ |_(_)_(_)___/                                                                
 
 #What Is BoxOfBits???                                                                
-This plugin is just what its name suggests, a box full of features which will make using your server easier and more fun. BoxOfBits is similar to EssentialsPE, although there are some features in BoxOfBits that are not in EssentialsPE even though BoxOfBits does not have as many features as EssentialsPE does. Please keep in mind that this is my first plugin so if there are any glitches I missed when i tested, please report them to me and i will try to release a bug-fix update or fix it in the next full update. Also sorry if updates take a long time to come out, school and many other things get in the way a lot of the time :( Currently BoxOfBits is in 0.0.1 on the stable release on ImagicalMine Forums, but this README is according to 1.0.0, as it is coming in March.
+This plugin is just what its name suggests, a box full of features which will make using your server easier and more fun. BoxOfBits is similar to EssentialsPE, although there are some features in BoxOfBits that are not in EssentialsPE even though BoxOfBits does not have as many features as EssentialsPE does. Please keep in mind that this is my first plugin so if there are any glitches I missed when i tested, please report them to me and i will try to release a bug-fix update or fix it in the next full update. Also sorry if updates take a long time to come out, school and many other things get in the way a lot of the time :( - Enjoy :)
 
 
 ##Completed Features:
+   • /suicide, /slay, /heal and /health are all commands for controller the health or you or someone else.
+
    • /gms, /gmc, /gma, and /gmsp are shortcut commands for changing gamemode to survival, creative, adventure mode, or spectator mode. You can also change other players gamemodes with them as well as your own.
 
    • The default join/leave broadcasts are now customable in config.
@@ -27,10 +29,6 @@ This plugin is just what its name suggests, a box full of features which will ma
 
 ##Planned Features:
    • Various teleport features like Warps, TPA, Homes, and Portals.
-
-   • Heal command.
-
-   • Slay & Suicide commands.
 
    • Jail & Timer-Ban commands.
 
@@ -64,6 +62,14 @@ This plugin is just what its name suggests, a box full of features which will ma
 
    • /sendpopup - Broadcast popup.
 
+   • /suicide - Kill you.
+
+   • /slay - Kill specified player.
+
+   • /heal - Heal you or specified player.
+
+   • /health - Control you or specified player's health.
+
 
 ##Permissions:
    • boxofbits.info - For /boxofbits
@@ -83,6 +89,14 @@ This plugin is just what its name suggests, a box full of features which will ma
    • boxofbits.popup - For /sendpopup
 
    • boxofbits.broadcast - For /sendbroadcast
+
+   • boxofbits.suicide - For /suicide
+
+   • boxofbits.slay - For /slay
+
+   • boxofbits.heal - For /heal
+
+   • boxofbits.health - For /health
 
 
 ##IMPORTANT CONTRIBUTING/REDISTRIBUTING NOTE:
