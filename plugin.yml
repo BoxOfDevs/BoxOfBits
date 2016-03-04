@@ -1,6 +1,6 @@
 name: BoxOfBits
 author: TheDragonRing
-version: 1.0.0
+version: 1.1.0
 description: A plugin full of bits of use
 api: 1.14.0, 2.0.0
 main: TheDragonRing\BoxOfBits\Main
@@ -35,6 +35,15 @@ commands:
         usage: /sendbroadcast server|player <messsage>
         aliases: sendb
         description: Broadcasts specified message
+    suicide:
+        usage: /suicide
+        description: Kills you
+    heal:
+        usage: /heal [playername]
+        description: Heals you or specified player
+    health:
+        usage: /health <amount> [playername]
+        description: Sets you or specified player's health
 permissions:
     boxofbits.info:
         default: true
@@ -63,3 +72,12 @@ permissions:
     boxofbits.broadcast:
         default: op
         description: Allows use of /sendbroadcast
+    boxofbits.suicide:
+        default: true
+        description: Allows use of /suicide
+    boxofbits.heal:
+        default: op
+        description: Allows use of /heal
+    boxofbits.health:
+        default: op
+        description: Allows use of /health
