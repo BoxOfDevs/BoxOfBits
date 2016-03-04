@@ -31,8 +31,8 @@ class Main extends PluginBase implements Listener{
 
 	public function onEnable(){
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
-		$this->getLogger()->info(Colour::AQUA."BoxOfBits".Colour::GOLD." by TheDragonRing".Colour::GREEN." Enabled!");	
-			if(!is_dir($this->getDataFolder())){	
+		$this->getLogger()->info(Colour::AQUA."BoxOfBits".Colour::GOLD." by TheDragonRing".Colour::GREEN." Enabled!");
+			if(!is_dir($this->getDataFolder())){
 			@mkdir($this->getDataFolder());
 			}
 			$this->config = new Config($this->getDataFolder()."config.yml",Config::YAML, array(
@@ -183,6 +183,47 @@ class Main extends PluginBase implements Listener{
 			return true;
 				}
 		break;
+//heal
+		if(strtolower($cmd->getName() == "heal"));
+			if(!($sender instanceof Player)){
+				if(!isset($args[0])){
+					$sender->sendMessage(Colour::DARK_RED."$this->consoleMsg");
+					return true;
+						}else{
+							$player = $this->getServer()->getPlayer($args[0]);
+							if($player instanceof Player){
+								$player->setHealth(20);
+								$sender->sendMessage("$player has been healed");
+								$player->sendMessage("You have been healed");
+								return true;
+									}else{
+										$sender->sendMessage("Player cannot be found");
+										return true;
+											}}}else{
+				if($sender->hasPermission("boxofbits.heal")){
+				if(!isset($args[0])){
+					$player->setHealth(20);
+					$sender->sendMessage("You have been healed");
+					return true;
+						}else{
+							$player = $this->getServer()->getPlayer($args[0]);
+							if($player instanceof Player){
+								$player->setHealth(20);
+								$sender->sendMessage("$player has been healed");
+								$player->sendMessage("You have been healed");
+								return true;
+									}else{
+										$sender->sendMessage("Player cannot be found");
+										return true;
+								}}}}else{
+									$sender->sendMessage("$this->permMessage");
+									return true;
+								}
+						break;
+//health
+		if(strtolower($cmd->getName() == "health"));
+//suicide
+		if(strtolower($cmd->getName() == "suicide"));
 //gms
 		if(strtolower($cmd->getName() == "gms"));
 			if(!($sender instanceof Player)){
