@@ -1,11 +1,11 @@
 <?php
 
-#  ____             ____   __ ____  _ _              __   ___   ___  
-# |  _ \           / __ \ / _|  _ \(_) |            /_ | / _ \ / _ \ 
-# | |_) | _____  _| |  | | |_| |_) |_| |_ ___  __   _| || | | | | | |
-# |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __| \ \ / / || | | | | | |
-# | |_) | (_) >  <| |__| | | | |_) | | |_\__ \  \ V /| || |_| | |_| |
-# |____/ \___/_/\_\\____/|_| |____/|_|\__|___/   \_/ |_(_)___(_)___/ 
+#  ____             ____   __ ____  _ _              __  __   ___  
+# |  _ \           / __ \ / _|  _ \(_) |            /_ |/_ | / _ \ 
+# | |_) | _____  _| |  | | |_| |_) |_| |_ ___  __   _| | | || | | |
+# |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __| \ \ / / | | || | | |
+# | |_) | (_) >  <| |__| | | | |_) | | |_\__ \  \ V /| |_| || |_| |
+# |____/ \___/_/\_\\____/|_| |____/|_|\__|___/   \_/ |_(_)_(_)___/ 
 #                                                                    
   
 namespace TheDragonRing\BoxOfBits;
@@ -35,16 +35,17 @@ class Main extends PluginBase implements Listener{
 			@mkdir($this->getDataFolder());
 			$this->config = new Config($this->getDataFolder()."config.yml",Config::YAML, array(
 
-				#  ____             ____   __ ____  _ _              __   ___   ___  
-				# |  _ \           / __ \ / _|  _ \(_) |            /_ | / _ \ / _ \ 
-				# | |_) | _____  _| |  | | |_| |_) |_| |_ ___  __   _| || | | | | | |
-				# |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __| \ \ / / || | | | | | |
-				# | |_) | (_) >  <| |__| | | | |_) | | |_\__ \  \ V /| || |_| | |_| |
-				# |____/ \___/_/\_\\____/|_| |____/|_|\__|___/   \_/ |_(_)___(_)___/ 
+			    #  ____             ____   __ ____  _ _              __  __   ___  
+			    # |  _ \           / __ \ / _|  _ \(_) |            /_ |/_ | / _ \ 
+			    # | |_) | _____  _| |  | | |_| |_) |_| |_ ___  __   _| | | || | | |
+			    # |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __| \ \ / / | | || | | |
+			    # | |_) | (_) >  <| |__| | | | |_) | | |_\__ \  \ V /| |_| || |_| |
+			    # |____/ \___/_/\_\\____/|_| |____/|_|\__|___/   \_/ |_(_)_(_)___/ 
 				#                                                                    
   
 
-				# Custom messages which either get sent in chat or popup on the bottom of the screen when certain events occur
+				# 
+Custom messages which either get sent in chat or popup on the bottom of the screen when certain events occur
 				# Please note that the JoinMessage and LeaveMessage replace the default join and leave/quit messages
 				# Use #playername as the name of the player and § to colour the text
 				"JoinMessage" => "#playername §bJoined the Server",
@@ -122,14 +123,14 @@ class Main extends PluginBase implements Listener{
 			if(!isset($args[0])){
 				$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits".Colour::BLACK."]---");
 				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."Plugin Maker §o§2The§4Dragon§1Ring");
-				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."Plugin Version §61.0.0");
-				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/boxofbits 1|2".Colour::DARK_GREEN." Shows page 1 or 2 of help");
+				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."Plugin Version §61.1.0");
+				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/boxofbits 1|2|3".Colour::DARK_GREEN." Shows page 1, 2 or 3 of help");
 				return true;
 			}else{
 				switch ($args[0]){
 					case "1":
-						$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v1.0.0 Help Page 1".Colour::BLACK."]---");
-						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/boxofbits 1|2".Colour::GREEN." Shows plugin info and help");
+						$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v1.1.0 Help Page 1".Colour::BLACK."]---");
+						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/boxofbits 1|2|3".Colour::GREEN." Shows plugin info and help");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/rules".Colour::GREEN." Shows server rules");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/gms [playername]".Colour::DARK_GREEN." Changes gamemode to Survival");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/gmc [playername]".Colour::DARK_GREEN." Changes gamemode to Creative");
@@ -137,11 +138,19 @@ class Main extends PluginBase implements Listener{
 						return true;
 							break;
 					case "2":
-						$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v1.0.0 Help Page 2".Colour::BLACK."]---");
+						$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v1.1.0 Help Page 2".Colour::BLACK."]---");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/gmsp [playername]".Colour::DARK_GREEN." Changes gamemode to Spectator");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/xyz [playername]".Colour::DARK_GREEN." Get player coordinates");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/sendpopup server|player <message>".Colour::DARK_GREEN." Broadcasts specified popup");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/sendmessage server|player <message>".Colour::DARK_GREEN." Broadcasts specified message");
+						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/suicide".Colour::DARK_GREEN." Kills you");
+						return true;
+							break;
+					case "3":
+						$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v1.1.0 Help Page 3".Colour::BLACK."]---");
+						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/slay <playername>".Colour::DARK_GREEN." Kills specified player");
+						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/heal [playername]".Colour::DARK_GREEN." Heals you or specified player");
+						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/health <amount> [playername]".Colour::DARK_GREEN." Sets you or specified player's health");
 						return true;
 							break;
 						}
@@ -152,14 +161,14 @@ class Main extends PluginBase implements Listener{
 			if(!isset($args[0])){
 				$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits".Colour::BLACK."]---");
 				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."Plugin Maker §o§2The§4Dragon§1Ring");
-				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."Plugin Version §61.0.0");
-				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/boxofbits 1|2".Colour::DARK_GREEN." Shows page 1 or 2 of help");
+				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."Plugin Version §61.1.0");
+				$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/boxofbits 1|2|3".Colour::DARK_GREEN." Shows page 1, 2 or 3 of help");
 				return true;
 			}else{
 				switch ($args[0]){
 					case "1":
-						$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v1.0.0 Help Page 1".Colour::BLACK."]---");
-						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/boxofbits 1|2".Colour::GREEN." Shows plugin info and help");
+						$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v1.1.0 Help Page 1".Colour::BLACK."]---");
+						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/boxofbits 1|2|3".Colour::GREEN." Shows plugin info and help");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/rules".Colour::GREEN." Shows server rules");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/gms [playername]".Colour::DARK_GREEN." Changes gamemode to Survival");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/gmc [playername]".Colour::DARK_GREEN." Changes gamemode to Creative");
@@ -167,11 +176,19 @@ class Main extends PluginBase implements Listener{
 						return true;
 							break;
 					case "2":
-						$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v1.0.0 Help Page 2".Colour::BLACK."]---");
+						$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v1.1.0 Help Page 2".Colour::BLACK."]---");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/gmsp [playername]".Colour::DARK_GREEN." Changes gamemode to Spectator");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/xyz [playername]".Colour::DARK_GREEN." Get player coordinates");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/sendpopup server|player <message>".Colour::DARK_GREEN." Broadcasts specified popup");
 						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/sendmessage server|player <message>".Colour::DARK_GREEN." Broadcasts specified message");
+						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/suicide".Colour::DARK_GREEN." Kills you");
+						return true;
+							break;
+					case "3":
+						$sender->sendMessage(Colour::BLACK. "---[".Colour::GOLD."BoxOfBits v1.1.0 Help Page 3".Colour::BLACK."]---");
+						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/slay <playername>".Colour::DARK_GREEN." Kills specified player");
+						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/heal [playername]".Colour::DARK_GREEN." Heals you or specified player");
+						$sender->sendMessage(Colour::BLACK. "- " .Colour::WHITE."/health <amount> [playername]".Colour::DARK_GREEN." Sets you or specified player's health");
 						return true;
 							break;
 						}
