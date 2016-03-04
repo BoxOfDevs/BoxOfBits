@@ -32,9 +32,7 @@ class Main extends PluginBase implements Listener{
 	public function onEnable(){
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		$this->getLogger()->info(Colour::AQUA."BoxOfBits".Colour::GOLD." by TheDragonRing".Colour::GREEN." Enabled!");
-			if(!is_dir($this->getDataFolder())){
 			@mkdir($this->getDataFolder());
-			}
 			$this->config = new Config($this->getDataFolder()."config.yml",Config::YAML, array(
 
 				#  ____             ____   __ ____  _ _              __   ___   ___  
