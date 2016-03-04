@@ -220,8 +220,54 @@ class Main extends PluginBase implements Listener{
 						break;
 //health
 		if(strtolower($cmd->getName() == "health"));
+			if(!($sender instanceof Player)){
+				if(!isset($args[1])){
+					$sender->sendMessage(Colour::DARK_RED."Usage: /health <amount> [player] - [player] required when run from console!");
+					return true;
+						}else{
+							$player = $this->getServer()->getPlayer($args[1]);
+							if($player instanceof Player){
+								$player->setHealth($args[0]);
+								$sender->sendMessage("$player 's health has been set");
+								$player->sendMessage("Your health has been set");
+								return true;
+									}else{
+										$sender->sendMessage("Player cannot be found");
+										return true;
+											}}}else{
+				if($sender->hasPermission("boxofbits.health")){
+				if(!isset($args[0])){
+					$sender->sendMessage(Colour::DARK_RED."Usage: /health <amount> [player]");
+					return true;
+						}else{
+							$sender->setHealth($args[0]);
+							$sender->sendMessage("Your health has been set");
+							}elseif(isset($args[0])){
+							$player = $this->getServer()->getPlayer($args[1]);
+							if($player instanceof Player){
+								$player->setHealth($args[0]);
+								$sender->sendMessage("$player 's health has been set");
+								$player->sendMessage("Your health has been set");
+								return true;
+									}else{
+										$sender->sendMessage("Player cannot be found");
+										return true;
+								}}}}else{
+									$sender->sendMessage("$this->permMessage");
+									return true;
+								}
+						break;
 //suicide
 		if(strtolower($cmd->getName() == "suicide"));
+			if(!($sender instanceof Player)){
+				$sender->sendMessage("$this->consoleMsg");
+				return true;
+					}else{
+						$sender->setHealth(0);
+						$sender->sendMessage("You have commited suicide!");
+						return true;
+					}
+			break;		
 //gms
 		if(strtolower($cmd->getName() == "gms"));
 			if(!($sender instanceof Player)){
