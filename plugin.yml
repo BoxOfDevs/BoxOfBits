@@ -7,7 +7,7 @@ api:
 main: BoxOfBits\Loader
 commands:
     boxofbits:
-        usage: /boxofbits 1|2|3|4|5|6
+        usage: /boxofbits commands|permissions|other
         description: View all the info about BoxOfBits, version, author, commands and permissions (alias = /bb)
         aliases: bb
     message:
@@ -61,7 +61,7 @@ commands:
         usage: /fly
         description: Lets you fly in survival
     hidetag:
-        usage: /ht on|off
+        usage: /hidetag on|off
         description: Hides the nametag above your head
 permissions:
     boxofbits:
