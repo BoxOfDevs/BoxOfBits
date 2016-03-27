@@ -38,7 +38,7 @@ Planned Features
 
 Commands
 =========
-   • /boxofbits 1|2|3|4|5|6 - View all the info about BoxOfBits, version, author, commands and permissions (alias = /bb)
+   • /boxofbits commands|permissions|other - View all the info about BoxOfBits, version, author, commands and permissions (alias = /bb)
    
    • /message server|playername <message...> - Send a message to either the whole server or one player (alias = /m)
    
@@ -64,7 +64,7 @@ Commands
    
    • /heal [playername] - Heals you or specified player
    
-   • /health [playername] -  Sets you or specified players health
+   • /health [playername] - Sets you or specified players health
    
    • /fly - Lets you fly in survival
    
