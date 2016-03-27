@@ -12,7 +12,7 @@ Completed Features
    
    • The default join/leave messages are now customisable in config
    
-   • When a player joins, leaves, dies, is kicked, or changes gamemode customisable popups appear on the bottom of the screen
+   • When a player joins, leaves, dies, sleeps, is kicked, or changes gamemode customisable popups appear on the bottom of the screen
    
    • A command to get player coordinates
    
