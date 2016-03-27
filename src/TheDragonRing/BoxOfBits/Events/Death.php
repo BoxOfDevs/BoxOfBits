@@ -25,7 +25,7 @@ class Death extends Loader implements Listener{
     public function onDeath(PlayerDeathEvent $event){
         $player = $event->getPlayer();
         $name = $player->getName();
-        $line = "/n";
+        $line = "\n";
         $popup = str_replace("{player}", $name, "{line}", $line, $this->config->get("DeathPopup"));
         $this->getServer()->broadcastPopup($popup);
         $message = str_replace("{player}", $name, "{line}", $line, $this->config->get("DeathMessage"));
