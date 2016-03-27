@@ -1,7 +1,7 @@
-TheDragonRing's Software License v1
+BoxOfBits License v1
 ===================================
 
-1. This code may not be edited, redistributed, or copied in any way.
+1. This code may not be edited, redistributed, or copied in any way. Copying code methods is allowed, copying whole files or the whole plugin is restricted.
 
 2. Custom versions of this will usually be unsupported.
 
