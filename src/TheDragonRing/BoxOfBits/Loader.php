@@ -17,7 +17,7 @@ namespace TheDragonRing\BoxOfBits;
 use TheDragonRing\BoxOfBits\Events\Join;
 use TheDragonRing\BoxOfBits\Events\Leave;
 use TheDragonRing\BoxOfBits\Events\GamemodeChange;
-use TheDragonRing\BoxOfBits\Events\Ban;
+use TheDragonRing\BoxOfBits\Events\Bed;
 use TheDragonRing\BoxOfBits\Events\Kick;
 use TheDragonRing\BoxOfBits\Events\Death;
 use TheDragonRing\BoxOfBits\Commands\fly;
