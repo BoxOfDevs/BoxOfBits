@@ -1,115 +1,127 @@
-  ____             ____   __ ____  _ _              __  __   ___  
- |  _ \           / __ \ / _|  _ \(_) |            /_ |/_ | / _ \ 
- | |_) | _____  _| |  | | |_| |_) |_| |_ ___  __   _| | | || | | |
- |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __| \ \ / / | | || | | |
- | |_) | (_) >  <| |__| | | | |_) | | |_\__ \  \ V /| |_| || |_| |
- |____/ \___/_/\_\\____/|_| |____/|_|\__|___/   \_/ |_(_)_(_)___/                                                                
+What is BoxOfBits???
+=====================
+This plugin is a massive project that I started as my first plugin, basically an alternative to Essentials from Bukkit and EssentialsPE from Pocketmine. Completely written and expanded from scratch, this plugin is still in its earlier stages but already has a fair collection of features that extend on others or are completely new, but may still be found in other plugins. My goal is to make this plugin so big that all a server own would need to do is download this one plugin and have features from about 100 other plugins. Also please note that there may be some bugs, please report them to me and I will to and fix them as soon as possible - Enjoy :)
 
-#What Is BoxOfBits???                                                                
-This plugin is just what its name suggests, a box full of features which will make using your server easier and more fun. BoxOfBits is similar to EssentialsPE, although there are some features in BoxOfBits that are not in EssentialsPE even though BoxOfBits does not have as many features as EssentialsPE does. Please keep in mind that this is my first plugin so if there are any glitches I missed when i tested, please report them to me and i will try to release a bug-fix update or fix it in the next full update. Also sorry if updates take a long time to come out, school and many other things get in the way a lot of the time :( - Enjoy :)
+Completed Features
+===================
+   • A main command that lets you view all the plugin info, version, author, commands, and permissions
+   
+   • Commands for controlling peoples health, either killing someone, killing yourself, healing someone, healing yourself, or setting someones health to a specified level
+   
+   • Shortcut commands for changing gamemode to survival, creative, adventure mode, or spectator mode. You can also change other players gamemodes with them as well as your own
+   
+   • The default join/leave messages are now customisable in config
+   
+   • When a player joins, leaves, dies, is kicked, or changes gamemode customisable popups appear on the bottom of the screen
+   
+   • A command to get player coordinates
+   
+   • Server rule features
+   
+   • Commands to send messages, popups or tips to either the whole server or one player
 
+Planned Features
+=================
+   • Various teleport features like Warps, TPA, Homes, and Portals
+   
+   • Jail & Timer-Ban commands
+   
+   • Possibly Permission features
+   
+   • Possibly Economy features
+   
+   • Possibly Account features
+   
+   • Possibly World-Edit features
+   
+   • More, undecided on features
 
-##Completed Features:
-   • /suicide, /slay, /heal and /health are all commands for controller the health or you or someone else.
+Commands
+=========
+   • /boxofbits 1|2|3|4|5|6 - View all the info about BoxOfBits, version, author, commands and permissions (alias = /bb)
+   
+   • /message server|playername <message...> - Send a message to either the whole server or one player (alias = /m)
+   
+   • /popup server|playername <message...> - Send a popup to either the whole server or one player (alias = /p)
+   
+   • /tip server|playername <message...> - Send a tip to either the whole server or one player (alias = /t)
+   
+   • /gms [playername] - Changes gamemode to Survival (aliases = /survival, /s, & /0)
+   
+   • /gmc [playername] - Changes gamemode to Creative (aliases = /creative, /c & /1)
+   
+   • /gma [playername] - Changes gamemode to Adventure (aliases = /adventure, /a, & /2)
+   
+   • /gmsp [playername] - Changes gamemode to Spectator (aliases = /spectator, /sp, & /3)
+   
+   • /xyz [playername] - Get player coordinates (alias = /coords)
+   
+   • /rules - Shows the server rules
+   
+   • /suicide - Kill yourself
+   
+   • /slay <playername> - Kills specified player
+   
+   • /heal [playername] - Heals you or specified player
+   
+   • /health [playername] -  Sets you or specified players health
+   
+   • /fly - Lets you fly in survival
+   
+   • /hidetag on|off - Hides the nametag above your head
 
-   • /gms, /gmc, /gma, and /gmsp are shortcut commands for changing gamemode to survival, creative, adventure mode, or spectator mode. You can also change other players gamemodes with them as well as your own.
+Permissions
+============
+   • boxofbits - Allows all BoxOfBits features - Default: Disabled/False
+   
+   • boxofbits.info - For /boxofbits - Default: Anyone/True
+   
+   • boxofbits.msg - For /message - Default: OP Only
+   
+   • boxofbits.popup - For /popup - Default: OP Only
+   
+   • bxofobits.tip - For /tip - Default: OP Only
+   
+   • boxofbits.gms - For /gms - Default: OP Only
+   
+   • boxofbits.gmc - For /gmc - Default: OP Only
+   
+   • boxofbits.gma - For /gma - Default: OP Only
+   
+   • boxofbits.gmsp - For /gmsp - Default: OP Only
+   
+   • boxofbits.rules - For /srules - Default: Anyone/True
+   
+   • boxofbits.xyz - For /xyz - Default: Anyone/True
+   
+   • boxofbits.suicide - For /suicide - Default: Anyone/True
+   
+   • boxofbits.slay - For /slay - Default: OP Only
+   
+   • boxofbits.heal - For /heal - Default: OP Only
+   
+   • boxofbits.health - For /health - Default: OP Only
+   
+   • boxofbits.fly - For /fly - Default: OP Only
+   
+   • boxofbits.ht - For /hidetag - Default: OP Only
 
-   • The default join/leave broadcasts are now customable in config.
+Credits
+========
+   • EssentialsPE - The original plugin that inspired BoxOfBits
+   
+   • Taki21, applqpak, Vaivez66, and remote_vase - For help with development
+   
+   • Various plugins - To develop this I had to take and customize many chunks of code from plugins all over the place
+   
+Quick Links
+============
+   • [ImagicalMine BoxOfBits Page] (http://forums.imagicalmine.net/plugins/boxofbits.19/)
+   
+   • [MCrafters BoxOfBits Page] (http://mcrafters.ml/index.php?resources/)
 
-   • When a player joins, leaves, dies, is kicked, or changes gamemode customisable popups appear on the bottom of the screen.
-
-   • /xyz shows player coordinates.
-
-   • /rules show server rules.
-
-   • /sendbroadcast & /sendpopup send broadcasted messages or popups to either the whole server or a specified player.
-
-   • /boxofbits shows the plugin help menu with all the commands + info stored inside.
-
-
-##Planned Features:
-   • Various teleport features like Warps, TPA, Homes, and Portals.
-
-   • Jail & Timer-Ban commands.
-
-   • Possibly Permission features.
-
-   • Possibly Economy features.
-
-   • Possibly Account features.
-
-   • Possibly World-Edit features.
-
-   • More, undecided on features.
-
-
-##Commands:
-   • /boxofbits - Shows plugin info/help menu.
-
-   • /gms - Changes gamemode to Survival.
-
-   • /gmc - Changes gamemode to Creative.
-
-   • /gma - Changes gamemode to Adventure mode.
-
-   • /gmsp - Changes gamemode to Spectator mode.
-
-   • /xyz - Shows player coordinates.
-
-   • /rules - Shows server rules.
-
-   • /sendbroadcast - Broadcast message.
-
-   • /sendpopup - Broadcast popup.
-
-   • /suicide - Kill you.
-
-   • /slay - Kill specified player.
-
-   • /heal - Heal you or specified player.
-
-   • /health - Control you or specified player's health.
-
-
-##Permissions:
-   • boxofbits.info - For /boxofbits
-
-   • boxofbits.gms - For /gms
-
-   • boxofbits.gmc - For /gmc
-
-   • boxofbits.gma - For /gma
-
-   • boxofbits.gmsp - For /gmsp
-
-   • boxofbits.rules - For /rules
-
-   • boxofbits.xyz - For /xyz
-
-   • boxofbits.popup - For /sendpopup
-
-   • boxofbits.broadcast - For /sendbroadcast
-
-   • boxofbits.suicide - For /suicide
-
-   • boxofbits.slay - For /slay
-
-   • boxofbits.heal - For /heal
-
-   • boxofbits.health - For /health
-
-
-##IMPORTANT CONTRIBUTING/REDISTRIBUTING NOTE:
-Anyone may contribute to BoxOfBits but contributions will be reviewed by me and must be submitted as either a GitHub pull request or the code been sent to me somewhere. Redistributing is not allowed unless you have spoken to me and I have given permission, depending on what you are posting it on you will be given further terms.
-
-
-###Quick Links
-   • [ImagicalMine BoxOfBits Page] (http://forums.imagicalmine.net/plugins/BoxOfBits.19/)
-
-   • [BoxOfBits Website] (https://TheDragonRing.github.io/BoxOfBits/)
+   • [BoxOfBits Official Website] (https://TheDragonRing.github.io/BoxOfBits/)
 
    • [TheDragonRing's Homepage] (https://TheDragonRing.github.io/)
 
    • [GitHub Project] (https://github.com/TheDragonRing/BoxOfBits/)
-
-   • [ImagicalMine Forums] (http://forums.imagicalmine.net/)
