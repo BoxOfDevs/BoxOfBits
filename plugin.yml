@@ -1,43 +1,53 @@
 name: BoxOfBits
+version: 1.2.3
 author: TheDragonRing
-version: 1.1.0
-description: The growing plugin with so many features
-api: 2.0.0
-main: TheDragonRing\BoxOfBits\Main
-load: STARTUP
+api:
+- 1.0.0
+- 2.0.0
+main: BoxOfBits\Loader
 commands:
     boxofbits:
-        usage: /boxofbits 1|2|3
-        description: Shows plugin info and help
+        usage: /boxofbits 1|2|3|4|5|6
+        description: View all the info about BoxOfBits, version, author, commands and permissions (alias = /bb)
+        aliases: bb
+    message:
+        usage: /message server|playername <message...>
+        description: Send a message to either the whole server or one player (alias = /m)
+        aliases: m
+    popup:
+        usage: /popup server|playername <message...>
+        description: Send a popup to either the whole server or one player (alias = /p)
+        aliases: p
+    tip:
+        usage: /tip server|playername <message...>
+        description: Send a tip to either the whole server or one player (alias = t)
+        aliases: t
     gms:
         usage: /gms [playername]
-        description: Changes gamemode to Survival 
+        description: Changes gamemode to Survival (aliases = /survival, /s, & /0)
+        aliases: survival, s, 0
     gmc:
         usage: /gmc [playername]
-        description: Changes gamemode to Creative
+        description: Changes gamemode to Creative (aliases = /creative, /c, & /1)
+        aliases: creative, c, 1
     gma:
         usage: /gma [playername]
-        description: Changes gamemode to Adventure
+        description: Changes gamemode to Adventure (aliases = /adventure, /a, & /2)
+        aliases: adventure, a, 2
     gmsp:
         usage: /gmsp [playername]
-        description: Changes gamemode to Spectator
+        description: Changes gamemode to Spectator (aliases = /spectator, /sp, & /3)
+        aliases: spectator, sp, 3
     xyz:
         usage: /xyz [playername]
-        description: Get player Coordinates
+        description: Get player coordinates (alias = /coords)
+        aliases: coords
     rules:
         usage: /rules
-        description: Shows server rules
-    sendpopup:
-        usage: /sendpopup server|player <message>
-        aliases: sendp
-        description: Broadcasts specified popup
-    sendbroadcast:
-        usage: /sendbroadcast server|player <messsage>
-        aliases: sendb
-        description: Broadcasts specified message
+        description: Shows the server rules
     suicide:
         usage: /suicide
-        description: Kills you
+        description: Kill yourself
     slay:
         usage: /slay <playername>
         description: Kills specified player
@@ -46,44 +56,45 @@ commands:
         description: Heals you or specified player
     health:
         usage: /health <amount> [playername]
-        description: Sets you or specified player's health
+        description: Sets you or specified players health
+    fly:
+        usage: /fly
+        description: Lets you fly in survival
+    hidetag:
+        usage: /ht on|off
+        description: Hides the nametag above your head
 permissions:
+    boxofbits:
+        default: false
     boxofbits.info:
         default: true
-        description: Allows use of /boxofbits
-    boxofbits.gms:
+    boxofbits.msg:
         default: op
-        description: Allows use of /gms
-    boxofbits.gmc:
-        default: op
-        description: Allows use of /gmc
-    boxofbits.gma:
-        default: op
-        description: Allows use of /gma
-    boxofbits.gmsp:
-        default: op
-        description: Allows use of /gmsp
-    boxofbits.xyz:
-        default: true
-        description: Allows use of /xyz
-    boxofbits.rules:
-        default: true
-        description: Allows use of /rules
     boxofbits.popup:
         default: op
-        description: Allows use of /sendpopup
-    boxofbits.broadcast:
+    boxofbits.tip:
         default: op
-        description: Allows use of /sendbroadcast
+    boxofbits.gms:
+        default: op
+    boxofbits.gmc:
+        default: op
+    boxofbits.gma:
+        default: op
+    boxofbits.gmsp:
+        default: op
+    boxofbits.xyz:
+        default: true
+    boxofbits.rules:
+        default: true
     boxofbits.suicide:
         default: true
-        description: Allows use of /suicide
     boxofbits.slay:
         default: op
-        description: Allows use of /slay
     boxofbits.heal:
         default: op
-        description: Allows use of /heal
     boxofbits.health:
         default: op
-        description: Allows use of /health
+    boxofbits.fly:
+        default: op
+    boxofbits.ht:
+        default: op
