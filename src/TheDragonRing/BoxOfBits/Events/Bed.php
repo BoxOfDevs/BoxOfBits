@@ -35,7 +35,7 @@ class Bed extends Loader implements Listener{
     public function onBedLeave(PlayerBedLeaveEvent $event){
         $player = $event->getPlayer();
         $name = $player->getName();
-        $line = "/n";
+        $line = "\n";
         $popup = str_replace("{player}", $name, "{line}", $line, $this->config->get("WakeTip"));
         $sender->sendTip($tip);
         return true;
