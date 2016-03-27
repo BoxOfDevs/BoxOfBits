@@ -31,7 +31,7 @@ class message extends Loader{
     
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         if(strolower($cmd->getName() == "message")){
-            if(!(isset($args[0]))){
+            if(!(isset($args[1]))){
                 $sender->sendMessage("§4Usage: /message server|playername <message...>");
             }else{
                 if($args[0] === "server"){
