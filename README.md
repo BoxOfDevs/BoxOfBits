@@ -1,6 +1,6 @@
 What is BoxOfBits???
 =====================
-This plugin is a massive project that I started as my first plugin, basically an alternative to Essentials from Bukkit and EssentialsPE from Pocketmine. Completely written and expanded from scratch, this plugin is still in its earlier stages but already has a fair collection of features that extend on others or are completely new, but may still be found in other plugins. My goal is to make this plugin so big that all a server owner would need to do is download this one plugin and have features from about 100 other plugins. Also please note that there may be some bugs, please report them to me and I will to and fix them as soon as possible - Enjoy :)
+This plugin is a massive project that I started as my first plugin. Completely written and expanded from scratch, this plugin is still in its earlier stages but already has a fair collection of features that extend on others or are completely new, but may still be found in other plugins. My goal is to make this plugin so big that all a server owner would need to do is download this one plugin and have features from about 100 other plugins. Also please note that there may be some bugs, please report them to me and I will to and fix them as soon as possible - Enjoy :)
 
 Completed Features
 ===================
