@@ -8,7 +8,7 @@
  | |_) | (_) >  <| |__| | | | |_) | | |_\__ \
  |____/ \___/_/\_\\____/|_| |____/|_|\__|___/
  
- The growing plugin with so many features
+ The growing plugin with so many features, an alternative to Essentials or EssentialsPE
  
  */
  
@@ -24,32 +24,27 @@ use pocketmine\utils\Config;
 use pocketmine\Player;
 use pocketmine\Server;
 
-class nick extends Loader{
+class rules extends Loader{
     
     private $permMessage = "§4You do not have permission to run this command!";
     private $consoleMsg = "§4This command can only be executed in-game!";
     
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
-        if(strolower($cmd->getName() == "nick")){
+        if(strolower($cmd->getName() == "rules")){
             if(!($sender instanceof Player)){
-                $sender->sendMessage("$this->consoleMsg");
+                $name = $sender->getName();
+                $line = "\n";
+                $rules = str_replace("{player}", $name, "{line}", $line, $this->cfg->get("Rules"));
+                $sender->sendMessage($rules);
             }
             if($sender instanceof Player){
-                if($sender->hasPermission("boxofbits.nick")){
-                    if(!isset($args[0]){
-                        $sender->sendMessage("§4Usage: /nick <nickname>");
-                    }
-                    if($args[0] === "reset"){
-                        $realname = $sender->getName();
-                        $sender->setDisplayName($realname);
-                        $sender->sendMessage("§2Your nick has been reset to:§f $realname");
-                    }elseif(isset($args[0]){
-                        $nick = $args[0];
-                        $sender->setDisplayName($nick);
-                        $sender->sendMessage("§2Your nick is now:§f $nick");
-                    }
-                }else{
+                if(!($sender->hasPermission("disablecmds.rules"))){
                     $sender->sendMessage("$this->permMessage");
+                }else{
+                    $name = $sender->getName();
+                    $line = "\n";
+                    $rules = str_replace("{player}", $name, "{line}", $line, $this->cfg->get("Rules"));
+                    $sender->sendMessage($rules)
                 }
             }
         }

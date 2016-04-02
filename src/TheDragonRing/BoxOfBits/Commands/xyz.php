@@ -72,6 +72,7 @@ class xyz extends Loader{
 				}
             }
         }
+        return true;
     }
 
 }

@@ -8,7 +8,7 @@
  | |_) | (_) >  <| |__| | | | |_) | | |_\__ \
  |____/ \___/_/\_\\____/|_| |____/|_|\__|___/
  
- The growing plugin with so many features
+ The growing plugin with so many features, an alternative to Essentials or EssentialsPE
  
  */
  
@@ -24,33 +24,24 @@ use pocketmine\utils\Config;
 use pocketmine\Player;
 use pocketmine\Server;
 
-class nick extends Loader{
+class suicide extends Loader{
     
     private $permMessage = "§4You do not have permission to run this command!";
     private $consoleMsg = "§4This command can only be executed in-game!";
     
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
-        if(strolower($cmd->getName() == "nick")){
+        if(strolower($cmd->getName() == "suicide")){
             if(!($sender instanceof Player)){
-                $sender->sendMessage("$this->consoleMsg");
+				$sender->sendMessage(Colour::DARK_RED."$this->consoleMsg");
             }
             if($sender instanceof Player){
-                if($sender->hasPermission("boxofbits.nick")){
-                    if(!isset($args[0]){
-                        $sender->sendMessage("§4Usage: /nick <nickname>");
-                    }
-                    if($args[0] === "reset"){
-                        $realname = $sender->getName();
-                        $sender->setDisplayName($realname);
-                        $sender->sendMessage("§2Your nick has been reset to:§f $realname");
-                    }elseif(isset($args[0]){
-                        $nick = $args[0];
-                        $sender->setDisplayName($nick);
-                        $sender->sendMessage("§2Your nick is now:§f $nick");
-                    }
-                }else{
-                    $sender->sendMessage("$this->permMessage");
-                }
+				if($sender->hasPermission("boxofbits.suicide")){
+				    $sender->setHealth(0);
+				    $sender->sendMessage(Colour::DARK_RED."You have commited suicide!");
+				    $this->getServer()->broadcastPopup("§4$sender commited suicide");
+				}else{
+				    $sender->sendMessage(Colour::DARK_RED."$this->permMessage");
+				}
             }
         }
         return true;
