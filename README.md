@@ -68,6 +68,8 @@ Commands
    
    • /fly - Lets you fly in survival
    
+   • /nick - Changes players display name
+   
    • /hidetag on|off - Hides the nametag above your head
 
 Permissions
@@ -103,6 +105,8 @@ Permissions
    • boxofbits.health - For /health - Default: OP Only
    
    • boxofbits.fly - For /fly - Default: OP Only
+   
+   • boxofbits.nick - For /nick - Default: OP Only
    
    • boxofbits.ht - For /hidetag - Default: OP Only
 

@@ -36,6 +36,7 @@ use TheDragonRing\BoxOfBits\Commands\info;
 use TheDragonRing\BoxOfBits\Commands\message;
 use TheDragonRing\BoxOfBits\Commands\popup;
 use TheDragonRing\BoxOfBits\Commands\tip;
+use TheDragonRing\BoxOfBits\Commands\nick;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat as Colour;
 use pocketmine\Player;

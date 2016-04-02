@@ -24,28 +24,29 @@ use pocketmine\utils\Config;
 use pocketmine\Player;
 use pocketmine\Server;
 
-class hidetag extends Loader{
+class nick extends Loader{
     
     private $permMessage = "§4You do not have permission to run this command!";
     private $consoleMsg = "§4This command can only be executed in-game!";
     
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
-        if(strolower($cmd->getName() == "hidetag")){
+        if(strolower($cmd->getName() == "nick")){
             if(!($sender instanceof Player)){
                 $sender->sendMessage("$this->consoleMsg");
             }
             if($sender instanceof Player){
-                if($sender->hasPermission("boxofbits.ht")){
+                if($sender->hasPermission("boxofbits.nick")){
                     if(!isset $args[0]){
-                        $sender->sendMessage("§4Usage: /hidetag on|off");
+                        $sender->sendMessage("§4Usage: /nick <nickname>");
                     }
-                    if($args[0] === "on"){
-                        $sender->sendMessage("§bTag Showing!");
-                        $sender->setNameTagVisible(true);
-                    }
-                    if($args[0] === "off"){
-                        $sender->sendMessage("§bTag Hidden!");
-                        $sender->setNameTagVisible(false);
+                    if($args[0] === "reset"){
+                        $realname = $sender->getName();
+                        $sender->setDisplayName($realname);
+                        $sender->sendMessage("§2Your nick has been reset to:§f $realname");
+                    }elseif(isset $args[0]){
+                        $nick = $args[0];
+                        $sender->setDisplayName($nick);
+                        $sender->sendMessage("§2Your nick is now:§f $nick");
                     }
                 }else{
                     $sender->sendMessage("$this->permMessage");

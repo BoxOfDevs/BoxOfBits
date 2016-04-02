@@ -63,6 +63,9 @@ commands:
     hidetag:
         usage: /hidetag on|off
         description: Hides the nametag above your head
+    nick:
+        usage: /nick <nickname>
+        description: Changes players display name
 permissions:
     boxofbits:
         default: false
@@ -95,6 +98,8 @@ permissions:
     boxofbits.health:
         default: op
     boxofbits.fly:
+        default: op
+    boxofbits.nick:
         default: op
     boxofbits.ht:
         default: op
