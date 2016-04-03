@@ -1,9 +1,7 @@
 name: BoxOfBits
 version: 1.2.3
 author: TheDragonRing
-api:
-- 1.0.0
-- 2.0.0
+api: [1.14.0, 2.0.0]
 main: BoxOfBits\Loader
 commands:
     boxofbits:
