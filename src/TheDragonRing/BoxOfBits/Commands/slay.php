@@ -48,7 +48,7 @@ class slay extends Loader{
 				}
             }
             if($sender instanceof Player){
-				if($sender->hasPermission("boxofbits.slay")){
+				if($sender->hasPermission("boxofbits" or "boxofbits.slay")){
 				    if(!isset($args[0])){
 				        $sender->sendMessage(Colour::DARK_RED."Usage: /slay <playername>");
 				    }

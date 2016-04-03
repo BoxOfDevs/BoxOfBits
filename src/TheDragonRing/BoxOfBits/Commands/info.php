@@ -46,7 +46,7 @@ class boxofbits extends Loader{
                 }
             }
             if($sender instanceof Player){
-                if(!($sender->hasPermission("disablecmds.info"))){
+                if(!($sender->hasPermission("boxofbits" or "boxofbits.info"))){
                     $sender->sendMessage("$this->permMessage");
                 }else{
                     if(!isset($args[0])){

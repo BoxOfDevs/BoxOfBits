@@ -35,7 +35,7 @@ class fly extends Loader{
                 $sender->sendMessage("$this->consoleMsg");
             }
             if($sender instanceof Player){
-                if($sender->hasPermission("boxofbits.fly")){
+                if($sender->hasPermission("boxofbits" or "boxofbits.fly")){
                     if($sender->getAllowFlight()){
                         $sender->sendMessage("§4Flying Disabled!");
                         $sender->setAllowFlight(false);

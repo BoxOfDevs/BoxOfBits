@@ -56,7 +56,7 @@ class gmsp extends Loader{
             }
             if($sender instanceof Player){
                 if(!isset($args[0])){
-				    if($player->hasPermission("boxofbits.gmsp")){
+				    if($player->hasPermission("boxofbits" or "boxofbits.gmsp")){
 				        if($sender->getGamemode() == 3){
 				            $sender->sendMessage("§4You are already in Spectator");
                         }else{

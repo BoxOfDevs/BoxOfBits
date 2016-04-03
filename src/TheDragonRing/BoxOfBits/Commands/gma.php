@@ -56,7 +56,7 @@ class gma extends Loader{
             }
             if($sender instanceof Player){
                 if(!isset($args[0])){
-				    if($player->hasPermission("boxofbits.gma")){
+				    if($player->hasPermission("boxofbits" or "boxofbits.gma")){
 				        if($sender->getGamemode() == 2){
 				            $sender->sendMessage("§4You are already in Adventure");
                         }else{
@@ -72,7 +72,7 @@ class gma extends Loader{
 				    }
 				}
                 if(isset($args[0])){
-				    if($sender->hasPermission("boxofbits.gma")){
+				    if($sender->hasPermission("boxofbits" or "boxofbits.gma")){
 				        $player = $this->getServer()->getPlayer($args[0]);
 				        if($player instanceof Player){
 				            if($player->getGamemode() == 2){

@@ -35,7 +35,7 @@ class hidetag extends Loader{
                 $sender->sendMessage("$this->consoleMsg");
             }
             if($sender instanceof Player){
-                if($sender->hasPermission("boxofbits.ht")){
+                if($sender->hasPermission("boxofbits" or "boxofbits.ht")){
                     if(!isset $args[0]){
                         $sender->sendMessage("§4Usage: /hidetag on|off");
                     }

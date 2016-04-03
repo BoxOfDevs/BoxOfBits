@@ -31,22 +31,49 @@ class popup extends Loader{
     
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         if(strolower($cmd->getName() == "popup")){
-            if(!(isset($args[1]))){
-                $sender->sendMessage("§4Usage: /popup server|playername <message...>");
-            }else{
-                if($args[0] === "server"){
-                    unset($args[0]);
-                    $popup = implode(" ", $args);
-                    $this->getServer()->broadcastPopup($popup);
+            if(!($sender instanceof Player)){
+                if(!(isset($args[1]))){
+                    $sender->sendPopup("§4Usage: /popup server|playername <popup...>");
                 }else{
-                    $name = $args[0];
-                    $player = $this->getServer()->getPlayer($name);
-                    if($player === null){
-                        $sender->sendMessage("§4Player Not Found");
-                    }else{
+                    if($args[0] === "server"){
                         unset($args[0]);
                         $popup = implode(" ", $args);
-                        $player->sendPopup($popup);                                               
+                        $this->getServer()->broadcastPopup($popup);
+                    }else{
+                        $name = $args[0];
+                        $player = $this->getServer()->getPlayer($name);
+                        if($player === null){
+                            $sender->sendPopup("§4Player Not Found");
+                        }else{
+                            unset($args[0]);
+                            $popup = implode(" ", $args);
+                            $player->sendPopup($popup);                                               
+                        }
+                    }
+                }
+            }
+            if($sender instanceof Player){
+                if(!($player->hasPermission("boxofbits" or "boxofbits.popup"))){
+                    $sender->sendPopup("$this->permMessage");
+                }else{
+                    if(!(isset($args[1]))){
+                        $sender->sendPopup("§4Usage: /popup server|playername <popup...>");
+                    }else{
+                        if($args[0] === "server"){
+                            unset($args[0]);
+                            $popup = implode(" ", $args);
+                            $this->getServer()->broadcastPopup($popup);
+                        }else{
+                            $name = $args[0];
+                            $player = $this->getServer()->getPlayer($name);
+                            if($player === null){
+                                $sender->sendPopup("§4Player Not Found");
+                            }else{
+                                unset($args[0]);
+                                $popup = implode(" ", $args);
+                                $player->sendPopup($popup);                                               
+                            }
+                        }
                     }
                 }
             }

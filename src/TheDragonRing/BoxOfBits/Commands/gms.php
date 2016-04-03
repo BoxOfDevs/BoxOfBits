@@ -56,7 +56,7 @@ class gms extends Loader{
             }
             if($sender instanceof Player){
                 if(!isset($args[0])){
-				    if($player->hasPermission("boxofbits.gms")){
+				    if($player->hasPermission("boxofbits" or "boxofbits.gms")){
 				        if($sender->getGamemode() == 0){
 				            $sender->sendMessage("§4You are already in Survival");
                         }else{

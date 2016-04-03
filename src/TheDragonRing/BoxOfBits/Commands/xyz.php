@@ -49,7 +49,7 @@ class xyz extends Loader{
 				}
             }
             if($sender instanceof Player){
-				if(!$sender->hasPermission("boxofbits.xyz")){
+				if(!$sender->hasPermission("boxofbits" or "boxofbits.xyz")){
 				    $sender->sendMessage("$this->permMessage");
 				}else{
 				    if(!isset($args[0])){

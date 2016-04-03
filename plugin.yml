@@ -62,7 +62,7 @@ commands:
         usage: /hidetag on|off
         description: Hides the nametag above your head
     nick:
-        usage: /nick <nickname>
+        usage: /nick nickname|reset
         description: Changes players display name
 permissions:
     boxofbits:

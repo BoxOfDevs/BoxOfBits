@@ -35,9 +35,9 @@ class nick extends Loader{
                 $sender->sendMessage("$this->consoleMsg");
             }
             if($sender instanceof Player){
-                if($sender->hasPermission("boxofbits.nick")){
+                if($sender->hasPermission("boxofbits" or "boxofbits.nick")){
                     if(!isset($args[0]){
-                        $sender->sendMessage("§4Usage: /nick <nickname>");
+                        $sender->sendMessage("§4Usage: /nick nickname|reset");
                     }
                     if($args[0] === "reset"){
                         $realname = $sender->getName();

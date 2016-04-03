@@ -31,22 +31,49 @@ class message extends Loader{
     
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         if(strolower($cmd->getName() == "message")){
-            if(!(isset($args[1]))){
-                $sender->sendMessage("§4Usage: /message server|playername <message...>");
-            }else{
-                if($args[0] === "server"){
-                    unset($args[0]);
-                    $message = implode(" ", $args);
-                    $this->getServer()->broadcastMessage($message);
+            if(!($sender instanceof Player)){
+                if(!(isset($args[1]))){
+                    $sender->sendMessage("§4Usage: /message server|playername <message...>");
                 }else{
-                    $name = $args[0];
-                    $player = $this->getServer()->getPlayer($name);
-                    if($player === null){
-                        $sender->sendMessage("§4Player Not Found");
-                    }else{
+                    if($args[0] === "server"){
                         unset($args[0]);
                         $message = implode(" ", $args);
-                        $player->sendMessage($message);                                               
+                        $this->getServer()->broadcastMessage($message);
+                    }else{
+                        $name = $args[0];
+                        $player = $this->getServer()->getPlayer($name);
+                        if($player === null){
+                            $sender->sendMessage("§4Player Not Found");
+                        }else{
+                            unset($args[0]);
+                            $message = implode(" ", $args);
+                            $player->sendMessage($message);                                               
+                        }
+                    }
+                }
+            }
+            if($sender instanceof Player){
+                if(!($player->hasPermission("boxofbits" or "boxofbits.message"))){
+                    $sender->sendMessage("$this->permMessage");
+                }else{
+                    if(!(isset($args[1]))){
+                        $sender->sendMessage("§4Usage: /message server|playername <message...>");
+                    }else{
+                        if($args[0] === "server"){
+                            unset($args[0]);
+                            $message = implode(" ", $args);
+                            $this->getServer()->broadcastMessage($message);
+                        }else{
+                            $name = $args[0];
+                            $player = $this->getServer()->getPlayer($name);
+                            if($player === null){
+                                $sender->sendMessage("§4Player Not Found");
+                            }else{
+                                unset($args[0]);
+                                $message = implode(" ", $args);
+                                $player->sendMessage($message);                                               
+                            }
+                        }
                     }
                 }
             }

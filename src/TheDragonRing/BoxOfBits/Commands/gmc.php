@@ -56,7 +56,7 @@ class gmc extends Loader{
             }
             if($sender instanceof Player){
                 if(!isset($args[0])){
-				    if($player->hasPermission("boxofbits.gmc")){
+				    if($player->hasPermission("boxofbits" or "boxofbits.gmc")){
 				        if($sender->getGamemode() == 1){
 				            $sender->sendMessage("§4You are already in Creative");
                         }else{
@@ -72,7 +72,7 @@ class gmc extends Loader{
 				    }
 				}
                 if(isset($args[0])){
-				    if($sender->hasPermission("boxofbits.gmc")){
+				    if($sender->hasPermission("boxofbits" or "boxofbits.gmc")){
 				        $player = $this->getServer()->getPlayer($args[0]);
 				        if($player instanceof Player){
 				            if($player->getGamemode() == 1){

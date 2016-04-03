@@ -35,7 +35,7 @@ class suicide extends Loader{
 				$sender->sendMessage(Colour::DARK_RED."$this->consoleMsg");
             }
             if($sender instanceof Player){
-				if($sender->hasPermission("boxofbits.suicide")){
+				if($sender->hasPermission("boxofbits" or "boxofbits.suicide")){
 				    $sender->setHealth(0);
 				    $sender->sendMessage(Colour::DARK_RED."You have commited suicide!");
 				    $this->getServer()->broadcastPopup("§4$sender commited suicide");

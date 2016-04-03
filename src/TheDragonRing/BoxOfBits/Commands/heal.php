@@ -46,7 +46,7 @@ class heal extends Loader{
 				}
             }
             if($sender instanceof Player){
-                if($sender->hasPermission("boxofbits.heal")){
+                if($sender->hasPermission("boxofbits" or "boxofbits.heal")){
 				    if(!isset($args[0])){
                         $player->setHealth(20);
                         $sender->sendMessage("§bYou have been healed");

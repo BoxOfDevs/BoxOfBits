@@ -46,7 +46,7 @@ class health extends Loader{
 				}
             }
             if($sender instanceof Player){
-                if($sender->hasPermission("boxofbits.health")){
+                if($sender->hasPermission("boxofbits" or "boxofbits.health")){
                     if(!isset($args[0])){
                         $sender->sendMessage("§4Usage: /health <amount> [playername]");
                     }

@@ -38,7 +38,7 @@ class rules extends Loader{
                 $sender->sendMessage($rules);
             }
             if($sender instanceof Player){
-                if(!($sender->hasPermission("disablecmds.rules"))){
+                if(!($sender->hasPermission("boxofbits" or "boxofbits.rules"))){
                     $sender->sendMessage("$this->permMessage");
                 }else{
                     $name = $sender->getName();
