@@ -12,9 +12,9 @@
  
  */
  
-namespace TheDragonRing\BoxOfBits\Commands;
+namespace BoxOfDevs\BoxOfBits\Commands;
  
-use TheDragonRing\BoxOfBits\Loader;
+use BoxOfDevs\BoxOfBits\Loader;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\command\CommandExecutor;
@@ -24,54 +24,54 @@ use pocketmine\utils\Config;
 use pocketmine\Player;
 use pocketmine\Server;
 
-class message extends Loader{
+class popup extends Loader{
     
     private $permMessage = "§4You do not have permission to run this command!";
     private $consoleMsg = "§4This command can only be executed in-game!";
     
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
-        if(strolower($cmd->getName() == "message")){
+        if(strolower($cmd->getName() == "popup")){
             if(!($sender instanceof Player)){
                 if(!(isset($args[1]))){
-                    $sender->sendMessage("§4Usage: /message server|playername <message...>");
+                    $sender->sendPopup("§4Usage: /popup server|playername <popup...>");
                 }else{
                     if($args[0] === "server"){
                         unset($args[0]);
-                        $message = implode(" ", $args);
-                        $this->getServer()->broadcastMessage($message);
+                        $popup = implode(" ", $args);
+                        $this->getServer()->broadcastPopup($popup);
                     }else{
                         $name = $args[0];
                         $player = $this->getServer()->getPlayer($name);
                         if($player === null){
-                            $sender->sendMessage("§4Player Not Found");
+                            $sender->sendPopup("§4Player Not Found");
                         }else{
                             unset($args[0]);
-                            $message = implode(" ", $args);
-                            $player->sendMessage($message);                                               
+                            $popup = implode(" ", $args);
+                            $player->sendPopup($popup);                                               
                         }
                     }
                 }
             }
             if($sender instanceof Player){
-                if(!($player->hasPermission("boxofbits" or "boxofbits.message"))){
-                    $sender->sendMessage("$this->permMessage");
+                if(!($player->hasPermission("boxofbits" or "boxofbits.popup"))){
+                    $sender->sendPopup("$this->permMessage");
                 }else{
                     if(!(isset($args[1]))){
-                        $sender->sendMessage("§4Usage: /message server|playername <message...>");
+                        $sender->sendPopup("§4Usage: /popup server|playername <popup...>");
                     }else{
                         if($args[0] === "server"){
                             unset($args[0]);
-                            $message = implode(" ", $args);
-                            $this->getServer()->broadcastMessage($message);
+                            $popup = implode(" ", $args);
+                            $this->getServer()->broadcastPopup($popup);
                         }else{
                             $name = $args[0];
                             $player = $this->getServer()->getPlayer($name);
                             if($player === null){
-                                $sender->sendMessage("§4Player Not Found");
+                                $sender->sendPopup("§4Player Not Found");
                             }else{
                                 unset($args[0]);
-                                $message = implode(" ", $args);
-                                $player->sendMessage($message);                                               
+                                $popup = implode(" ", $args);
+                                $player->sendPopup($popup);                                               
                             }
                         }
                     }

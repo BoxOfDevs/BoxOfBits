@@ -12,9 +12,9 @@
  
  */
  
-namespace TheDragonRing\BoxOfBits\Commands;
+namespace BoxOfDevs\BoxOfBits\Commands;
  
-use TheDragonRing\BoxOfBits\Loader;
+use BoxOfDevs\BoxOfBits\Loader;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\command\CommandExecutor;
@@ -24,27 +24,27 @@ use pocketmine\utils\Config;
 use pocketmine\Player;
 use pocketmine\Server;
 
-class gma extends Loader{
+class gmc extends Loader{
     
     private $permMessage = "§4You do not have permission to run this command!";
     private $consoleMsg = "§4This command can only be executed in-game!";
     
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
-        if(strolower($cmd->getName() == "gma")){
+        if(strolower($cmd->getName() == "gmc")){
             if(!($sender instanceof Player)){
 				if(!isset($args[0])){
-					$sender->sendMessage("§4Usage: /gma [playername] - [playername] required when run from console!");
+					$sender->sendMessage("§4Usage: /gmc [playername] - [playername] required when run from console!");
                 }else{
                     $player = $this->getServer()->getPlayer($args[0]);
 				    if($player instanceof Player){
-                        if($player->getGamemode() == 2){
+                        if($player->getGamemode() == 1){
 							$name = $player->getName();
-							$sender->sendMessage("§4$name is already in Adventure");
+							$sender->sendMessage("§4$name is already in Creative");
 				        }else{
-							$player->setGamemode(2);
-							$player->sendMessage("§aYou are now in Adventure");
+							$player->setGamemode(1);
+							$player->sendMessage("§aYou are now in Creative");
 							$name = $player->getName();
-							$sender->sendMessage("§a$name is now in Adventure");
+							$sender->sendMessage("§a$name is now in Creative");
 							$line = "\n";
 							$message = str_replace("{player}", $name, "{line}", $line, $this->cfg->get("GamemodeChangePopup"));
 							$this->getServer()->broadcastPopup($message);
@@ -56,12 +56,12 @@ class gma extends Loader{
             }
             if($sender instanceof Player){
                 if(!isset($args[0])){
-				    if($player->hasPermission("boxofbits" or "boxofbits.gma")){
-				        if($sender->getGamemode() == 2){
-				            $sender->sendMessage("§4You are already in Adventure");
+				    if($player->hasPermission("boxofbits" or "boxofbits.gmc")){
+				        if($sender->getGamemode() == 1){
+				            $sender->sendMessage("§4You are already in Creative");
                         }else{
-				            $sender->setGamemode(2);
-				            $sender->sendMessage("§aYou are now in Adventure");
+				            $sender->setGamemode(1);
+				            $sender->sendMessage("§aYou are now in Creative");
                             $name = $player->getName();
                             $line = "\n";
                             $message = str_replace("{player}", $name, "{line}", $line, $this->cfg->get("GamemodeChangePopup"));
@@ -72,17 +72,17 @@ class gma extends Loader{
 				    }
 				}
                 if(isset($args[0])){
-				    if($sender->hasPermission("boxofbits" or "boxofbits.gma")){
+				    if($sender->hasPermission("boxofbits" or "boxofbits.gmc")){
 				        $player = $this->getServer()->getPlayer($args[0]);
 				        if($player instanceof Player){
-				            if($player->getGamemode() == 2){
+				            if($player->getGamemode() == 1){
 				                $name = $player->getName();
-								$sender->sendMessage("§4$name is already in Adventure");
+								$sender->sendMessage("§4$name is already in Creative");
 				            }else{
-								$player->setGamemode(2);
-								$player->sendMessage("§aYou are now in Adventure");
+								$player->setGamemode(1);
+								$player->sendMessage("§aYou are now in Creative");
 								$name = $player->getName();
-								$sender->sendMessage("§a$name is now in Adventure");
+								$sender->sendMessage("§a$name is now in Creative");
 								$line = "\n";
 								$message = str_replace("{player}", $name, "{line}", $line, $this->cfg->get("GamemodeChangePopup"));
 								$this->getServer()->broadcastPopup($message);

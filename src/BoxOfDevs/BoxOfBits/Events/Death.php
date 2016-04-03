@@ -8,27 +8,27 @@
  | |_) | (_) >  <| |__| | | | |_) | | |_\__ \
  |____/ \___/_/\_\\____/|_| |____/|_|\__|___/
  
- The growing plugin with so many features
+ The growing plugin with so many features, an alternative to Essentials or EssentialsPE
  
 */
 
-namespace TheDragonRing\BoxOfBits\Events;
+namespace BoxOfDevs\BoxOfBits\Events;
 
-use TheDragonRing\BoxOfBits\Loader;
+use BoxOfDevs\BoxOfBits\Loader;
 use pocketmine\event\Listener;
 use pocketmine\utils\TextFormat as Colour;
-use pocketmine\event\player\PlayerGameModeChange;
+use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\utils\Config;
 
-class GameModeChange extends Loader implements Listener{
+class Death extends Loader implements Listener{
     
-    public function onGameModeChange(PlayerGameModeChangeEvent $event){
-        $player = $event->getPlayer();
+    public function onDeath(PlayerDeathEvent $event){
+        $player = $event->getEntity();
         $name = $player->getName();
         $line = "\n";
-        $popup = str_replace("{player}", $name, "{line}", $line, $this->config->get("GamemodeChangePopup"));
+        $popup = str_replace("{player}", $name, "{line}", $line, $this->config->get("DeathPopup"));
         $this->getServer()->broadcastPopup($popup);
-        $message = str_replace("{player}", $name, "{line}", $line, $this->config->get("GamemodeChangeMessage"));
+        $message = str_replace("{player}", $name, "{line}", $line, $this->config->get("DeathMessage"));
         $this->getServer()->broadcastMessage($message);
         return true;
     }

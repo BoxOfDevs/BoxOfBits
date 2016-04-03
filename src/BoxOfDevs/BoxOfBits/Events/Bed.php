@@ -12,9 +12,9 @@
  
 */
 
-namespace TheDragonRing\BoxOfBits\Events;
+namespace BoxOfDevs\BoxOfBits\Events;
 
-use TheDragonRing\BoxOfBits\Loader;
+use BoxOfDevs\BoxOfBits\Loader;
 use pocketmine\event\Listener;
 use pocketmine\utils\TextFormat as Colour;
 use pocketmine\event\player\PlayerBedEnterEvent;

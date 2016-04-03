@@ -12,9 +12,9 @@
  
  */
  
-namespace TheDragonRing\BoxOfBits\Commands;
+namespace BoxOfDevs\BoxOfBits\Commands;
  
-use TheDragonRing\BoxOfBits\Loader;
+use BoxOfDevs\BoxOfBits\Loader;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\command\CommandExecutor;
@@ -24,27 +24,27 @@ use pocketmine\utils\Config;
 use pocketmine\Player;
 use pocketmine\Server;
 
-class gmsp extends Loader{
+class gma extends Loader{
     
-    private $permMessage = Colour::DARK_RED."You do not have permission to run this command!";
-    private $consoleMsg = Colour::DARK_RED."This command can only be executed in-game!";
+    private $permMessage = "§4You do not have permission to run this command!";
+    private $consoleMsg = "§4This command can only be executed in-game!";
     
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
-        if(strolower($cmd->getName() == "gmsp")){
+        if(strolower($cmd->getName() == "gma")){
             if(!($sender instanceof Player)){
 				if(!isset($args[0])){
-					$sender->sendMessage("§4Usage: /gmsp [playername] - [playername] required when run from console!");
+					$sender->sendMessage("§4Usage: /gma [playername] - [playername] required when run from console!");
                 }else{
                     $player = $this->getServer()->getPlayer($args[0]);
 				    if($player instanceof Player){
-                        if($player->getGamemode() == 3){
+                        if($player->getGamemode() == 2){
 							$name = $player->getName();
-							$sender->sendMessage("§4$name is already in Spectator");
+							$sender->sendMessage("§4$name is already in Adventure");
 				        }else{
-							$player->setGamemode(3);
-							$player->sendMessage("§aYou are now in Spectator");
+							$player->setGamemode(2);
+							$player->sendMessage("§aYou are now in Adventure");
 							$name = $player->getName();
-							$sender->sendMessage("§a$name is now in Spectator");
+							$sender->sendMessage("§a$name is now in Adventure");
 							$line = "\n";
 							$message = str_replace("{player}", $name, "{line}", $line, $this->cfg->get("GamemodeChangePopup"));
 							$this->getServer()->broadcastPopup($message);
@@ -56,12 +56,12 @@ class gmsp extends Loader{
             }
             if($sender instanceof Player){
                 if(!isset($args[0])){
-				    if($player->hasPermission("boxofbits" or "boxofbits.gmsp")){
-				        if($sender->getGamemode() == 3){
-				            $sender->sendMessage("§4You are already in Spectator");
+				    if($player->hasPermission("boxofbits" or "boxofbits.gma")){
+				        if($sender->getGamemode() == 2){
+				            $sender->sendMessage("§4You are already in Adventure");
                         }else{
-				            $sender->setGamemode(3);
-				            $sender->sendMessage("§aYou are now in Spectator");
+				            $sender->setGamemode(2);
+				            $sender->sendMessage("§aYou are now in Adventure");
                             $name = $player->getName();
                             $line = "\n";
                             $message = str_replace("{player}", $name, "{line}", $line, $this->cfg->get("GamemodeChangePopup"));
@@ -72,17 +72,17 @@ class gmsp extends Loader{
 				    }
 				}
                 if(isset($args[0])){
-				    if($sender->hasPermission("boxofbits.gmsp")){
+				    if($sender->hasPermission("boxofbits" or "boxofbits.gma")){
 				        $player = $this->getServer()->getPlayer($args[0]);
 				        if($player instanceof Player){
-				            if($player->getGamemode() == 3){
+				            if($player->getGamemode() == 2){
 				                $name = $player->getName();
-								$sender->sendMessage("§4$name is already in Spectator");
+								$sender->sendMessage("§4$name is already in Adventure");
 				            }else{
-								$player->setGamemode(3);
-								$player->sendMessage("§aYou are now in Spectator");
+								$player->setGamemode(2);
+								$player->sendMessage("§aYou are now in Adventure");
 								$name = $player->getName();
-								$sender->sendMessage("§a$name is now in Spectator");|
+								$sender->sendMessage("§a$name is now in Adventure");
 								$line = "\n";
 								$message = str_replace("{player}", $name, "{line}", $line, $this->cfg->get("GamemodeChangePopup"));
 								$this->getServer()->broadcastPopup($message);

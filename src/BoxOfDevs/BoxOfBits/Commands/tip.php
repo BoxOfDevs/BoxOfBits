@@ -12,9 +12,9 @@
  
  */
  
-namespace TheDragonRing\BoxOfBits\Commands;
+namespace BoxOfDevs\BoxOfBits\Commands;
  
-use TheDragonRing\BoxOfBits\Loader;
+use BoxOfDevs\BoxOfBits\Loader;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\command\CommandExecutor;

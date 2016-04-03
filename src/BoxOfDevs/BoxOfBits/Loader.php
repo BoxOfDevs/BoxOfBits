@@ -12,31 +12,31 @@
 
 */
 
-namespace TheDragonRing\BoxOfBits;
+namespace BoxOfDevs\BoxOfBits;
 
-use TheDragonRing\BoxOfBits\Events\Join;
-use TheDragonRing\BoxOfBits\Events\Leave;
-use TheDragonRing\BoxOfBits\Events\GamemodeChange;
-use TheDragonRing\BoxOfBits\Events\Bed;
-use TheDragonRing\BoxOfBits\Events\Kick;
-use TheDragonRing\BoxOfBits\Events\Death;
-use TheDragonRing\BoxOfBits\Commands\fly;
-use TheDragonRing\BoxOfBits\Commands\gmc;
-use TheDragonRing\BoxOfBits\Commands\gms;
-use TheDragonRing\BoxOfBits\Commands\gma;
-use TheDragonRing\BoxOfBits\Commands\gmsp;
-use TheDragonRing\BoxOfBits\Commands\xyz;
-use TheDragonRing\BoxOfBits\Commands\rules;
-use TheDragonRing\BoxOfBits\Commands\hidetag;
-use TheDragonRing\BoxOfBits\Commands\health;
-use TheDragonRing\BoxOfBits\Commands\heal;
-use TheDragonRing\BoxOfBits\Commands\suicide;
-use TheDragonRing\BoxOfBits\Commands\slay;
-use TheDragonRing\BoxOfBits\Commands\info;
-use TheDragonRing\BoxOfBits\Commands\message;
-use TheDragonRing\BoxOfBits\Commands\popup;
-use TheDragonRing\BoxOfBits\Commands\tip;
-use TheDragonRing\BoxOfBits\Commands\nick;
+use BoxOfDevs\BoxOfBits\Events\Join;
+use BoxOfDevs\BoxOfBits\Events\Leave;
+use BoxOfDevs\BoxOfBits\Events\GamemodeChange;
+use BoxOfDevs\BoxOfBits\Events\Bed;
+use BoxOfDevs\BoxOfBits\Events\Kick;
+use BoxOfDevs\BoxOfBits\Events\Death;
+use BoxOfDevs\BoxOfBits\Commands\fly;
+use BoxOfDevs\BoxOfBits\Commands\gmc;
+use BoxOfDevs\BoxOfBits\Commands\gms;
+use BoxOfDevs\BoxOfBits\Commands\gma;
+use BoxOfDevs\BoxOfBits\Commands\gmsp;
+use BoxOfDevs\BoxOfBits\Commands\xyz;
+use BoxOfDevs\BoxOfBits\Commands\rules;
+use BoxOfDevs\BoxOfBits\Commands\hidetag;
+use BoxOfDevs\BoxOfBits\Commands\health;
+use BoxOfDevs\BoxOfBits\Commands\heal;
+use BoxOfDevs\BoxOfBits\Commands\suicide;
+use BoxOfDevs\BoxOfBits\Commands\slay;
+use BoxOfDevs\BoxOfBits\Commands\info;
+use BoxOfDevs\BoxOfBits\Commands\message;
+use BoxOfDevs\BoxOfBits\Commands\popup;
+use BoxOfDevs\BoxOfBits\Commands\tip;
+use BoxOfDevs\BoxOfBits\Commands\nick;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat as Colour;
 use pocketmine\event\Listener;
