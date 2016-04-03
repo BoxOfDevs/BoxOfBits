@@ -116,7 +116,7 @@ Credits
 ========
    • EssentialsPE - The original plugin that inspired BoxOfBits.
    
-   • Taki21, applqpak, Vaivez66, and remote_vase - For help with development.
+   • The whole BoxOfDevs team - For major help with development.
    
    • Various plugins - To develop this I had to take and customize many chunks of code from plugins all over the place.
    
@@ -126,8 +126,8 @@ Quick Links
    
    • [MCrafters BoxOfBits Page] (http://mcrafters.ml/index.php?resources/)
 
-   • [BoxOfBits Official Website] (https://TheDragonRing.github.io/BoxOfBits/)
+   • [BoxOfBits Official Website] (https://BoxOfDevs.github.io/BoxOfBits/)
 
-   • [TheDragonRing's Homepage] (https://TheDragonRing.github.io/)
+   • [BoxOfDevs Website] (https://BoxOfDevs.github.io/)
 
-   • [GitHub Project] (https://github.com/TheDragonRing/BoxOfBits/)
+   • [GitHub Project] (https://github.com/BoxOfDevs/BoxOfBits/)
