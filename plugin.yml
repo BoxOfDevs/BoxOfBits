@@ -1,69 +1,69 @@
 name: BoxOfBits
 version: 1.2.3
-author: BoxOfDevs
+author: BoxOfDevs Team
 api: [1.14.0, 2.0.0]
 main: BoxOfDevs\BoxOfBits\Loader
 commands:
     boxofbits:
-        usage: /boxofbits commands|permissions|other
-        description: View all the info about BoxOfBits, version, author, commands and permissions (alias = /bb)
-        aliases: bb
+        usage: "/boxofbits commands|permissions|other"
+        description: "View all the info about BoxOfBits, version, author, commands and permissions"
+        aliases: [bb]
     message:
-        usage: /message server|playername <message...>
-        description: Send a message to either the whole server or one player (alias = /m)
-        aliases: m
+        usage: "/message server|playername <message...>"
+        description: "Send a message to either the whole server or one player"
+        aliases: [m]
     popup:
-        usage: /popup server|playername <message...>
-        description: Send a popup to either the whole server or one player (alias = /p)
-        aliases: p
+        usage: "/popup server|playername <message...>"
+        description: "Send a popup to either the whole server or one player"
+        aliases: [p]
     tip:
-        usage: /tip server|playername <message...>
-        description: Send a tip to either the whole server or one player (alias = t)
-        aliases: t
+        usage: "/tip server|playername <message...>"
+        description: "Send a tip to either the whole server or one player"
+        aliases: [t]
     gms:
-        usage: /gms [playername]
-        description: Changes gamemode to Survival (aliases = /survival, /s, & /0)
-        aliases: survival, s, 0
+        usage: "/gms [playername]"
+        description: "Changes gamemode to Survival"
+        aliases: [survival, s, 0]
     gmc:
-        usage: /gmc [playername]
-        description: Changes gamemode to Creative (aliases = /creative, /c, & /1)
-        aliases: creative, c, 1
+        usage: "/gmc [playername]"
+        description: "Changes gamemode to Creative"
+        aliases: [creative, c, 1]
     gma:
-        usage: /gma [playername]
-        description: Changes gamemode to Adventure (aliases = /adventure, /a, & /2)
-        aliases: adventure, a, 2
+        usage: "/gma [playername]"
+        description: "Changes gamemode to Adventure"
+        aliases: [adventure, a, 2]
     gmsp:
-        usage: /gmsp [playername]
-        description: Changes gamemode to Spectator (aliases = /spectator, /sp, & /3)
-        aliases: spectator, sp, 3
+        usage: "/gmsp [playername]"
+        description: "Changes gamemode to Spectator"
+        aliases: [spectator, sp, 3]
     xyz:
-        usage: /xyz [playername]
-        description: Get player coordinates (alias = /coords)
-        aliases: coords
+        usage: "/xyz [playername]"
+        description: "Get player coordinates"
+        aliases: [coords]
     rules:
-        usage: /rules
-        description: Shows the server rules
+        usage: "/rules"
+        description: "Shows the server rules"
     suicide:
-        usage: /suicide
-        description: Kill yourself
+        usage: "/suicide"
+        description: "Kill yourself"
     slay:
-        usage: /slay <playername>
-        description: Kills specified player
+        usage: "/slay <playername>"
+        description: "Kills specified player"
     heal:
-        usage: /heal [playername]
-        description: Heals you or specified player
+        usage: "/heal [playername]"
+        description: "Heals you or specified player"
     health:
-        usage: /health <amount> [playername]
-        description: Sets you or specified players health
+        usage: "/health <amount> [playername]"
+        description: "Sets you or specified players health"
     fly:
-        usage: /fly
-        description: Lets you fly in survival
+        usage: "/fly"
+        description: "Lets you fly in survival"
     hidetag:
-        usage: /hidetag on|off
-        description: Hides the nametag above your head
+        usage: "/hidetag on|off"
+        description: "Hides the nametag above your head"
     nick:
-        usage: /nick nickname|reset
-        description: Changes players display name
+        usage: "/nick nickname|reset"
+        description: "Changes players display name"
 permissions:
     boxofbits:
         default: false
