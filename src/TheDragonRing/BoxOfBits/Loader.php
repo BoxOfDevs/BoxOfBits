@@ -40,6 +40,7 @@ use TheDragonRing\BoxOfBits\Commands\nick;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat as Colour;
 use pocketmine\Player;
+use pocketmine\event\Listener;
 use pocketmine\Server;
 use pocketmine\utils\Config;
 
@@ -52,16 +53,15 @@ class Loader extends PluginBase{
     
     public function onEnable(){
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        @mkdir($this->getDataFolder());
-        $this->cfg = new Config($this->getDataFolder() . "config.yml", Config::YAML, array(
-            
-        ));
-        $this->saveResource("config.yml");
+        $this->saveDefaultConfig();
+        $this->reloadConfig();
+        $this->getConfig()->set("", "");
+        $this->getConfig()->save();
         $this->getLogger()->info("§aEnabled!");
     }
     
     public function onDisable(){
-        $this->getLogger()->getInfo("§4Disabled!");
+        $this->getLogger()->info("§4Disabled!");
     }
     
 }
