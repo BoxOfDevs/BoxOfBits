@@ -56,7 +56,23 @@ class Loader extends PluginBase{
         $this->getConfig()->save();
         $this->getLogger()->info(Colour::GREEN . "Enabled!");
     }
-    
+
+    public function getPrefix(){
+        return self::PREFIX;
+    }
+
+    public function getAuthor(){
+        return self::AUTHOR;
+    }
+
+    public function getVersion(){
+        return self::VERSION;
+    }
+
+    public function getMainWebsite(){
+        return self::MAIN_WEBSITE;
+    }
+
     public function onDisable(){
         $this->getLogger()->info(Colour::RED . "Disabled!");
     }
