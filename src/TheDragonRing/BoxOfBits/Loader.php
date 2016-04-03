@@ -39,10 +39,7 @@ use TheDragonRing\BoxOfBits\Commands\tip;
 use TheDragonRing\BoxOfBits\Commands\nick;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat as Colour;
-use pocketmine\Player;
 use pocketmine\event\Listener;
-use pocketmine\Server;
-use pocketmine\utils\Config;
 
 class Loader extends PluginBase{
     
@@ -57,11 +54,11 @@ class Loader extends PluginBase{
         $this->reloadConfig();
         $this->getConfig()->set("", "");
         $this->getConfig()->save();
-        $this->getLogger()->info("§aEnabled!");
+        $this->getLogger()->info(Colour::GREEN . "Enabled!");
     }
     
     public function onDisable(){
-        $this->getLogger()->info("§4Disabled!");
+        $this->getLogger()->info(Colour::RED . "Disabled!");
     }
     
 }
