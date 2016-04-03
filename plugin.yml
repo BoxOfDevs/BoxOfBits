@@ -2,7 +2,7 @@ name: BoxOfBits
 version: 1.2.3
 author: TheDragonRing
 api: [1.14.0, 2.0.0]
-main: BoxOfBits\Loader
+main: TheDragonRing\BoxOfBits\Loader
 commands:
     boxofbits:
         usage: /boxofbits commands|permissions|other
