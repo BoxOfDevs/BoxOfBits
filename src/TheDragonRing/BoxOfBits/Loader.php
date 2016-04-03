@@ -43,9 +43,9 @@ use pocketmine\event\Listener;
 
 class Loader extends PluginBase{
     
-    const AUTHOR = "TheDragonRing";
+    const AUTHOR = "BoxOfDevs";
     const VERSION = "1.2.3";
-    const MAIN_WEBSITE = "https://thedragonring.github.io/BoxOfBits/";
+    const MAIN_WEBSITE = "https://BoxOfDevs.github.io/BoxOfBits/";
     const PREFIX = "§0§l[§r§bBoxOfBits§0§l]§r";
     
     public function onEnable(){
