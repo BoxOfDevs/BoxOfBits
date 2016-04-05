@@ -41,7 +41,7 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat as Colour;
 use pocketmine\event\Listener;
 
-class Loader extends PluginBase{
+class Loader extends PluginBase extends Listener{
     
     const AUTHOR = "BoxOfDevs Team";
     const VERSION = "1.2.3";
