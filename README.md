@@ -5,117 +5,63 @@ BoxOfBits began as a small plugin developed by TheDragonRing, then as it slowly 
 Commands
 =========
 All the commands currently in BoxOfBits:
-
     - /boxofbits : View BoxOfBits info
-
     - /message <server|player> <message...> : Send a message to either the whole server or one player
-
     - /popup <server|player> <message...> : Send a popup to either the whole server or one player
-
     - /tip <server|player> <message...> : Send a tip to either the whole server or one player
-
     - /pm <player> <message...> : Sends a private message
-
     - /gms [player] : Changes gamemode to Survival
-
     - /gmc [player] : Changes gamemode to Creative
-
     - /gma [player] : Changes gamemode to Adventure
-
     - /gmsp [player] : Changes gamemode to Spectator
-
     - /xyz [player] : Get coordinates
-
     - /rules : Shows the server rules
-
     - /suicide : Kill yourself
-
     - /slay <player> : Kills player
-
     - /heal [player] : Heals you or specified player
-
     - /health <amount> [player] : Sets your or players health
-
     - /fly : Lets you fly in survival
-
     - /hidetag <on|off> : Hides the nametag above your head
-
     - /nick <nickname|reset> : Changes your display name
-
     - /wild : Teleport to a random place
-
     - /setperm <player> <permission> : Give a player a permission
-
     - /rmperm <player> <permission> : Removes a players permission
-
     - /checkperm <player> <permission> : Checks if a player has a permission
-
     - /seeperms <player> : Shows a players permissions
 
 Permissions
 ============
 All the permissions for BoxOfBits:
-
     - boxofbits : BoxOfBits Universal Permission (Default: false)
-
         • boxofbits.info : Allows /boxofbits (Default: true)
-
         • boxofbits.msgs : BoxOfBits Message Features Universal Permission (Default: false)
-
             - boxofbits.msgs.message : Allows /message (Default: op)
-
             - boxofbits.msgs.popup : Allows /popup (Default: op)
-
             - boxofbits.msgs.tip : Allows /tip (Default: op)
-
             - boxofbits.msgs.pm : Allows /pm (Default: true)
-
         • boxofbits.gm : BoxOfBits Gamemode Features Universal Permission (Default: false)
-
             - boxofbits.gm.gms : Allows /gms (Default: op)
-
             - boxofbits.gm.gmc : Allows /gmc (Default: op)
-
             - boxofbits.gm.gma : Allows /gma (Default: op)
-
             - boxofbits.gm.gmsp : Allows /gmsp (Default: op)
-
         • boxofbits.xyz : Allows /xyz (Default: true)
-
         • boxofbits.rules : Allows /rules (Default: true)
-
         • boxofbits.hm : BoxOfBits Health Manager Features Universal Permission (Default: false)
-
             - boxofbits.hm.suicide : Allows /suicide (Default: true)
-
             - boxofbits.hm.slay : Allows /slay (Default: op)
-
             - boxofbits.hm.heal : Allows /heal (Default: op)
-
             - boxofbits.hm.health : Allows /health (Default: op)
-
             - boxofbits.fly : Allows /fly (Default: op)
-
         • boxofbits.name : BoxOfBits Name Features Universal Permission (Default: false)
-
             - boxofbits.name.ht : Allows /hidetag (Default: op)
-
             - boxofbits.name.nick : Allows /nick (Default: op)
-
         • boxofbits.allowcolourchat : Allows colouring text (Default: op)
-        
         • boxofbits.tp : BoxOfBits Teleport Features Universal Permission (Default: false)
-
             - boxofbits.tp.wild : Allows /wild (Default: true)
-
         • boxofbits.pm : BoxOfBits Permissions Manager Universal Permission (Default: false)
-
             - boxofbits.pm.setperm : Allows /setperm (Default: op)
-
             - boxofbits.pm.rmperm : Allows /rmperm (Default: op)
-
             - boxofbits.pm.checkperm : Allows /checkperm (Default: op)
-
             - boxofbits.pm.seeperms : Allows /seeperms (Default: op)
 
 Configuration
