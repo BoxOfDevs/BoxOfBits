@@ -1,103 +1,170 @@
 name: BoxOfBits
 version: 1.2.3
 author: BoxOfDevs Team
-api: [1.14.0, 2.0.0]
-main: BoxOfDevs\BoxOfBits\Loader
+api:
+- 1.0.0
+- 2.0.0
+main: BoxOfBits\Loader
 commands:
     boxofbits:
-        usage: "/boxofbits commands|permissions|other"
-        description: "View all the info about BoxOfBits, version, author, commands and permissions"
-        aliases: [bb]
+        usage: "/boxofbits"
+        description: "View BoxOfBits info"
+        permission: boxofbits.info
     message:
-        usage: "/message server|playername <message...>"
+        usage: "/message <server|player> <message...>"
         description: "Send a message to either the whole server or one player"
-        aliases: [m]
+        permission: boxofbits.msgs.message
     popup:
-        usage: "/popup server|playername <message...>"
+        usage: "/popup <server|player> <message...>"
         description: "Send a popup to either the whole server or one player"
-        aliases: [p]
+        permission: boxofbits.msgs.popup
     tip:
-        usage: "/tip server|playername <message...>"
+        usage: "/tip <server|player> <message...>"
         description: "Send a tip to either the whole server or one player"
-        aliases: [t]
+        permission: boxofbits.msgs.tip
+    pm:
+        usage: "/pm <player> <message...>"
+        description: "Sends a private message"
+        permission: boxofbits.msgs.pm
     gms:
-        usage: "/gms [playername]"
+        usage: "/gms [player]"
         description: "Changes gamemode to Survival"
-        aliases: [survival, s, 0]
+        permission: boxofbits.gm.gms
     gmc:
-        usage: "/gmc [playername]"
+        usage: "/gmc [player]"
         description: "Changes gamemode to Creative"
-        aliases: [creative, c, 1]
+        permission: boxofbits.gm.gmc
     gma:
-        usage: "/gma [playername]"
+        usage: "/gma [player]"
         description: "Changes gamemode to Adventure"
-        aliases: [adventure, a, 2]
+        permission: boxofbits.gm.gma
     gmsp:
-        usage: "/gmsp [playername]"
+        usage: "/gmsp [player]"
         description: "Changes gamemode to Spectator"
-        aliases: [spectator, sp, 3]
+        permission: boxofbits.gm.gmsp
     xyz:
-        usage: "/xyz [playername]"
-        description: "Get player coordinates"
-        aliases: [coords]
+        usage: "/xyz [player]"
+        description: "Get xyz coordinates"
+        permission: boxofbits.xyz
     rules:
         usage: "/rules"
         description: "Shows the server rules"
+        permission: boxofbits.rules
     suicide:
         usage: "/suicide"
         description: "Kill yourself"
+        permission: boxofbits.hm.suicide
     slay:
-        usage: "/slay <playername>"
-        description: "Kills specified player"
+        usage: "/slay <player>"
+        description: "Kills player"
+        permission: boxofbits.hm.slay
     heal:
-        usage: "/heal [playername]"
+        usage: "/heal [player]"
         description: "Heals you or specified player"
+        permission: boxofbits.hm.heal
     health:
-        usage: "/health <amount> [playername]"
-        description: "Sets you or specified players health"
+        usage: "/health <amount> [player]"
+        description: "Sets your or players health"
+        permission: boxofbits.hm.health
     fly:
         usage: "/fly"
         description: "Lets you fly in survival"
+        permission: boxofbits.fly
     hidetag:
-        usage: "/hidetag on|off"
+        usage: "/hidetag <on|off>"
         description: "Hides the nametag above your head"
+        permission: boxofbits.name.ht
     nick:
-        usage: "/nick nickname|reset"
-        description: "Changes players display name"
+        usage: "/nick <nickname|reset>"
+        description: "Changes your display name"
+        permission: boxofbits.name.nick
+    wild:
+        usage: "/wild"
+        description: "Teleport to a random place"
+        permission: boxofbits.tp.wild
+    setperm:
+        usage: "/setperm <player> <permission>"
+        description: "Give a player a permission"
+        permission: boxofbits.pm.setperm
+    rmperm:
+        usage: "/rmperm <player> <permission>"
+        description: "Removes a players permission"
+        permission: boxofbits.pm.rmperm
+    checkperm:
+        usage: "/checkperm <player> <permission>"
+        description: "Checks if a player has a permission"
+        permission: boxofbits.pm.checkperm
+    seeperms:
+        usage: "/seeperms <player>"
+        description: "Shows a players permissions"
+        permission: boxofbits.pm.seeperms
 permissions:
     boxofbits:
         default: false
-    boxofbits.info:
-        default: true
-    boxofbits.msg:
-        default: op
-    boxofbits.popup:
-        default: op
-    boxofbits.tip:
-        default: op
-    boxofbits.gms:
-        default: op
-    boxofbits.gmc:
-        default: op
-    boxofbits.gma:
-        default: op
-    boxofbits.gmsp:
-        default: op
-    boxofbits.xyz:
-        default: true
-    boxofbits.rules:
-        default: true
-    boxofbits.suicide:
-        default: true
-    boxofbits.slay:
-        default: op
-    boxofbits.heal:
-        default: op
-    boxofbits.health:
-        default: op
-    boxofbits.fly:
-        default: op
-    boxofbits.nick:
-        default: op
-    boxofbits.ht:
-        default: op
+        children:
+            boxofbits.info:
+                default: true
+            boxofbits.msgs:
+                default: false
+                children:
+                    boxofbits.msgs.message:
+                        default: op
+                    boxofbits.msgs.popup:
+                        default: op
+                    boxofbits.msgs.tip:
+                        default: op
+                    boxofbits.msgs.pm:
+                        default: true
+            boxofbits.gm:
+                default: false
+                children:
+                    boxofbits.gm.gms:
+                        default: op
+                    boxofbits.gm.gmc:
+                        default: op
+                    boxofbits.gm.gma:
+                        default: op
+                    boxofbits.gm.gmsp:
+                        default: op
+            boxofbits.xyz:
+                default: true
+            boxofbits.rules:
+                default: true
+            boxofbits.hm:
+                default: false
+                children:
+                    boxofbits.hm.suicide:
+                        default: true
+                    boxofbits.hm.slay:
+                        default: op
+                    boxofbits.hm.heal:
+                        default: op
+                    boxofbits.hm.health:
+                        default: op
+            boxofbits.fly:
+                default: op
+            boxofbits.name:
+                default: false
+                children:
+                    boxofbits.name.ht:
+                        default: op
+                    boxofbits.name.nick:
+                        default: op
+            boxofbits.allowcolourchat:
+                default: op
+            boxofbits.tp:
+                default: false
+                children:
+                    boxofbits.tp.wild:
+                        default: true
+            boxofbits.pm:
+                default: false
+                children:
+                    boxofbits.pm.setperm:
+                        default: op
+                    boxofbits.pm.rmperm:
+                        default: op
+                    boxofbits.pm.checkperm:
+                        default: op
+                    boxofbits.pm.seeperms:
+                        default: op
