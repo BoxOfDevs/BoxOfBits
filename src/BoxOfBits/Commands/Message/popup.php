@@ -10,30 +10,28 @@
  
  The growing plugin with so many features
  
- */
- 
-namespace BoxOfDevs\BoxOfBits\Commands;
- 
-use BoxOfDevs\BoxOfBits\Loader;
+*/
+
+namespace BoxOfBits\Commands\Message;
+
+use BoxOfBits\Loader;
+use BoxOfBits\utils\SymbolFormat;
+
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\command\CommandExecutor;
 use pocketmine\command\PluginCommand;
-use pocketmine\permission\Permission;
-use pocketmine\utils\Config;
+use pocketmine\utils\TextFormat as TF;
 use pocketmine\Player;
 use pocketmine\Server;
 
 class popup extends Loader{
-    
-    private $permMessage = "§4You do not have permission to run this command!";
-    private $consoleMsg = "§4This command can only be executed in-game!";
-    
+
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         if(strolower($cmd->getName() == "popup")){
             if(!($sender instanceof Player)){
                 if(!(isset($args[1]))){
-                    $sender->sendPopup("§4Usage: /popup server|playername <popup...>");
+                    $sender->sendPopup("§4Usage: /popup <server|player> <popup...>");
                 }else{
                     if($args[0] === "server"){
                         unset($args[0]);
@@ -43,7 +41,7 @@ class popup extends Loader{
                         $name = $args[0];
                         $player = $this->getServer()->getPlayer($name);
                         if($player === null){
-                            $sender->sendPopup("§4Player Not Found");
+                            $sender->sendPopup("§4Player not found");
                         }else{
                             unset($args[0]);
                             $popup = implode(" ", $args);
@@ -53,26 +51,22 @@ class popup extends Loader{
                 }
             }
             if($sender instanceof Player){
-                if(!($player->hasPermission("boxofbits" or "boxofbits.popup"))){
-                    $sender->sendPopup("$this->permMessage");
+                if(!(isset($args[1]))){
+                    $sender->sendPopup("§4Usage: /popup <server|player> <popup...>");
                 }else{
-                    if(!(isset($args[1]))){
-                        $sender->sendPopup("§4Usage: /popup server|playername <popup...>");
+                    if($args[0] === "server"){
+                        unset($args[0]);
+                        $popup = implode(" ", $args);
+                        $this->getServer()->broadcastPopup($popup);
                     }else{
-                        if($args[0] === "server"){
+                        $name = $args[0];
+                        $player = $this->getServer()->getPlayer($name);
+                        if($player === null){
+                            $sender->sendPopup("§4Player not found");
+                        }else{
                             unset($args[0]);
                             $popup = implode(" ", $args);
-                            $this->getServer()->broadcastPopup($popup);
-                        }else{
-                            $name = $args[0];
-                            $player = $this->getServer()->getPlayer($name);
-                            if($player === null){
-                                $sender->sendPopup("§4Player Not Found");
-                            }else{
-                                unset($args[0]);
-                                $popup = implode(" ", $args);
-                                $player->sendPopup($popup);                                               
-                            }
+                            $player->sendPopup($popup);                                               
                         }
                     }
                 }
@@ -82,3 +76,5 @@ class popup extends Loader{
     }
 
 }
+
+?>

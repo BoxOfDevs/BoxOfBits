@@ -12,13 +12,14 @@
  
 */
 
-namespace BoxOfDevs\BoxOfBits\Events;
+namespace BoxOfBits\Events;
 
-use BoxOfDevs\BoxOfBits\Loader;
+use BoxOfBits\Loader;
+use BoxOfBits\utils\SymbolFormat;
+
 use pocketmine\event\Listener;
-use pocketmine\utils\TextFormat as Colour;
+use pocketmine\utils\TextFormat as TF;
 use pocketmine\event\player\PlayerJoinEvent;
-use pocketmine\utils\Config;
 
 class Join extends Loader implements Listener{
     
@@ -26,17 +27,17 @@ class Join extends Loader implements Listener{
         $player = $event->getPlayer();
 		$name = $player->getName();
 		$line = "\n";
-		$popup = str_replace("{player}", $name, "{line}", $line, $this->config->get("JoinPopup"));
+		$popup = str_replace("&", $formatter, "{player}", $name, "{line}", $line, $this->getConfig->get("JoinPopup"));
 		$this->getServer()->broadcastPopup($popup);
-        $tip = str_replace("{player}", $name, "{line}", $line, $this->config->get("WelcomeMsg"));
-		$player->sendTip($tip);
-		$message = str_replace("{player}", $name, "{line}", $line, $this->config->get("JoinMessage"));
+		$message = str_replace("{player}", $name, "{line}", $line, $this->getConfig->get("JoinMessage"));
 		$event->setJoinMessage($message);
-		if($player is OP){
-		    $op = str_replace("{player}", $name, "{line}", $line, $this->config->get("OPJoinMsg"));
+		if($player isOP()){
+		    $op = str_replace("{player}", $name, "{line}", $line, $this->getConfig->get("OPJoinMsg"));
 		    $this->getServer()->broadcastMessage($op);
 		}
-		return true;
+        return true;
     }
 
 }
+
+?>

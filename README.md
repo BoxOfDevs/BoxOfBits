@@ -1,3 +1,5 @@
+ESTIMATED UPDATE PROGRESS = 74%
+
 Description
 ============
 BoxOfBits began as a small plugin developed by TheDragonRing, then as it slowly grew bigger it was transferred to the BoxOfDevs Team. Now, it is a huge, but still growing plugin with many, many features. Our goal is to make this plugin have so many features, that a server owner could download this plugin and have features from a 100 or more other plugins! Enjoy :)
@@ -94,7 +96,7 @@ All the permissions for BoxOfBits:
 
             - boxofbits.hm.health : Allows /health (Default: op)
 
-            - boxofbits.fly : Allows /fly (Default: op)
+        • boxofbits.fly : Allows /fly (Default: op)
 
         • boxofbits.name : BoxOfBits Name Features Universal Permission (Default: false)
 

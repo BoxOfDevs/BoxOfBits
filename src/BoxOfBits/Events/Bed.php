@@ -12,14 +12,15 @@
  
 */
 
-namespace BoxOfDevs\BoxOfBits\Events;
+namespace BoxOfBits\Events;
 
-use BoxOfDevs\BoxOfBits\Loader;
+use BoxOfBits\Loader;
+use BoxOfBits\utils\SymbolFormat;
+
 use pocketmine\event\Listener;
-use pocketmine\utils\TextFormat as Colour;
+use pocketmine\utils\TextFormat as TF;
 use pocketmine\event\player\PlayerBedEnterEvent;
 use pocketmine\event\player\PlayerBedLeaveEvent;
-use pocketmine\utils\Config;
 
 class Bed extends Loader implements Listener{
     
@@ -27,7 +28,7 @@ class Bed extends Loader implements Listener{
         $player = $event->getPlayer();
         $name = $player->getName();
         $line = "\n";
-        $popup = str_replace("{player}", $name, "{line}", $line, $this->config->get("SleepTip"));
+        $tip = str_replace("{player}", $name, "{line}", $line, $this->getConfig->get("SleepTip"));
         $sender->sendTip($tip);
         return true;
     }
@@ -36,9 +37,12 @@ class Bed extends Loader implements Listener{
         $player = $event->getPlayer();
         $name = $player->getName();
         $line = "\n";
-        $popup = str_replace("{player}", $name, "{line}", $line, $this->config->get("WakeTip"));
+        $formatter = "§";
+        $tip = str_replace("{player}", $name, "{line}", $line, $this->getConfig->get("WakeTip"));
         $sender->sendTip($tip);
         return true;
     }
 
 }
+
+?>

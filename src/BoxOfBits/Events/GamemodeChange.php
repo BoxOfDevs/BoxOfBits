@@ -12,25 +12,28 @@
  
 */
 
-namespace BoxOfDevs\BoxOfBits\Events;
+namespace BoxOfBits\Events;
 
-use BoxOfDevs\BoxOfBits\Loader;
+use BoxOfBits\Loader;
+use BoxOfBits\utils\SymbolFormat;
+
 use pocketmine\event\Listener;
-use pocketmine\utils\TextFormat as Colour;
-use pocketmine\event\player\PlayerKickEvent;
-use pocketmine\utils\Config;
+use pocketmine\utils\TextFormat as TF;
+use pocketmine\event\player\PlayerGameModeChange;
 
-class Kick extends Loader implements Listener{
+class GameModeChange extends Loader implements Listener{
     
-    public function onKick(PlayerKickEvent $event){
+    public function onGameModeChange(PlayerGameModeChangeEvent $event){
         $player = $event->getPlayer();
         $name = $player->getName();
         $line = "\n";
-        $popup = str_replace("{player}", $name, "{line}", $line, $this->config->get("KickPopup"));
+        $popup = str_replace("{player}", $name, "{line}", $line, $this->getConfig->get("GamemodeChangePopup"));
         $this->getServer()->broadcastPopup($popup);
-        $message = str_replace("{player}", $name, "{line}", $line, $this->config->get("KickMessage"));
+        $message = str_replace("{player}", $name, "{line}", $line, $this->getConfig->get("GamemodeChangeMessage"));
         $this->getServer()->broadcastMessage($message);
         return true;
     }
 
 }
+
+?>

@@ -10,25 +10,23 @@
  
  The growing plugin with so many features
  
- */
- 
-namespace BoxOfDevs\BoxOfBits\Commands;
- 
-use BoxOfDevs\BoxOfBits\Loader;
+*/
+
+namespace BoxOfBits\Commands\HealthManager;
+
+use BoxOfBits\Loader;
+use BoxOfBits\utils\SymbolFormat;
+
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\command\CommandExecutor;
 use pocketmine\command\PluginCommand;
-use pocketmine\permission\Permission;
-use pocketmine\utils\Config;
+use pocketmine\utils\TextFormat as TF;
 use pocketmine\Player;
 use pocketmine\Server;
 
 class health extends Loader{
-    
-    private $permMessage = "§4You do not have permission to run this command!";
-    private $consoleMsg = "§4This command can only be executed in-game!"; 
-    
+
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         if(strolower($cmd->getName() == "health")){
             if(!($sender instanceof Player)){
@@ -41,12 +39,11 @@ class health extends Loader{
 				        $sender->sendMessage("§b$player's health has been set");
 				        $player->sendMessage("§bYour health has been set");
 				    }else{
-				        $sender->sendMessage("§4Player Not Found");
+				        $sender->sendMessage("§4Player not found");
 				    }
 				}
             }
             if($sender instanceof Player){
-                if($sender->hasPermission("boxofbits" or "boxofbits.health")){
                     if(!isset($args[0])){
                         $sender->sendMessage("§4Usage: /health <amount> [playername]");
                     }
@@ -59,12 +56,9 @@ class health extends Loader{
 				            $player->setHealth($args[0]);
 				            $sender->sendMessage("§b$player's health has been set");
 				            $player->sendMessage("§bYour health has been set");
-				        }else{
-				            $sender->sendMessage("§4Player Not Found");
-				        }
+				    }else{
+				        $sender->sendMessage("§4Player not found");
 				    }
-				}else{
-                $sender->sendMessage("$this->permMessage");
 				}
             }
         }
@@ -72,3 +66,5 @@ class health extends Loader{
     }
 
 }
+
+?>
