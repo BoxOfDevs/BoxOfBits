@@ -41,7 +41,7 @@ class setperm extends Loader{
                     $perm = $args[1];
                     $player->setPermission($perm);
                     $sender->sendMessage(TF::GREEN."$perm successfully set to $name!");
-				}
+	        }
             }elseif($sender instanceof Player){
                 if(!isset($args[1])){
                     $sender->sendMessage(TF::DARK_RED."Usage: /setperm <player> <permission>");
