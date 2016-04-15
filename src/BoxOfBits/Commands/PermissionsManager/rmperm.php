@@ -15,7 +15,7 @@
 * 
 */
 
-namespace BoxOfBits\Commands;
+namespace BoxOfBits\Commands\PermissionsManager;
 
 use BoxOfBits\Loader;
 use BoxOfBits\utils\SymbolFormat;
