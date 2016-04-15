@@ -51,6 +51,7 @@ class rmperm extends Loader{
                     $player->removePermission($perm);
                     $sender->sendMessage(TF::GREEN."$perm successfully removed from $name!");
                 }
+            }
         }
         return true;
     }
