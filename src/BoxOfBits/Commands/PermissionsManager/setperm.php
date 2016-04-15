@@ -51,7 +51,7 @@ class setperm extends Loader{
                     $player->setPermission($perm);
                     $sender->sendMessage(TF::GREEN."$perm successfully set to $name!");
                 }
-			}
+	    }
         }
         return true;
     }
