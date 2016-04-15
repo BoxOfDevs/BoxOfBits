@@ -55,7 +55,6 @@ class rmperm extends Loader{
         }
         return true;
     }
-
 }
 
 ?>
