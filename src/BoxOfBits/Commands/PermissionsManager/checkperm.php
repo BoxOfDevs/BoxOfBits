@@ -34,10 +34,24 @@ class checkperm extends Loader{
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         if(strolower($cmd->getName() == "checkperm")){
             if(!($sender instanceof Player)){
-
+                if(!isset($args[1])){
+                    $sender->sendMessage(TF::DARK_RED."Usage: /checkperm <player> <permission>");
+                }else{
+                    $player = $args[0];
+                    $perm = $args[1];
+                    $player->removePermission($perm);
+                    $sender->sendMessage(TF::GREEN."$perm successfully removed from $name!");
+				}
             }elseif($sender instanceof Player){
-
-			}
+                if(!isset($args[1])){
+                    $sender->sendMessage(TF::DARK_RED."Usage: /checkperm <player> <permission>");
+                }else{
+                    $player = $args[0];
+                    $perm = $args[1];
+                    $player->removePermission($perm);
+                    $sender->sendMessage(TF::GREEN."$perm successfully removed from $name!");
+                }
+            }
         }
         return true;
     }
