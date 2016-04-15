@@ -27,22 +27,23 @@ use pocketmine\command\PluginCommand;
 use pocketmine\utils\TextFormat as TF;
 use pocketmine\Player;
 use pocketmine\Server;
+use pocketmine\math\Vector3;
+use pocketmine\level\Level;
+use pocketmine\level\Position;
 
-class rules extends Loader{
-    
+class wild extends Loader{
+
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
-        if(strolower($cmd->getName() == "rules")){
+        if(strolower($cmd->getName() == "wild")){
             if(!($sender instanceof Player)){
-                $name = $sender->getName();
-                $line = "\n";
-                $rules = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("Rules"));
-                $sender->sendMessage($rules);
+                $sender->sendMessage(TF::DARK_RED."This command can only be executed in-game!");
             }elseif($sender instanceof Player){
-                $name = $sender->getName();
-                $line = "\n";
-                $rules = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("Rules"));
-                $sender->sendMessage($rules)
-            }
+				$x = rand(1,999);
+            	$y = rand(1,128);
+            	$z = rand(1,999);
+            	$sender->teleport(new Position($x,$y,$z));
+            	$sender->sendMessage(TF::GREEN."Teleported to a random position!");
+			}
         }
         return true;
     }

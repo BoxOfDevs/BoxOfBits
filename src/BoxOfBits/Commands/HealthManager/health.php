@@ -45,8 +45,7 @@ class health extends Loader{
 				        $sender->sendMessage(TF::DARK_RED."Player not found");
 				    }
 				}
-            }
-            if($sender instanceof Player){
+            }elseif($sender instanceof Player){
                     if(!isset($args[0])){
                         $sender->sendMessage(TF::DARK_RED."Usage: /health <amount> [playername]");
                     }

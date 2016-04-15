@@ -52,8 +52,7 @@ class message extends Loader{
                         }
                     }
                 }
-            }
-            if($sender instanceof Player){
+            }elseif($sender instanceof Player){
                 if(!(isset($args[1]))){
                     $sender->sendMessage(TF::DARK_RED."Usage: /message <server|player> <message...>");
                 }else{

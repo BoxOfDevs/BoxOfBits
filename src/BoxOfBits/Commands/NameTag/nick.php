@@ -34,8 +34,7 @@ class nick extends Loader{
         if(strolower($cmd->getName() == "nick")){
             if(!($sender instanceof Player)){
                 $sender->sendMessage(TF::DARK_RED."This command can only be executed in-game!");
-            }
-            if($sender instanceof Player){
+            }elseif($sender instanceof Player){
                 if(!isset($args[0]){
                     $sender->sendMessage(TF::DARK_RED."Usage: /nick <nickname|reset>");
                 }

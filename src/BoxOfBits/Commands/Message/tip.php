@@ -52,8 +52,7 @@ class tip extends Loader{
                         }
                     }
                 }
-            }
-            if($sender instanceof Player){
+            }elseif($sender instanceof Player){
                 if(!(isset($args[1]))){
                     $sender->sendTip(TF::DARK_RED."Usage: /tip <server|player> <tip...>");
                 }else{

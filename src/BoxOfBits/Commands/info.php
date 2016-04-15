@@ -34,8 +34,7 @@ class info extends Loader{
         if(strolower($cmd->getName() == "boxofbits")){
             if(!($sender instanceof Player)){
                 $sender->sendMessage(TF::BLACK."-=[."TF::AQUA."BoxOfBits Info".TF::BLACK."]=- \n	".TF::BLACK."• ".TF::DARK_GREEN."Version: ".TF::WHITE."1.2.3 \n	".TF::BLACK."• ".TF::DARK_GREEN."Author/s: ".TF::WHITE."BoxOfDevs Team \n	".TF::BLACK."• ".TF::DARK_GREEN."Website: ".TF::WHITE."https://boxofdevs.github.io/BoxOfBits/ \n	".TF::BLACK."• ".TF::DARK_GREEN."Description: ".TF::WHITE."The growing plugin with so many features! \n	".TF::BLACK."• ".TF::DARK_GREEN."License: ".TF::WHITE."GNU GENERAL PUBLIC LICENSE");
-            }
-            if($sender instanceof Player){
+            }elseif($sender instanceof Player){
                 $sender->sendMessage(TF::BLACK."-=[."TF::AQUA."BoxOfBits Info".TF::BLACK."]=- \n	".TF::BLACK."• ".TF::DARK_GREEN."Version: ".TF::WHITE."1.2.3 \n	".TF::BLACK."• ".TF::DARK_GREEN."Author/s: ".TF::WHITE."BoxOfDevs Team \n	".TF::BLACK."• ".TF::DARK_GREEN."Website: ".TF::WHITE."https://boxofdevs.github.io/BoxOfBits/ \n	".TF::BLACK."• ".TF::DARK_GREEN."Description: ".TF::WHITE."The growing plugin with so many features! \n	".TF::BLACK."• ".TF::DARK_GREEN."License: ".TF::WHITE."GNU GENERAL PUBLIC LICENSE");
             }
         }

@@ -1,8 +1,8 @@
-ESTIMATED UPDATE PROGRESS = 74%
+ESTIMATED UPDATE PROGRESS = 91%
 
 Description
 ============
-BoxOfBits began as a small plugin developed by TheDragonRing, then as it slowly grew bigger it was transferred to the BoxOfDevs Team. Now, it is a huge, but still growing plugin with many, many features. Our goal is to make this plugin have so many features, that a server owner could download this plugin and have features from a 100 or more other plugins! Enjoy :)
+BoxOfBits began as a small plugin developed by TheDragonRing, then as it slowly grew bigger it was transferred to the BoxOfDevs Team. Now, it is a huge, but still growing plugin with many, many features. Our goal is to make this plugin have so many features, that a server owner could download this plugin and have features from a 100 or more other plugins! Enjoy :D
 
 Commands
 =========
@@ -151,3 +151,5 @@ The BoxOfDevs Team members who have contributed and devleloped BoxOfBits:
     - Ad5001
 
     - Vaivez66
+
+	- 0-Eclipse-0

@@ -36,8 +36,7 @@ class xyz extends Loader{
             if(!($sender instanceof Player)){
 				if(!isset($args[0])){
 				    $sender->sendMessage(TF::DARK_RED."Usage: /xyz [player] - [player] required when run from console!");
-				}
-				if(isset($args[0])){
+				}elseif(isset($args[0])){
     				$player = $this->getServer()->getPlayer($args[0]);
     				if($player instanceof Player){
     				    $x = $player->getX();

@@ -45,8 +45,7 @@ class heal extends Loader{
 				        $sender->sendMessage(TF::DARK_RED."Player not found");
 				    }
 				}
-            }
-            if($sender instanceof Player){
+            }elseif($sender instanceof Player){
 				if(!isset($args[0])){
                     $player->setHealth(20);
                     $sender->sendMessage("§bYou have been healed");

@@ -27,22 +27,17 @@ use pocketmine\command\PluginCommand;
 use pocketmine\utils\TextFormat as TF;
 use pocketmine\Player;
 use pocketmine\Server;
+use pocketmine\permission\Permission;
 
-class rules extends Loader{
-    
+class seeperms extends Loader{
+
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
-        if(strolower($cmd->getName() == "rules")){
+        if(strolower($cmd->getName() == "seeperms")){
             if(!($sender instanceof Player)){
-                $name = $sender->getName();
-                $line = "\n";
-                $rules = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("Rules"));
-                $sender->sendMessage($rules);
+
             }elseif($sender instanceof Player){
-                $name = $sender->getName();
-                $line = "\n";
-                $rules = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("Rules"));
-                $sender->sendMessage($rules)
-            }
+
+			}
         }
         return true;
     }

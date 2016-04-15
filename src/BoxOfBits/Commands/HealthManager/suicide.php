@@ -34,8 +34,7 @@ class suicide extends Loader{
         if(strolower($cmd->getName() == "suicide")){
             if(!($sender instanceof Player)){
 				$sender->sendMessage(TF::DARK_RED."This command can only be executed in-game!");
-            }
-            if($sender instanceof Player){
+            }elseif($sender instanceof Player){
 				$sender->setHealth(0);
                 $sender->sendMessage(TF::DARK_RED."You have commited suicide!");
                 $this->getServer()->broadcastPopup(TF::DARK_RED."$sender commited suicide");

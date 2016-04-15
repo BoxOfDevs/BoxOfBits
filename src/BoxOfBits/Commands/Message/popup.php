@@ -52,8 +52,7 @@ class popup extends Loader{
                         }
                     }
                 }
-            }
-            if($sender instanceof Player){
+            }elseif($sender instanceof Player){
                 if(!(isset($args[1]))){
                     $sender->sendPopup(TF::DARK_RED."Usage: /popup <server|player> <popup...>");
                 }else{

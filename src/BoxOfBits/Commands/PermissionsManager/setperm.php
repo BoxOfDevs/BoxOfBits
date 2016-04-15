@@ -27,22 +27,31 @@ use pocketmine\command\PluginCommand;
 use pocketmine\utils\TextFormat as TF;
 use pocketmine\Player;
 use pocketmine\Server;
+use pocketmine\permission\Permission;
 
-class rules extends Loader{
-    
+class setperm extends Loader{
+
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
-        if(strolower($cmd->getName() == "rules")){
+        if(strolower($cmd->getName() == "setperm")){
             if(!($sender instanceof Player)){
-                $name = $sender->getName();
-                $line = "\n";
-                $rules = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("Rules"));
-                $sender->sendMessage($rules);
+                if(!isset($args[1])){
+                    $sender->sendMessage(TF::DARK_RED."Usage: /setperm <player> <permission>");
+                }else{
+                    $player = $args[0];
+                    $perm = $args[1];
+                    $player->setPermission($perm);
+                    $sender->sendMessage(TF::GREEN."$perm successfully set to $name!");
+				}
             }elseif($sender instanceof Player){
-                $name = $sender->getName();
-                $line = "\n";
-                $rules = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("Rules"));
-                $sender->sendMessage($rules)
-            }
+                if(!isset($args[1])){
+                    $sender->sendMessage(TF::DARK_RED."Usage: /setperm <player> <permission>");
+                }else{
+                    $player = $args[0];
+                    $perm = $args[1];
+                    $player->setPermission($perm);
+                    $sender->sendMessage(TF::GREEN."$perm successfully set to $name!");
+                }
+			}
         }
         return true;
     }

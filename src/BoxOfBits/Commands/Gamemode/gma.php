@@ -54,8 +54,7 @@ class gma extends Loader{
 			         	}
                     }
 				}
-            }
-            if($sender instanceof Player){
+            }elseif($sender instanceof Player){
                 if(!isset($args[0])){
 				    if($sender->getGamemode() == 2){
 				        $sender->sendMessage(TF::DARK_RED."You are already in Adventure");
