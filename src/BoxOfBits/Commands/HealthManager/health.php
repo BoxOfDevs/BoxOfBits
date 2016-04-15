@@ -1,15 +1,18 @@
 <?php
 
 /*
-  ____             ____   __ ____  _ _       
- |  _ \           / __ \ / _|  _ \(_) |      
- | |_) | _____  _| |  | | |_| |_) |_| |_ ___ 
- |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __|
- | |_) | (_) >  <| |__| | | | |_) | | |_\__ \
- |____/ \___/_/\_\\____/|_| |____/|_|\__|___/
- 
- The growing plugin with so many features
- 
+*  ____             ____   __ ____  _ _       
+* |  _ \           / __ \ / _|  _ \(_) |      
+* | |_) | _____  _| |  | | |_| |_) |_| |_ ___ 
+* |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __|
+* | |_) | (_) >  <| |__| | | | |_) | | |_\__ \
+* |____/ \___/_/\_\\____/|_| |____/|_|\__|___/
+* 
+* The growing plugin with so many features
+*
+* @author BoxOfDevs Team
+* @link http://boxofdevs.x10host.com/
+* 
 */
 
 namespace BoxOfBits\Commands\HealthManager;
@@ -31,33 +34,33 @@ class health extends Loader{
         if(strolower($cmd->getName() == "health")){
             if(!($sender instanceof Player)){
 				if(!isset($args[1])){
-					$sender->sendMessage("§4Usage: /health <amount> [playername] - [playername] required when run from console!");
+					$sender->sendMessage(TF::DARK_RED."Usage: /health <amount> [playername] - [playername] required when run from console!");
 				}else{
 				    $player = $this->getServer()->getPlayer($args[1]);
 				    if($player instanceof Player){
 				        $player->setHealth($args[0]);
-				        $sender->sendMessage("§b$player's health has been set");
-				        $player->sendMessage("§bYour health has been set");
+				        $sender->sendMessage(TF::GREEN."$player's health has been set");
+				        $player->sendMessage(TF::GREEN."Your health has been set");
 				    }else{
-				        $sender->sendMessage("§4Player not found");
+				        $sender->sendMessage(TF::DARK_RED."Player not found");
 				    }
 				}
             }
             if($sender instanceof Player){
                     if(!isset($args[0])){
-                        $sender->sendMessage("§4Usage: /health <amount> [playername]");
+                        $sender->sendMessage(TF::DARK_RED."Usage: /health <amount> [playername]");
                     }
 				    if(!isset($args[1])){
                         $player->setHealth($args[0]);
-                        $sender->sendMessage("§bYour health has been set");
+                        $sender->sendMessage(TF::GREEN."Your health has been set");
                     }else{
 				        $player = $this->getServer()->getPlayer($args[1]);
 				        if($player instanceof Player){
 				            $player->setHealth($args[0]);
-				            $sender->sendMessage("§b$player's health has been set");
-				            $player->sendMessage("§bYour health has been set");
+				            $sender->sendMessage(TF::GREEN."$player's health has been set");
+				            $player->sendMessage(TF::GREEN."Your health has been set");
 				    }else{
-				        $sender->sendMessage("§4Player not found");
+				        $sender->sendMessage(TF::DARK_RED."Player not found");
 				    }
 				}
             }

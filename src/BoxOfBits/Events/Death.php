@@ -1,15 +1,18 @@
 <?php
 
 /*
-  ____             ____   __ ____  _ _       
- |  _ \           / __ \ / _|  _ \(_) |      
- | |_) | _____  _| |  | | |_| |_) |_| |_ ___ 
- |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __|
- | |_) | (_) >  <| |__| | | | |_) | | |_\__ \
- |____/ \___/_/\_\\____/|_| |____/|_|\__|___/
- 
- The growing plugin with so many features
- 
+*  ____             ____   __ ____  _ _       
+* |  _ \           / __ \ / _|  _ \(_) |      
+* | |_) | _____  _| |  | | |_| |_) |_| |_ ___ 
+* |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __|
+* | |_) | (_) >  <| |__| | | | |_) | | |_\__ \
+* |____/ \___/_/\_\\____/|_| |____/|_|\__|___/
+* 
+* The growing plugin with so many features
+*
+* @author BoxOfDevs Team
+* @link http://boxofdevs.x10host.com/
+* 
 */
 
 namespace BoxOfBits\Events;
@@ -27,9 +30,9 @@ class Death extends Loader implements Listener{
         $player = $event->getEntity();
         $name = $player->getName();
         $line = "\n";
-        $popup = str_replace("{player}", $name, "{line}", $line, $this->getConfig->get("DeathPopup"));
+        $popup = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("DeathPopup"));
         $this->getServer()->broadcastPopup($popup);
-        $message = str_replace("{player}", $name, "{line}", $line, $this->getConfig->get("DeathMessage"));
+        $message = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("DeathMessage"));
         $this->getServer()->broadcastMessage($message);
         return true;
     }

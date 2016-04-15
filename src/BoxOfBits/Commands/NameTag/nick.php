@@ -1,15 +1,18 @@
 <?php
 
 /*
-  ____             ____   __ ____  _ _       
- |  _ \           / __ \ / _|  _ \(_) |      
- | |_) | _____  _| |  | | |_| |_) |_| |_ ___ 
- |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __|
- | |_) | (_) >  <| |__| | | | |_) | | |_\__ \
- |____/ \___/_/\_\\____/|_| |____/|_|\__|___/
- 
- The growing plugin with so many features
- 
+*  ____             ____   __ ____  _ _       
+* |  _ \           / __ \ / _|  _ \(_) |      
+* | |_) | _____  _| |  | | |_| |_) |_| |_ ___ 
+* |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __|
+* | |_) | (_) >  <| |__| | | | |_) | | |_\__ \
+* |____/ \___/_/\_\\____/|_| |____/|_|\__|___/
+* 
+* The growing plugin with so many features
+*
+* @author BoxOfDevs Team
+* @link http://boxofdevs.x10host.com/
+* 
 */
 
 namespace BoxOfBits\Commands\NameTag;
@@ -30,20 +33,20 @@ class nick extends Loader{
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         if(strolower($cmd->getName() == "nick")){
             if(!($sender instanceof Player)){
-                $sender->sendMessage("§4This command can only be executed in-game!");
+                $sender->sendMessage(TF::DARK_RED."This command can only be executed in-game!");
             }
             if($sender instanceof Player){
                 if(!isset($args[0]){
-                    $sender->sendMessage("§4Usage: /nick <nickname|reset>");
+                    $sender->sendMessage(TF::DARK_RED."Usage: /nick <nickname|reset>");
                 }
                 if($args[0] === "reset"){
                     $realname = $sender->getName();
                     $sender->setDisplayName($realname);
-                    $sender->sendMessage("§2Your nick has been reset to:§f $realname");
+                    $sender->sendMessage(TF::DARK_GREEN."Your nick has been reset to:".TF::WHITE." $realname");
                 }elseif(isset($args[0]){
                     $nick = $args[0];
                     $sender->setDisplayName($nick);
-                    $sender->sendMessage("§2Your nick is now:§f $nick");
+                    $sender->sendMessage(TF::DARK_GREEN."Your nick is now:".TF::WHITE." $nick");
                 }
             }
         }

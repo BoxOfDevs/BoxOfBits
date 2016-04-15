@@ -1,15 +1,18 @@
 <?php
 
 /*
-  ____             ____   __ ____  _ _       
- |  _ \           / __ \ / _|  _ \(_) |      
- | |_) | _____  _| |  | | |_| |_) |_| |_ ___ 
- |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __|
- | |_) | (_) >  <| |__| | | | |_) | | |_\__ \
- |____/ \___/_/\_\\____/|_| |____/|_|\__|___/
- 
- The growing plugin with so many features
- 
+*  ____             ____   __ ____  _ _       
+* |  _ \           / __ \ / _|  _ \(_) |      
+* | |_) | _____  _| |  | | |_| |_) |_| |_ ___ 
+* |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __|
+* | |_) | (_) >  <| |__| | | | |_) | | |_\__ \
+* |____/ \___/_/\_\\____/|_| |____/|_|\__|___/
+* 
+* The growing plugin with so many features
+*
+* @author BoxOfDevs Team
+* @link http://boxofdevs.x10host.com/
+* 
 */
 
 namespace BoxOfBits\Commands\HealthManager;
@@ -31,15 +34,15 @@ class heal extends Loader{
         if(strolower($cmd->getName() == "heal")){
 			if(!($sender instanceof Player)){
 				if(!isset($args[0])){
-					$sender->sendMessage("§4Usage: /heal [playername] - [playername] required when run from console!");
+					$sender->sendMessage(TF::DARK_RED."Usage: /heal [playername] - [playername] required when run from console!");
 				}else{
 				    $player = $this->getServer()->getPlayer($args[0]);
 				    if($player instanceof Player){
 				        $player->setHealth(20);
-				        $sender->sendMessage("§b$player has been healed");
-				        $player->sendMessage("§bYou have been healed");
+				        $sender->sendMessage(TF::AQUA."$player has been healed");
+				        $player->sendMessage(TF::AQUA."You have been healed");
 				    }else{
-				        $sender->sendMessage("§4Player not found");
+				        $sender->sendMessage(TF::DARK_RED."Player not found");
 				    }
 				}
             }
@@ -51,10 +54,10 @@ class heal extends Loader{
 				    $player = $this->getServer()->getPlayer($args[0]);
 				    if($player instanceof Player){
 				        $player->setHealth(20);
-				        $sender->sendMessage("§b$player has been healed");
-				        $player->sendMessage("§bYou have been healed");
+				        $sender->sendMessage(TF::AQUA."$player has been healed");
+				        $player->sendMessage(TF::AQUA."You have been healed");
 				    }else{
-				        $sender->sendMessage("§4Player Not Found");
+				        $sender->sendMessage(TF::DARK_RED."Player Not Found");
                     }
 				}
             }

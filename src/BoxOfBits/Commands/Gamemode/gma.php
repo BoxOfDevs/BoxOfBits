@@ -1,15 +1,18 @@
 <?php
 
 /*
-  ____             ____   __ ____  _ _       
- |  _ \           / __ \ / _|  _ \(_) |      
- | |_) | _____  _| |  | | |_| |_) |_| |_ ___ 
- |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __|
- | |_) | (_) >  <| |__| | | | |_) | | |_\__ \
- |____/ \___/_/\_\\____/|_| |____/|_|\__|___/
- 
- The growing plugin with so many features
- 
+*  ____             ____   __ ____  _ _       
+* |  _ \           / __ \ / _|  _ \(_) |      
+* | |_) | _____  _| |  | | |_| |_) |_| |_ ___ 
+* |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __|
+* | |_) | (_) >  <| |__| | | | |_) | | |_\__ \
+* |____/ \___/_/\_\\____/|_| |____/|_|\__|___/
+* 
+* The growing plugin with so many features
+*
+* @author BoxOfDevs Team
+* @link http://boxofdevs.x10host.com/
+* 
 */
 
 namespace BoxOfBits\Commands\Gamemode;
@@ -31,23 +34,23 @@ class gma extends Loader{
         if(strolower($cmd->getName() == "gma")){
             if(!($sender instanceof Player)){
 				if(!isset($args[0])){
-					$sender->sendMessage("§4Usage: /gma [playername] - [playername] required when run from console!");
+					$sender->sendMessage(TF::DARK_RED."Usage: /gma [playername] - [playername] required when run from console!");
                 }else{
                     $player = $this->getServer()->getPlayer($args[0]);
 				    if($player instanceof Player){
                         if($player->getGamemode() == 2){
 							$name = $player->getName();
-							$sender->sendMessage("§4$name is already in Adventure");
+							$sender->sendMessage(TF::DARK_RED."$name is already in Adventure");
 				        }else{
 							$player->setGamemode(2);
-							$player->sendMessage("§aYou are now in Adventure");
+							$player->sendMessage(TF::GREEN."You are now in Adventure");
 							$name = $player->getName();
-							$sender->sendMessage("§a$name is now in Adventure");
+							$sender->sendMessage(TF::GREEN."$name is now in Adventure");
 							$line = "\n";
-							$message = str_replace("{player}", $name, "{line}", $line, $this->getConfig->get("GamemodeChangePopup"));
+							$message = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("GamemodeChangePopup"));
 							$this->getServer()->broadcastPopup($message);
 		          		}else{
-				            $sender->sendMessage("§4Player not found");
+				            $sender->sendMessage(TF::DARK_RED."Player not found");
 			         	}
                     }
 				}
@@ -55,13 +58,13 @@ class gma extends Loader{
             if($sender instanceof Player){
                 if(!isset($args[0])){
 				    if($sender->getGamemode() == 2){
-				        $sender->sendMessage("§4You are already in Adventure");
+				        $sender->sendMessage(TF::DARK_RED."You are already in Adventure");
                     }else{
 				        $sender->setGamemode(2);
-				        $sender->sendMessage("§aYou are now in Adventure");
+				        $sender->sendMessage(TF::GREEN."You are now in Adventure");
                         $name = $player->getName();
                         $line = "\n";
-                        $message = str_replace("{player}", $name, "{line}", $line, $this->getConfig->get("GamemodeChangePopup"));
+                        $message = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("GamemodeChangePopup"));
                         $this->getServer()->broadcastPopup($message);
 				    }
 				}
@@ -70,18 +73,18 @@ class gma extends Loader{
 				    if($player instanceof Player){
 				        if($player->getGamemode() == 2){
 				            $name = $player->getName();
-				            $sender->sendMessage("§4$name is already in Adventure");
+				            $sender->sendMessage(TF::DARK_RED."$name is already in Adventure");
 				        }else{
 				            $player->setGamemode(2);
-				            $player->sendMessage("§aYou are now in Adventure");
+				            $player->sendMessage(TF::GREEN."You are now in Adventure");
 				            $name = $player->getName();
-				            $sender->sendMessage("§a$name is now in Adventure");
+				            $sender->sendMessage(TF::GREEN."$name is now in Adventure");
 				            $line = "\n";
-				            $message = str_replace("{player}", $name, "{line}", $line, $this->getConfig->get("GamemodeChangePopup"));
+				            $message = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("GamemodeChangePopup"));
 				            $this->getServer()->broadcastPopup($message);
 				        }
 				    }else{
-				        $sender->sendMessage("§4Player not found");
+				        $sender->sendMessage(TF::DARK_RED."Player not found");
 				    }				        
 				}
             }

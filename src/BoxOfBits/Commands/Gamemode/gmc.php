@@ -1,15 +1,18 @@
 <?php
 
 /*
-  ____             ____   __ ____  _ _       
- |  _ \           / __ \ / _|  _ \(_) |      
- | |_) | _____  _| |  | | |_| |_) |_| |_ ___ 
- |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __|
- | |_) | (_) >  <| |__| | | | |_) | | |_\__ \
- |____/ \___/_/\_\\____/|_| |____/|_|\__|___/
- 
- The growing plugin with so many features
- 
+*  ____             ____   __ ____  _ _       
+* |  _ \           / __ \ / _|  _ \(_) |      
+* | |_) | _____  _| |  | | |_| |_) |_| |_ ___ 
+* |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __|
+* | |_) | (_) >  <| |__| | | | |_) | | |_\__ \
+* |____/ \___/_/\_\\____/|_| |____/|_|\__|___/
+* 
+* The growing plugin with so many features
+*
+* @author BoxOfDevs Team
+* @link http://boxofdevs.x10host.com/
+* 
 */
 
 namespace BoxOfBits\Commands\Gamemode;
@@ -31,23 +34,23 @@ class gmc extends Loader{
         if(strolower($cmd->getName() == "gmc")){
             if(!($sender instanceof Player)){
 				if(!isset($args[0])){
-					$sender->sendMessage("§4Usage: /gmc [playername] - [playername] required when run from console!");
+					$sender->sendMessage(TF::DARK_RED."Usage: /gmc [playername] - [playername] required when run from console!");
                 }else{
                     $player = $this->getServer()->getPlayer($args[0]);
 				    if($player instanceof Player){
                         if($player->getGamemode() == 1){
 							$name = $player->getName();
-							$sender->sendMessage("§4$name is already in Crative");
+							$sender->sendMessage(TF::DARK_RED."$name is already in Creative");
 				        }else{
 							$player->setGamemode(1);
-							$player->sendMessage("§aYou are now in Creative");
+							$player->sendMessage(TF::GREEN."You are now in Creative");
 							$name = $player->getName();
-							$sender->sendMessage("§a$name is now in Creative");
+							$sender->sendMessage(TF::GREEN."$name is now in Creative");
 							$line = "\n";
-							$message = str_replace("{player}", $name, "{line}", $line, $this->getConfig->get("GamemodeChangePopup"));
+							$message = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("GamemodeChangePopup"));
 							$this->getServer()->broadcastPopup($message);
 		          		}else{
-				            $sender->sendMessage("§4Player not found");
+				            $sender->sendMessage(TF::DARK_RED."Player not found");
 			         	}
                     }
 				}
@@ -55,13 +58,13 @@ class gmc extends Loader{
             if($sender instanceof Player){
                 if(!isset($args[0])){
 				    if($sender->getGamemode() == 1){
-				        $sender->sendMessage("§4You are already in Creative");
+				        $sender->sendMessage(TF::DARK_RED."You are already in Creative");
                     }else{
 				        $sender->setGamemode(1);
-				        $sender->sendMessage("§aYou are now in Creative");
+				        $sender->sendMessage(TF::GREEN."You are now in Creative");
                         $name = $player->getName();
                         $line = "\n";
-                        $message = str_replace("{player}", $name, "{line}", $line, $this->getConfig->get("GamemodeChangePopup"));
+                        $message = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("GamemodeChangePopup"));
                         $this->getServer()->broadcastPopup($message);
 				    }
 				}
@@ -70,18 +73,18 @@ class gmc extends Loader{
 				    if($player instanceof Player){
 				        if($player->getGamemode() == 1){
 				            $name = $player->getName();
-				            $sender->sendMessage("§4$name is already in Creative");
+				            $sender->sendMessage(TF::DARK_RED."$name is already in Creative");
 				        }else{
 				            $player->setGamemode(1);
-				            $player->sendMessage("§aYou are now in Creative");
+				            $player->sendMessage(TF::GREEN."You are now in Creative");
 				            $name = $player->getName();
-				            $sender->sendMessage("§a$name is now in Creative");
+				            $sender->sendMessage(TF::GREEN."$name is now in Creative");
 				            $line = "\n";
-				            $message = str_replace("{player}", $name, "{line}", $line, $this->getConfig->get("GamemodeChangePopup"));
+				            $message = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("GamemodeChangePopup"));
 				            $this->getServer()->broadcastPopup($message);
 				        }
 				    }else{
-				        $sender->sendMessage("§4Player not found");
+				        $sender->sendMessage(TF::DARK_RED."Player not found");
 				    }				        
 				}
             }

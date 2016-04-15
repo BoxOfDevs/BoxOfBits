@@ -1,15 +1,18 @@
 <?php
 
 /*
-  ____             ____   __ ____  _ _       
- |  _ \           / __ \ / _|  _ \(_) |      
- | |_) | _____  _| |  | | |_| |_) |_| |_ ___ 
- |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __|
- | |_) | (_) >  <| |__| | | | |_) | | |_\__ \
- |____/ \___/_/\_\\____/|_| |____/|_|\__|___/
- 
- The growing plugin with so many features
- 
+*  ____             ____   __ ____  _ _       
+* |  _ \           / __ \ / _|  _ \(_) |      
+* | |_) | _____  _| |  | | |_| |_) |_| |_ ___ 
+* |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __|
+* | |_) | (_) >  <| |__| | | | |_) | | |_\__ \
+* |____/ \___/_/\_\\____/|_| |____/|_|\__|___/
+* 
+* The growing plugin with so many features
+*
+* @author BoxOfDevs Team
+* @link http://boxofdevs.x10host.com/
+* 
 */
 
 namespace BoxOfBits\Commands;
@@ -30,14 +33,14 @@ class fly extends Loader{
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         if(strolower($cmd->getName() == "fly")){
             if(!($sender instanceof Player)){
-                $sender->sendMessage("§4This command can only be executed in-game!");
+                $sender->sendMessage(TF::DARK_RED."This command can only be executed in-game!");
             }
             if($sender instanceof Player){
                 if($sender->getAllowFlight()){
-                    $sender->sendMessage("§4Flying Disabled!");
+                    $sender->sendMessage(TF::AQUA."Flying Disabled!");
                     $sender->setAllowFlight(false);
                 }else{
-                    $sender->sendMessage("§aFlying Enabled!");
+                    $sender->sendMessage(TF::AQUA."Flying Enabled!");
                     $sender->setAllowFlight(true);
                 }
             }

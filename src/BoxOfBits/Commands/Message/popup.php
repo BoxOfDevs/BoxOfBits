@@ -1,15 +1,18 @@
 <?php
 
 /*
-  ____             ____   __ ____  _ _       
- |  _ \           / __ \ / _|  _ \(_) |      
- | |_) | _____  _| |  | | |_| |_) |_| |_ ___ 
- |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __|
- | |_) | (_) >  <| |__| | | | |_) | | |_\__ \
- |____/ \___/_/\_\\____/|_| |____/|_|\__|___/
- 
- The growing plugin with so many features
- 
+*  ____             ____   __ ____  _ _       
+* |  _ \           / __ \ / _|  _ \(_) |      
+* | |_) | _____  _| |  | | |_| |_) |_| |_ ___ 
+* |  _ < / _ \ \/ / |  | |  _|  _ <| | __/ __|
+* | |_) | (_) >  <| |__| | | | |_) | | |_\__ \
+* |____/ \___/_/\_\\____/|_| |____/|_|\__|___/
+* 
+* The growing plugin with so many features
+*
+* @author BoxOfDevs Team
+* @link http://boxofdevs.x10host.com/
+* 
 */
 
 namespace BoxOfBits\Commands\Message;
@@ -31,7 +34,7 @@ class popup extends Loader{
         if(strolower($cmd->getName() == "popup")){
             if(!($sender instanceof Player)){
                 if(!(isset($args[1]))){
-                    $sender->sendPopup("§4Usage: /popup <server|player> <popup...>");
+                    $sender->sendPopup(TF::DARK_RED."Usage: /popup <server|player> <popup...>");
                 }else{
                     if($args[0] === "server"){
                         unset($args[0]);
@@ -41,7 +44,7 @@ class popup extends Loader{
                         $name = $args[0];
                         $player = $this->getServer()->getPlayer($name);
                         if($player === null){
-                            $sender->sendPopup("§4Player not found");
+                            $sender->sendPopup(TF::DARK_RED."Player not found");
                         }else{
                             unset($args[0]);
                             $popup = implode(" ", $args);
@@ -52,7 +55,7 @@ class popup extends Loader{
             }
             if($sender instanceof Player){
                 if(!(isset($args[1]))){
-                    $sender->sendPopup("§4Usage: /popup <server|player> <popup...>");
+                    $sender->sendPopup(TF::DARK_RED."Usage: /popup <server|player> <popup...>");
                 }else{
                     if($args[0] === "server"){
                         unset($args[0]);
@@ -62,7 +65,7 @@ class popup extends Loader{
                         $name = $args[0];
                         $player = $this->getServer()->getPlayer($name);
                         if($player === null){
-                            $sender->sendPopup("§4Player not found");
+                            $sender->sendPopup(TF::DARK_RED."Player not found");
                         }else{
                             unset($args[0]);
                             $popup = implode(" ", $args);
