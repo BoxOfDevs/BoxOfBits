@@ -39,17 +39,22 @@ class checkperm extends Loader{
                 }else{
                     $player = $args[0];
                     $perm = $args[1];
-                    $player->removePermission($perm);
-                    $sender->sendMessage(TF::GREEN."$perm successfully removed from $name!");
-				}
+                    if($player->hasPermission($perm)){
+                        $sender->sendMessage(TF::GREEN."$player has permission $perm!");
+                    }else{
+                        $sender->sendMessage(TF::GREEN."$player doesn't have permission $perm!");
+                    }
             }elseif($sender instanceof Player){
                 if(!isset($args[1])){
                     $sender->sendMessage(TF::DARK_RED."Usage: /checkperm <player> <permission>");
                 }else{
                     $player = $args[0];
                     $perm = $args[1];
-                    $player->removePermission($perm);
-                    $sender->sendMessage(TF::GREEN."$perm successfully removed from $name!");
+                    if($player->hasPermission($perm)){
+                        $sender->sendMessage(TF::GREEN."$player has permission $perm!");
+                    }else{
+                        $sender->sendMessage(TF::GREEN."$player doesn't have permission $perm!");
+                    }
                 }
             }
         }
