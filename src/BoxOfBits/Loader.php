@@ -17,6 +17,29 @@
 
 namespace BoxOfBits;
 
+use BoxOfBits\commands\xyz;
+use BoxOfBits\commands\rules;
+use BoxOfBits\commands\info;
+use BoxOfBits\commands\fly;
+use BoxOfBits\commands\Teleport\wild;
+use BoxOfBits\commands\PermissionsManager\setperm;
+use BoxOfBits\commands\PermissionsManager\rmperm;
+use BoxOfBits\commands\PermissionsManager\checkperm;
+// use BoxOfBits\commands\PermissionsManager\seeperms;
+use BoxOfBits\commands\NameTag\nick;
+use BoxOfBits\commands\NameTag\hidetag;
+use BoxOfBits\commands\Message\message;
+use BoxOfBits\commands\Message\popup;
+use BoxOfBits\commands\Message\tip;
+use BoxOfBits\commands\Message\pm;
+use BoxOfBits\commands\HealthManager\heal;
+use BoxOfBits\commands\HealthManager\health;
+use BoxOfBits\commands\HealthManager\slay;
+use BoxOfBits\commands\HealthManager\suicide;
+use BoxOfBits\commands\Gamemode\gma;
+use BoxOfBits\commands\Gamemode\gmc;
+use BoxOfBits\commands\Gamemode\gms;
+use BoxOfBits\commands\Gamemode\gmsp;
 use BoxOfBits\utils\SymbolFormat;
 use BoxOfBits\Events\Bed;
 use BoxOfBits\Events\Chat;
