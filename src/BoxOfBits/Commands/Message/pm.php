@@ -34,42 +34,30 @@ class pm extends Loader{
         if(strolower($cmd->getName() == "pm")){
             if(!($sender instanceof Player)){
                 if(!(isset($args[1]))){
-                    $sender->sendMessage(TF::DARK_RED."Usage: /message <server|player> <message...>");
+                    $sender->sendMessage(TF::DARK_RED."Usage: /pm <player> <message...>");
                 }else{
-                    if($args[0] === "server"){
+                    $name = $args[0];
+                    $player = $this->getServer()->getPlayer($name);
+                    if($player === null){
+                        $sender->sendMessage(TF::DARK_RED."Player not found");
+                    }else{
                         unset($args[0]);
                         $message = implode(" ", $args);
-                        $this->getServer()->broadcastMessage($message);
-                    }else{
-                        $name = $args[0];
-                        $player = $this->getServer()->getPlayer($name);
-                        if($player === null){
-                            $sender->sendMessage(TF::DARK_RED."Player not found");
-                        }else{
-                            unset($args[0]);
-                            $message = implode(" ", $args);
-                            $player->sendMessage($message);                                               
-                        }
+                        $player->sendMessage($message);
                     }
                 }
             }elseif($sender instanceof Player){
                 if(!(isset($args[1]))){
-                    $sender->sendMessage(TF::DARK_RED."Usage: /message <server|player> <message...>");
+                    $sender->sendMessage(TF::DARK_RED."Usage: /pm <player> <message...>");
                 }else{
-                    if($args[0] === "server"){
+                    $name = $args[0];
+                    $player = $this->getServer()->getPlayer($name);
+                    if($player === null){
+                        $sender->sendMessage(TF::DARK_RED."Player not found");
+                    }else{
                         unset($args[0]);
                         $message = implode(" ", $args);
-                        $this->getServer()->broadcastMessage($message);
-                    }else{
-                        $name = $args[0];
-                        $player = $this->getServer()->getPlayer($name);
-                        if($player === null){
-                            $sender->sendMessage(TF::DARK_RED."Player not found");
-                        }else{
-                            unset($args[0]);
-                            $message = implode(" ", $args);
-                            $player->sendMessage($message);                                               
-                        }
+                        $player->sendMessage($message);
                     }
                 }
             }
