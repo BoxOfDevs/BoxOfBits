@@ -22,11 +22,11 @@ use BoxOfBits\utils\SymbolFormat;
 
 use pocketmine\event\Listener;
 use pocketmine\utils\TextFormat as TF;
-use pocketmine\event\player\PlayerChatEvent;
+use pocketmine\event\block\SignChangeEvent;
 
-class Chat extends Loader implements Listener{
+class Sign extends Loader implements Listener{
     
-    public function onChat(PlayerChatEvent $event){
+    public function onChange(SignChangeEvent $event){
         $player = $event->getPlayer();
         if($player->hasPermission("boxofbits" || "boxofbits.allowcolour" || "boxofbits.allowcolour.chat")){
             $message = $event->getMessage();
