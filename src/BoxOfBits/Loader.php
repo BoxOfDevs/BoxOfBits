@@ -60,15 +60,15 @@ class Loader extends PluginBase extends Listener{
     
     const AUTHOR = "BoxOfDevs Team";
     const VERSION = "1.2.3";
-    const WEBSITE = "https://boxofdevs.github.io/BoxOfBits/";
-    const PREFIX = "§0§l[§r§bBoxOfBits§0§l]§r";
+    const WEBSITE = "https://boxofdevs.x10host.com/software/BoxOfBits/";
+    const PREFIX = TF::BLACK . "[" . TF::AQUA . "BoxOfBits" . TF::BLACK . "]";
     
     public function onEnable(){
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->saveDefaultConfig();
         $messages = new Config($this->getDataFolder . "/messages.yml", Config::YAML);
         $this->messages->save();
-        $this->getLogger()->info(TF::GREEN . "Enabled!");
+        $this->getLogger()->info(self::PREFIX . TF::GREEN . "Enabled!");
     }
 
     public function getPrefix(){
@@ -88,7 +88,7 @@ class Loader extends PluginBase extends Listener{
     }
 
     public function onDisable(){
-        $this->getLogger()->info(TF::RED . "Disabled!");
+        $this->getLogger()->info(self::PREFIX . TF::RED . "Disabled!");
     }
     
 }

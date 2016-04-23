@@ -15,40 +15,42 @@
 * 
 */
 
-namespace BoxOfBits\Events;
+namespace BoxOfBits\events;
 
 use BoxOfBits\Loader;
 use BoxOfBits\utils\SymbolFormat;
 
 use pocketmine\event\Listener;
 use pocketmine\utils\TextFormat as TF;
+use pocketmine\utils\Config;
 use pocketmine\event\player\PlayerGameModeChange;
 
 class GameModeChange extends Loader implements Listener{
     
     public function onGameModeChange(PlayerGameModeChangeEvent $event){
+        $messages = new Config($this->getDataFolder . "/messages.yml", CONFIG::YAML);
 		$player = $event->getPlayer();
 		$name = $player->getName();
 		$line = "\n";
-		$tip = str_replace("{player}", $name, $this->getConfig()->get("onGamemodeChangeTip"));
-		$tip = str_replace("{line}", $line, $this->getConfig()->get("onGamemodeChangeTip"));
+		$t = str_replace("{player}", $name, $message->get("onGamemodeChangeTip"));
+		$tip = str_replace("{line}", $line, $t);
 		if($tip === "disabled"){
 			return false;
 		}elseif(!$tip === "disabled"){
 			$this->getServer()->broadcastTip($tip);
 		}
-		$popup = str_replace("{player}", $name, $this->getConfig()->get("onGamemodeChangePopup"));
-		$popup = str_replace("{line}", $line, $this->getConfig()->get("onGamemodeChangePopup"));
+		$p = str_replace("{player}", $name, $messages->get("onGamemodeChangePopup"));
+		$popup = str_replace("{line}", $line, $p);
 		if($popup === "disabled"){
 			return false;
 		}elseif(!$popup === "disabled"){
 			$this->getServer()->broadcastPopup($popup);
 		}
-		$message = str_replace("{player}", $name, $this->getConfig()->get("onGamemodeChangeMessage"));
-		$message = str_replace("{line}", $line, $this->getConfig()->get("onGamemodeChangeMessage"));
+		$m = str_replace("{player}", $name, $messages->get("onGamemodeChangeMessage"));
+		$message = str_replace("{line}", $line, $m);
 		if($message === "disabled"){
 			return false;
-		}elseif(!$message === "disabled" || "default" ){
+		}elseif(!$message === "disabled"){
 			$this->getServer()->broadcastMessage($message);
 		}
         return $event;

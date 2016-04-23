@@ -15,37 +15,39 @@
 * 
 */
 
-namespace BoxOfBits\Events;
+namespace BoxOfBits\events;
 
 use BoxOfBits\Loader;
 use BoxOfBits\utils\SymbolFormat;
 
 use pocketmine\event\Listener;
 use pocketmine\utils\TextFormat as TF;
+use pocketmine\utils\Config;
 use pocketmine\event\player\PlayerKickEvent;
 
 class Kick extends Loader implements Listener{
     
     public function onKick(PlayerKickEvent $event){
+        $messages = new Config($this->getDataFolder . "/messages.yml", CONFIG::YAML);
         $player = $event->getPlayer();
 		$name = $player->getName();
 		$line = "\n";
-		$tip = str_replace("{player}", $name, $this->getConfig()->get("onKickTip"));
-		$tip = str_replace("{line}", $line, $this->getConfig()->get("onKickTip"));
+		$t = str_replace("{player}", $name, $message>get("onKickTip"));
+		$tip = str_replace("{line}", $line, $t);
 		if($tip === "disabled"){
 			return false;
 		}elseif(!$tip === "disabled"){
 			$this->getServer()->broadcastTip($tip);
 		}
-		$popup = str_replace("{player}", $name, $this->getConfig()->get("onKickPopup"));
-		$popup = str_replace("{line}", $line, $this->getConfig()->get("onKickPopup"));
+		$p = str_replace("{player}", $name, $messages->get("onKickPopup"));
+		$popup = str_replace("{line}", $line, $p);
 		if($popup === "disabled"){
 			return false;
 		}elseif(!$popup === "disabled"){
 			$this->getServer()->broadcastPopup($popup);
 		}
-		$message = str_replace("{player}", $name, $this->getConfig()->get("onKickMessage"));
-		$message = str_replace("{line}", $line, $this->getConfig()->get("onKickMessage"));
+		$m = str_replace("{player}", $name, $messages->get("onKickMessage"));
+		$message = str_replace("{line}", $line, $m);
 		if($message === "disabled"){
 			$event->setKickMessage(false);
 		}elseif(!$message === "disabled" || "default" ){

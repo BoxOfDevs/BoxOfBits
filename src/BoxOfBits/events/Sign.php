@@ -22,6 +22,7 @@ use BoxOfBits\utils\SymbolFormat;
 
 use pocketmine\event\Listener;
 use pocketmine\utils\TextFormat as TF;
+use pocketmine\utils\Config;
 use pocketmine\event\block\SignChangeEvent;
 
 class Sign extends Loader implements Listener{

@@ -33,43 +33,43 @@ class Bed extends Loader implements Listener{
         $player = $event->getPlayer();
 		$name = $player->getName();
 		$line = "\n";
-		$t = str_replace("{player}", $name, $this->messages->get("onSleepTip"));
+		$t = str_replace("{player}", $name, $messages->get("onSleepTip"));
 		$tip = str_replace("{line}", $line, $t);
-		if($tip === "disabled"){
+		oif($tip === "disabled"){
 			return false;
 		}elseif(!$tip === "disabled"){
 			$sender->sendTip($tip);
 		}
-		$p = str_replace("{player}", $name, $this->messages->get("onSleepPopup"));
+		$p = str_replace("{player}", $name, $messages->get("onSleepPopup"));
 		$popup = str_replace("{line}", $line, $p);
 		if($popup === "disabled"){
 			return false;
 		}elseif(!$popup === "disabled"){
 			$sender->sendPopup($popup);
 		}
-		$m = str_replace("{player}", $name, $this->messages->get("onSleepMessage"));
+		$m = str_replace("{player}", $name, $messages->get("onSleepMessage"));
 		$message = str_replace("{line}", $line, $m);
 		if($message === "disabled"){
 			return false;
 		}elseif(!$message === "disabled"){
 			$sender->sendMessage($message);
 		}
-		if($player isOP()){
-		    $opt = str_replace("{player}", $name, $this->messages->get("OP-onSleepTip"));
+		if($player->isOP()){
+		    $opt = str_replace("{player}", $name, $messages->get("OP-onSleepTip"));
 			$optip = str_replace("{line}", $line, $opt);
 			if($optip === "disabled"){
 				return false;
 			}elseif(!$optip === "disabled"){
 				$sender->sendTip($optip);
 			}
-			$opp = str_replace("{player}", $name, $this->messages->get("OP-onSleepPopup"));
+			$opp = str_replace("{player}", $name, $messages->get("OP-onSleepPopup"));
 			$oppopup = str_replace("{line}", $line, $opp);
 			if($oppopup === "disabled"){
 				return false;
 			}elseif(!$oppopup === "disabled"){
 				$sender->sendPopup($oppopup);
 			}
-			$opm = str_replace("{player}", $name, $this->messages->get("OP-onSleepMessage"));
+			$opm = str_replace("{player}", $name, $messages->get("OP-onSleepMessage"));
 			$opmessage = str_replace("{line}", $line, $opm);
 			if($opmessage === "disabled"){
 				return false;
@@ -85,43 +85,43 @@ class Bed extends Loader implements Listener{
         $player = $event->getPlayer();
 		$name = $player->getName();
 		$line = "\n";
-		$t = str_replace("{player}", $name, $this->messages->get("onWakeTip"));
+		$t = str_replace("{player}", $name, $messages->get("onWakeTip"));
 		$tip = str_replace("{line}", $line, $t);
 		if($tip === "disabled"){
 			return false;
 		}elseif(!$tip === "disabled"){
 			$sender->sendTip($tip);
 		}
-		$p = str_replace("{player}", $name, $this->messages->get("onWakePopup"));
+		$p = str_replace("{player}", $name, $messages->get("onWakePopup"));
 		$popup = str_replace("{line}", $line, $p);
 		if($popup === "disabled"){
 			return false;
 		}elseif(!$popup === "disabled"){
 			$sender->sendPopup($popup);
 		}
-		$m = str_replace("{player}", $name, $this->messages->get("onWakeMessage"));
+		$m = str_replace("{player}", $name, $messages->get("onWakeMessage"));
 		$message = str_replace("{line}", $line, $m);
 		if($message === "disabled"){
 			return false;
 		}elseif(!$message === "disabled"){
 			$sender->sendMessage($message);
 		}
-		if($player isOP()){
-		    $opt = str_replace("{player}", $name, $this->messages->get("OP-onWakeTip"));
+		if($player->isOP()){
+		    $opt = str_replace("{player}", $name, $messages->get("OP-onWakeTip"));
 			$optip = str_replace("{line}", $line, $opt);
 			if($optip === "disabled"){
 				return false;
 			}elseif(!$optip === "disabled"){
 				$sender->sendTip($optip);
 			}
-			$opp = str_replace("{player}", $name, $this->messages)->get("OP-onWakePopup"));
+			$opp = str_replace("{player}", $name, $messages)->get("OP-onWakePopup"));
 			$oppopup = str_replace("{line}", $line, $opp);
 			if($oppopup === "disabled"){
 				return false;
 			}elseif(!$oppopup === "disabled"){
 				$sender->sendPopup($oppopup);
 			}
-			$opm = str_replace("{player}", $name, $this->messages->get("OP-onWakeMessage"));
+			$opm = str_replace("{player}", $name, $messages->get("OP-onWakeMessage"));
 			$opmessage = str_replace("{line}", $line, $opm);
 			if($opmessage === "disabled"){
 				return false;
