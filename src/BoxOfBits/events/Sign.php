@@ -28,30 +28,31 @@ class Sign extends Loader implements Listener{
     
     public function onChange(SignChangeEvent $event){
         $player = $event->getPlayer();
-        if($player->hasPermission("boxofbits" || "boxofbits.allowcolour" || "boxofbits.allowcolour.chat")){
-            $message = $event->getMessage();
-            $message = str_replace("§0", TF::BLACK, $message);
-            $message = str_replace("§1", TF::DARK_BLUE, $message);
-            $message = str_replace("§2", TF::DARK_GREEN, $message);
-            $message = str_replace("§3", TF::DARK_AQUA, $message);
-            $message = str_replace("§4", TF::DARK_RED, $message);
-            $message = str_replace("§5", TF::DARK_PURPLE, $message);
-            $message = str_replace("§6", TF::GOLD, $message);
-            $message = str_replace("§7", TF::GRAY, $message);
-            $message = str_replace("§8", TF::DARK_GRAY, $message);
-            $message = str_replace("§9", TF::BLUE, $message);
-            $message = str_replace("§a", TF::GREEN, $message);
-            $message = str_replace("§b", TF::AQUA, $message);
-            $message = str_replace("§c", TF::RED, $message);
-            $message = str_replace("§d", TF::LIGHT_PURPLE, $message);
-            $message = str_replace("§e", TF::YELLOW, $message);
-            $message = str_replace("§f", TF::WHITE, $message);
-            $message = str_replace("§k", TF::OBFUSCATED, $message);
-            $message = str_replace("§l", TF::BOLD, $message);
-            $message = str_replace("§m", TF::STRIKETHROUGH, $message);
-            $message = str_replace("§n", TF::UNDERLINE, $message);
-            $message = str_replace("§o", TF::ITALIC, $message);
-            $message = str_replace("§r", TF::RESET, $message);
+        if($player->hasPermission("boxofbits" || "boxofbits.allowcolour" || "boxofbits.allowcolour.sign")){
+            $lines = $event->getLines();
+            $symbol = "§";
+            $black = str_replace($symbol . "0", TF::BLACK, $lines);
+            $dark_blue = str_replace($symbol . "1", TF::DARK_BLUE, $black);
+            $dark_green = str_replace($symbol . "2", TF::DARK_GREEN, $dark_blue);
+            $dark_aqua = str_replace($symbol . "3", TF::DARK_AQUA, $dark_green);
+            $dark_red = str_replace($symbol . "4", TF::DARK_RED, $dark_aqua);
+            $dark_purple = str_replace($symbol . "5", TF::DARK_PURPLE, $dark_red);
+            $gold = str_replace($symbol . "6", TF::GOLD, $dark_purple);
+            $gray = str_replace($symbol . "7", TF::GRAY, $gold);
+            $dark_gray = str_replace($symbol . "8", TF::DARK_GRAY, $gray);
+            $blue = str_replace($symbol . "9", TF::BLUE, $dark_gray);
+            $green = str_replace($symbol . "a", TF::GREEN, $blue);
+            $aqua = str_replace($symbol . "b", TF::AQUA, $green);
+            $red = str_replace($symbol . "c", TF::RED, $aqua);
+            $light_purple = str_replace($symbol . "d", TF::LIGHT_PURPLE, $red);
+            $yellow = str_replace($symbol . "e", TF::YELLOW, $light_purple);
+            $white = str_replace($symbol . "f", TF::WHITE, $yellow);
+            $obfuscated = str_replace($symbol . "k", TF::OBFUSCATED, $white);
+            $bold = str_replace($symbol . "l", TF::BOLD, $obfuscated);
+            $strikethrough = str_replace($symbol . "m", TF::STRIKETHROUGH, $bold);
+            $underline = str_replace($symbol . "n", TF::UNDERLINE, $strikethrough);
+            $italic = str_replace($symbol . "o", TF::ITALIC, $underline);
+            $reset = str_replace($symbol . "r", TF::RESET, $italic);
         }
         return $event;
     }
