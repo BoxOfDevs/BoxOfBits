@@ -150,8 +150,13 @@ permissions:
                         default: op
                     boxofbits.name.nick:
                         default: op
-            boxofbits.allowcolourchat:
-                default: op
+            boxofbits.allowcolour:
+                default: false
+                children:
+                    boxofbits.allowcolour.chat:
+                        default: op
+                    boxofbits.allowcolour.sign:
+                        default: op
             boxofbits.tp:
                 default: false
                 children:
