@@ -24,7 +24,7 @@ use BoxOfBits\commands\fly;
 use BoxOfBits\commands\Teleport\wild;
 use BoxOfBits\commands\PermissionsManager\setperm;
 use BoxOfBits\commands\PermissionsManager\rmperm;
-use BoxOfBits\commands\PermissionsManager\checkperm;
+use BoxOfBits\commands\PermissionsManager\hasperm;
 use BoxOfBits\commands\PermissionsManager\seeperms;
 use BoxOfBits\commands\PermissionsManager\allperms;
 use BoxOfBits\commands\NameTag\nick;
@@ -42,17 +42,19 @@ use BoxOfBits\commands\Gamemode\gmc;
 use BoxOfBits\commands\Gamemode\gms;
 use BoxOfBits\commands\Gamemode\gmsp;
 use BoxOfBits\utils\SymbolFormat;
-use BoxOfBits\Events\Bed;
-use BoxOfBits\Events\Chat;
-use BoxOfBits\Events\Death;
-use BoxOfBits\Events\GamemodeChange;
-use BoxOfBits\Events\Join;
-use BoxOfBits\Events\Kick;
-use BoxOfBits\Events\Quit;
+use BoxOfBits\events\Bed;
+use BoxOfBits\events\Chat;
+use BoxOfBits\events\Death;
+use BoxOfBits\events\GamemodeChange;
+use BoxOfBits\events\Join;
+use BoxOfBits\events\Kick;
+use BoxOfBits\events\Quit;
+use BoxOfBits\events\Sign;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat as TF;
 use pocketmine\event\Listener;
+use pocketmine\utils\Config;
 
 class Loader extends PluginBase extends Listener{
     
