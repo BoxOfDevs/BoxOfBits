@@ -15,62 +15,64 @@
 * 
 */
 
-namespace BoxOfBits\Events;
+namespace BoxOfBits\events;
 
 use BoxOfBits\Loader;
 use BoxOfBits\utils\SymbolFormat;
 
 use pocketmine\event\Listener;
 use pocketmine\utils\TextFormat as TF;
+use pocketmine\utils\Config;
 use pocketmine\event\player\PlayerQuitEvent;
 
 class Quit extends Loader implements Listener{
     
     public function onQuit(PlayerQuitEvent $event){
+    	$messages = new Config($this->getDataFolder . "/messages.yml", CONFIG::YAML);
         $player = $event->getPlayer();
 		$name = $player->getName();
 		$line = "\n";
-		$tip = str_replace("{player}", $name, $this->getConfig()->get("onQuitTip"));
-		$tip = str_replace("{line}", $line, $this->getConfig()->get("onQuitTip"));
+		$t = str_replace("{player}", $name, $messages->get("onQuitTip"));
+		$tip = str_replace("{line}", $line, $t);
 		if($tip === "disabled"){
 			return false;
 		}elseif(!$tip === "disabled"){
 			$this->getServer()->broadcastTip($tip);
 		}
-		$popup = str_replace("{player}", $name, $this->getConfig()->get("onQuitPopup"));
-		$popup = str_replace("{line}", $line, $this->getConfig()->get("onQuitPopup"));
+		$p = str_replace("{player}", $name, $messages->get("onQuitPopup"));
+		$popup = str_replace("{line}", $line, $p);
 		if($popup === "disabled"){
 			return false;
 		}elseif(!$popup === "disabled"){
 			$this->getServer()->broadcastPopup($popup);
 		}
-		$message = str_replace("{player}", $name, $this->getConfig()->get("onQuitMessage"));
-		$message = str_replace("{line}", $line, $this->getConfig()->get("onQuitMessage"));
+		$m = str_replace("{player}", $name, $messages->get("onQuitMessage"));
+		$message = str_replace("{line}", $line, $m);
 		if($message === "disabled"){
 			$event->setQuitMessage(false);
 		}elseif(!$message === "disabled" || "default" ){
 			$event->setQuitMessage($message);
 		}
-		if($player isOP()){
-		    $optip = str_replace("{player}", $name, $this->getConfig()->get("OP-onQuitTip"));
-			$optip = str_replace("{line}", $line, $this->getConfig()->get("OP-onQuitTip"));
+		if($player->isOP()){
+		    $opt = str_replace("{player}", $name, $messages->get("OP-onQuitTip"));
+			$optip = str_replace("{line}", $line, $opt);
 			if($optip === "disabled"){
 				return false;
 			}elseif(!$optip === "disabled"){
 				$this->getServer()->broadcastTip($optip);
 			}
-			$oppopup = str_replace("{player}", $name, $this->getConfig()->get("OP-onQuitPopup"));
-			$oppopup = str_replace("{line}", $line, $this->getConfig()->get("OP-onQuitPopup"));
+			$opp = str_replace("{player}", $name, $messages->get("OP-onQuitPopup"));
+			$oppopup = str_replace("{line}", $line, $opp);
 			if($oppopup === "disabled"){
 				return false;
 			}elseif(!$oppopup === "disabled"){
 				$this->getServer()->broadcastPopup($oppopup);
 			}
-			$opmessage = str_replace("{player}", $name, $this->getConfig()->get("OP-onQuitMessage"));
-			$opmessage = str_replace("{line}", $line, $this->getConfig()->get("OP-onQuitMessage"));
+			$opm = str_replace("{player}", $name, $messages->get("OP-onQuitMessage"));
+			$opmessage = str_replace("{line}", $line, $opm);
 			if($opmessage === "disabled"){
 				return false;
-			}elseif(!$opmessage === "disabled" || "default" ){
+			}elseif(!$opmessage === "disabled"){
 				$event->setQuitMessage($opmessage);
 			}
 		}

@@ -35,7 +35,7 @@ class Bed extends Loader implements Listener{
 		$line = "\n";
 		$t = str_replace("{player}", $name, $messages->get("onSleepTip"));
 		$tip = str_replace("{line}", $line, $t);
-		oif($tip === "disabled"){
+		if($tip === "disabled"){
 			return false;
 		}elseif(!$tip === "disabled"){
 			$sender->sendTip($tip);
@@ -114,7 +114,7 @@ class Bed extends Loader implements Listener{
 			}elseif(!$optip === "disabled"){
 				$sender->sendTip($optip);
 			}
-			$opp = str_replace("{player}", $name, $messages)->get("OP-onWakePopup"));
+			$opp = str_replace("{player}", $name, $messages->get("OP-onWakePopup"));
 			$oppopup = str_replace("{line}", $line, $opp);
 			if($oppopup === "disabled"){
 				return false;

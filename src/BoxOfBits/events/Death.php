@@ -61,7 +61,7 @@ class Death extends Loader implements Listener{
 			}elseif(!$optip === "disabled"){
 				$this->getServer()->broadcastTip($optip);
 			}
-			$opp = str_replace("{player}", $name, $messages)->get("OP-onDeathPopup"));
+			$opp = str_replace("{player}", $name, $messages->get("OP-onDeathPopup"));
 			$oppopup = str_replace("{line}", $line, $opp);
 			if($oppopup === "disabled"){
 				return false;
