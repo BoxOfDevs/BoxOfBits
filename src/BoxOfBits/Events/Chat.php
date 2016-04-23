@@ -28,7 +28,7 @@ class Chat extends Loader implements Listener{
     
     public function onChat(PlayerChatEvent $event){
         $player = $event->getPlayer();
-        if($player->hasPermission("boxofbits.allowcolourchat")){
+        if($player->hasPermission("boxofbits" || "boxofbits.allowcolour" || "boxofbits.allowcolour.chat")){
             $message = $event->getMessage();
             $message = str_replace("§0", TF::BLACK, $message);
             $message = str_replace("§1", TF::DARK_BLUE, $message);
@@ -53,7 +53,7 @@ class Chat extends Loader implements Listener{
             $message = str_replace("§o", TF::ITALIC, $message);
             $message = str_replace("§r", TF::RESET, $message);
         }
-        return true;
+        return $event;
     }
 
 }

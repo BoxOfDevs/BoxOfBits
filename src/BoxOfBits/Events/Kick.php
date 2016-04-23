@@ -28,13 +28,30 @@ class Kick extends Loader implements Listener{
     
     public function onKick(PlayerKickEvent $event){
         $player = $event->getPlayer();
-        $name = $player->getName();
-        $line = "\n";
-        $popup = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("KickPopup"));
-        $this->getServer()->broadcastPopup($popup);
-        $message = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("KickMessage"));
-        $this->getServer()->broadcastMessage($message);
-        return true;
+		$name = $player->getName();
+		$line = "\n";
+		$tip = str_replace("{player}", $name, $this->getConfig()->get("onKickTip"));
+		$tip = str_replace("{line}", $line, $this->getConfig()->get("onKickTip"));
+		if($tip === "disabled"){
+			return false;
+		}elseif(!$tip === "disabled"){
+			$this->getServer()->broadcastTip($tip);
+		}
+		$popup = str_replace("{player}", $name, $this->getConfig()->get("onKickPopup"));
+		$popup = str_replace("{line}", $line, $this->getConfig()->get("onKickPopup"));
+		if($popup === "disabled"){
+			return false;
+		}elseif(!$popup === "disabled"){
+			$this->getServer()->broadcastPopup($popup);
+		}
+		$message = str_replace("{player}", $name, $this->getConfig()->get("onKickMessage"));
+		$message = str_replace("{line}", $line, $this->getConfig()->get("onKickMessage"));
+		if($message === "disabled"){
+			$event->setKickMessage(false);
+		}elseif(!$message === "disabled" || "default" ){
+			$event->setKickMessage($message);
+		}
+        return $event;
     }
 
 }

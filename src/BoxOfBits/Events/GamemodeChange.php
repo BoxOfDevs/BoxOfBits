@@ -27,14 +27,31 @@ use pocketmine\event\player\PlayerGameModeChange;
 class GameModeChange extends Loader implements Listener{
     
     public function onGameModeChange(PlayerGameModeChangeEvent $event){
-        $player = $event->getPlayer();
-        $name = $player->getName();
-        $line = "\n";
-        $popup = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("GamemodeChangePopup"));
-        $this->getServer()->broadcastPopup($popup);
-        $message = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("GamemodeChangeMessage"));
-        $this->getServer()->broadcastMessage($message);
-        return true;
+		$player = $event->getPlayer();
+		$name = $player->getName();
+		$line = "\n";
+		$tip = str_replace("{player}", $name, $this->getConfig()->get("onGamemodeChangeTip"));
+		$tip = str_replace("{line}", $line, $this->getConfig()->get("onGamemodeChangeTip"));
+		if($tip === "disabled"){
+			return false;
+		}elseif(!$tip === "disabled"){
+			$this->getServer()->broadcastTip($tip);
+		}
+		$popup = str_replace("{player}", $name, $this->getConfig()->get("onGamemodeChangePopup"));
+		$popup = str_replace("{line}", $line, $this->getConfig()->get("onGamemodeChangePopup"));
+		if($popup === "disabled"){
+			return false;
+		}elseif(!$popup === "disabled"){
+			$this->getServer()->broadcastPopup($popup);
+		}
+		$message = str_replace("{player}", $name, $this->getConfig()->get("onGamemodeChangeMessage"));
+		$message = str_replace("{line}", $line, $this->getConfig()->get("onGamemodeChangeMessage"));
+		if($message === "disabled"){
+			return false;
+		}elseif(!$message === "disabled" || "default" ){
+			$this->getServer()->broadcastMessage($message);
+		}
+        return $event;
     }
 
 }

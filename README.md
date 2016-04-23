@@ -1,8 +1,8 @@
-ESTIMATED UPDATE PROGRESS = 91%
+ESTIMATED UPDATE PROGRESS = 73%
 
 Description
 ============
-BoxOfBits began as a small plugin developed by TheDragonRing, then as it slowly grew bigger it was transferred to the BoxOfDevs Team. Now, it is a huge, but still growing plugin with many, many features. Our goal is to make this plugin have so many features, that a server owner could download this plugin and have features from a 100 or more other plugins! Enjoy :D
+Originally inspired EssentialsPE, BoxOfBits began as a small plugin developed by TheDragonRing, then as it slowly grew bigger it was transferred to the BoxOfDevs Team. Now, it is a huge, but still growing plugin with many, many features. Our goal is to make this plugin have so many features, that a server owner could download this plugin and have features from a 100 or more other plugins! Enjoy :D
 
 Commands
 =========
@@ -50,7 +50,7 @@ All the commands currently in BoxOfBits:
 
     - /rmperm <player> <permission> : Removes a players permission
 
-    - /checkperm <player> <permission> : Checks if a player has a permission
+    - /hasperm <player> <permission> : Checks if a player has a permission
 
     - /seeperms <player> : Shows a players permissions
 
@@ -104,7 +104,11 @@ All the permissions for BoxOfBits:
 
             - boxofbits.name.nick : Allows /nick (Default: op)
 
-        • boxofbits.allowcolourchat : Allows colouring text (Default: op)
+        • boxofbits.allowcolour : Allows colouring text (Default: false)
+
+			- boxofbits.allowcolour.chat : Allows colouring text in chat (Default: op)
+
+			- boxofbits.allowcolour.sign : Allows colouring text on signs (Default: op)
 
         • boxofbits.tp : BoxOfBits Teleport Features Universal Permission (Default: false)
 
@@ -116,7 +120,7 @@ All the permissions for BoxOfBits:
 
             - boxofbits.pm.rmperm : Allows /rmperm (Default: op)
 
-            - boxofbits.pm.checkperm : Allows /checkperm (Default: op)
+            - boxofbits.pm.hasperm : Allows /hasperm (Default: op)
 
             - boxofbits.pm.seeperms : Allows /seeperms (Default: op)
 

@@ -2,7 +2,7 @@ name: BoxOfBits
 version: 1.2.3
 author: BoxOfDevs Team
 api:
-- 1.0.0
+- 1.14.0
 - 2.0.0
 main: BoxOfBits\Loader
 commands:
@@ -91,9 +91,9 @@ commands:
         description: "Removes a players permission"
         permission: boxofbits.pm.rmperm
     checkperm:
-        usage: "/checkperm <player> <permission>"
+        usage: "/hasperm <player> <permission>"
         description: "Checks if a player has a permission"
-        permission: boxofbits.pm.checkperm
+        permission: boxofbits.pm.hasperm
     seeperms:
         usage: "/seeperms <player>"
         description: "Shows a players permissions"
@@ -164,7 +164,7 @@ permissions:
                         default: op
                     boxofbits.pm.rmperm:
                         default: op
-                    boxofbits.pm.checkperm:
+                    boxofbits.pm.hasperm:
                         default: op
                     boxofbits.pm.seeperms:
                         default: op

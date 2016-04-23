@@ -30,15 +30,51 @@ class Quit extends Loader implements Listener{
         $player = $event->getPlayer();
 		$name = $player->getName();
 		$line = "\n";
-		$popup = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("QuitPopup"));
-		$this->getServer()->broadcastPopup($popup);
-		$message = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("QuitMessage"));
-		$event->setQuitMessage($message);
-		if($player isOP()){
-		    $op = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("OPQuitMsg"));
-		    $this->getServer()->broadcastMessage($op);
+		$tip = str_replace("{player}", $name, $this->getConfig()->get("onQuitTip"));
+		$tip = str_replace("{line}", $line, $this->getConfig()->get("onQuitTip"));
+		if($tip === "disabled"){
+			return false;
+		}elseif(!$tip === "disabled"){
+			$this->getServer()->broadcastTip($tip);
 		}
-        return true;
+		$popup = str_replace("{player}", $name, $this->getConfig()->get("onQuitPopup"));
+		$popup = str_replace("{line}", $line, $this->getConfig()->get("onQuitPopup"));
+		if($popup === "disabled"){
+			return false;
+		}elseif(!$popup === "disabled"){
+			$this->getServer()->broadcastPopup($popup);
+		}
+		$message = str_replace("{player}", $name, $this->getConfig()->get("onQuitMessage"));
+		$message = str_replace("{line}", $line, $this->getConfig()->get("onQuitMessage"));
+		if($message === "disabled"){
+			$event->setQuitMessage(false);
+		}elseif(!$message === "disabled" || "default" ){
+			$event->setQuitMessage($message);
+		}
+		if($player isOP()){
+		    $optip = str_replace("{player}", $name, $this->getConfig()->get("OP-onQuitTip"));
+			$optip = str_replace("{line}", $line, $this->getConfig()->get("OP-onQuitTip"));
+			if($optip === "disabled"){
+				return false;
+			}elseif(!$optip === "disabled"){
+				$this->getServer()->broadcastTip($optip);
+			}
+			$oppopup = str_replace("{player}", $name, $this->getConfig()->get("OP-onQuitPopup"));
+			$oppopup = str_replace("{line}", $line, $this->getConfig()->get("OP-onQuitPopup"));
+			if($oppopup === "disabled"){
+				return false;
+			}elseif(!$oppopup === "disabled"){
+				$this->getServer()->broadcastPopup($oppopup);
+			}
+			$opmessage = str_replace("{player}", $name, $this->getConfig()->get("OP-onQuitMessage"));
+			$opmessage = str_replace("{line}", $line, $this->getConfig()->get("OP-onQuitMessage"));
+			if($opmessage === "disabled"){
+				return false;
+			}elseif(!$opmessage === "disabled" || "default" ){
+				$event->setQuitMessage($opmessage);
+			}
+		}
+        return $event;
     }
 
 }

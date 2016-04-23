@@ -25,7 +25,8 @@ use BoxOfBits\commands\Teleport\wild;
 use BoxOfBits\commands\PermissionsManager\setperm;
 use BoxOfBits\commands\PermissionsManager\rmperm;
 use BoxOfBits\commands\PermissionsManager\checkperm;
-// use BoxOfBits\commands\PermissionsManager\seeperms;
+use BoxOfBits\commands\PermissionsManager\seeperms;
+use BoxOfBits\commands\PermissionsManager\allperms;
 use BoxOfBits\commands\NameTag\nick;
 use BoxOfBits\commands\NameTag\hidetag;
 use BoxOfBits\commands\Message\message;
@@ -64,8 +65,29 @@ class Loader extends PluginBase extends Listener{
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->saveDefaultConfig();
         $this->reloadConfig();
-        $config_data =
+        $config_data = "";
         $this->getConfig()->set($config_data);
+                if(!isset($this->messages->getAll()["message.authdelaykickreason"])){
+                        $this->messages->get("message.authdelaykickreason", "&eYou took too much time trying to log in");
+                }
+                if(!isset($this->messages->getAll()["message.join"])){
+                        $this->messages->set("message.join", "&eThis server requires you to login / register");
+                }
+		if(!isset($this->messages->getAll()["main.prefix"])){
+			$this->messages->set("main.prefix", "&7[§aAuth§7]§f ");
+		}
+		if(!isset($this->messages->getAll()["message.login"])){
+			$this->messages->set("message.login", "&eYou have to login. Use /login <password>.");
+		}
+		if(!isset($this->messages->getAll()["message.loginSuccessfull"])){
+			$this->messages->set("message.loginSuccessfull", "&aYou have successfully logged in!");
+		}
+		if(!isset($this->messages->getAll()["message.loginFail"])){
+			$this->messages->set("message.loginFail", "&cWrong password!");
+		}
+		if(!isset($this->messages->getAll()["message.loginNotRegistered"])){
+			$this->messages->set("message.loginNotRegistered", "&cThis account is not registered!");
+		}
         $this->getConfig()->save();
         $this->getLogger()->info(TF::GREEN . "Enabled!");
     }
