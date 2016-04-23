@@ -29,7 +29,7 @@ use pocketmine\event\player\PlayerBedLeaveEvent;
 class Bed extends Loader implements Listener{
     
     public function onBedEnter(PlayerBedEnterEvent $event){
-        $this->messages = new Config($this->getDataFolder . "Messages.yml", CONFIG::YAML);
+        $messages = new Config($this->getDataFolder . "/messages.yml", CONFIG::YAML);
         $player = $event->getPlayer();
 		$name = $player->getName();
 		$line = "\n";
@@ -81,7 +81,7 @@ class Bed extends Loader implements Listener{
     }
     
     public function onBedLeave(PlayerBedLeaveEvent $event){
-        $this->messages = new Config($this->getDataFolder . "Messages.yml", CONFIG::YAML);
+        $messages = new Config($this->getDataFolder . "/messages.yml", CONFIG::YAML);
         $player = $event->getPlayer();
 		$name = $player->getName();
 		$line = "\n";
