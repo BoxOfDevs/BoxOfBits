@@ -56,7 +56,7 @@ use pocketmine\utils\TextFormat as TF;
 use pocketmine\event\Listener;
 use pocketmine\utils\Config;
 
-class Loader extends PluginBase implements Listener{
+class Loader extends PluginBase implements Listener && CommandExecutor{
     
     const AUTHOR = "BoxOfDevs Team";
     const VERSION = "1.2.3";

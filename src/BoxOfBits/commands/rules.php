@@ -1,4 +1,4 @@
-<?php
+<<?php
 
 /*
 *  ____             ____   __ ____  _ _       
@@ -15,7 +15,7 @@
 * 
 */
 
-namespace BoxOfBits\Commands;
+namespace BoxOfBits\commands;
 
 use BoxOfBits\Loader;
 use BoxOfBits\utils\SymbolFormat;
@@ -25,26 +25,31 @@ use pocketmine\command\CommandSender;
 use pocketmine\command\CommandExecutor;
 use pocketmine\command\PluginCommand;
 use pocketmine\utils\TextFormat as TF;
+use pocketmine\utils\Config;
+use pocketmine\permission\Permission;
 use pocketmine\Player;
 use pocketmine\Server;
+use pocketmine\math\Vector3;
 
-class rules extends Loader{
+class rules extends Loader implements CommandExecutor{
     
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         if(strolower($cmd->getName() == "rules")){
             if(!($sender instanceof Player)){
                 $name = $sender->getName();
                 $line = "\n";
-                $rules = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("Rules"));
-                $sender->sendMessage($rules);
+                $rules = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("ServerRules"));
+                $this->getLogger()->info($rules);
             }elseif($sender instanceof Player){
-                $name = $sender->getName();
-                $line = "\n";
-                $rules = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("Rules"));
-                $sender->sendMessage($rules)
+                if($sender->hasPermission("boxofbits" || "boxofbits.rules")){
+                    $name = $sender->getName();
+                    $line = "\n";
+                    $rules = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("ServerRules"));
+                    $sender->sendMessage($rules)
+                }
             }
         }
-        return true;
+        return $cmd;
     }
 
 }

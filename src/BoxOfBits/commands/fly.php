@@ -15,7 +15,7 @@
 * 
 */
 
-namespace BoxOfBits\Commands;
+namespace BoxOfBits\commands;
 
 use BoxOfBits\Loader;
 use BoxOfBits\utils\SymbolFormat;
@@ -25,15 +25,18 @@ use pocketmine\command\CommandSender;
 use pocketmine\command\CommandExecutor;
 use pocketmine\command\PluginCommand;
 use pocketmine\utils\TextFormat as TF;
+use pocketmine\utils\Config;
+use pocketmine\permission\Permission;
 use pocketmine\Player;
 use pocketmine\Server;
+use pocketmine\math\Vector3;
 
-class fly extends Loader{
+class fly extends Loader implements CommandExecutor{
 
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         if(strolower($cmd->getName() == "fly")){
             if(!($sender instanceof Player)){
-                $sender->sendMessage(TF::DARK_RED."This command can only be executed in-game!");
+                $this->getLogger()->info(self::PREFIX . TF::DARK_RED . "Usage: /fly [player] - [player] required when run from console!");
             }elseif($sender instanceof Player){
                 if($sender->getAllowFlight()){
                     $sender->sendMessage(TF::AQUA."Flying Disabled!");
@@ -41,7 +44,33 @@ class fly extends Loader{
                 }else{
                     $sender->sendMessage(TF::AQUA."Flying Enabled!");
                     $sender->setAllowFlight(true);
-                }
+                }				if($sender->hasPermission("boxofbits" || "boxofbits.fly")){
+				    if(!isset($args[0])){
+                        if($sender->getAllowFlight()){
+                    		$sender->sendMessage(self::PREFIX . TF::AQUA . "Flying Disabled!");
+                    		$sender->setAllowFlight(false);
+                		}else{
+                    		$sender->sendMessage(self::PREFIX . TF::AQUA . "Flying Enabled!");
+                    		$sender->setAllowFlight(true);
+                		}
+				    }
+				    if(isset($args[0])){
+						$player = $this->getServer()->getPlayer($args[0]);
+						$player_name = $args[0];
+						$sender_name = $sender->getName();
+						if($player instanceof Player){
+                        	if($player->getAllowFlight()){
+                    			$player->sendMessage(self::PREFIX . TF::AQUA . "Flying Disabled by " . $sender_name . "!");
+                    			$player->setAllowFlight(false);
+                			}else{
+                    			$player->sendMessage(self::PREFIX . TF::AQUA . "Flying Enabled by " . $sender_name . "!");
+                    			$player->setAllowFlight(true);
+                			}
+						}elseif
+				            $sender->sendMessage(self::PREFIX . TF::DARK_RED . "Player not found");
+						}
+					}
+				}
             }
         }
         return true;
