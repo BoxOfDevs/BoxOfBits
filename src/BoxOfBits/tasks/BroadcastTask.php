@@ -10,7 +10,7 @@ use pocketmine\Server;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat as TF;
 
-class Broadcast extends PluginTask{
+class BroadcastTask extends PluginTask{ // Never forget to set the class name to the file name
 
     public function __construct(Broadcast $plugin){
         parent::__construct($plugin);
@@ -18,10 +18,10 @@ class Broadcast extends PluginTask{
     }
 
     public function onRun($tick){
-        $config = new Config($this->getDataFolder . "/config.yml", Config::YAML);
-        $messages = new Config($this->getDataFolder . "/messages.yml", Config::YAML);
+        $config = new Config($this->getDataFolder . "config.yml", Config::YAML); // the "/" are not needed since the $this->getDataFolder() automaticly fill it
+        $messages = new Config($this->getDataFolder . "messages.yml", Config::YAML);
 	$broadcast = str_replace("{line}", "\n", $messages->get("Broadcasts"));
-        $prefix = $messages->get("BroadcastPrefix");
+        $prefix = $messages->get("BroadcastPrefix")." "; // Or the message would be right next to the prefix :/
         $msgnumber = rand(1,5);
         if($msgnumber === 1){
             $this->getServer()->broadcastMessage($prefix . $broadcast[1]);
