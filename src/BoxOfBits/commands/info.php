@@ -35,10 +35,10 @@ class info extends Loader implements CommandExecutor{
     
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         if(strolower($cmd->getName() == "boxofbits")){
-            if(!($sender instanceof Player)){
-                $this->getLogger()->info(TF::BLACK . "-=[" . TF::AQUA . "BoxOfBits Info" . TF::BLACK . "]=- \n " . TF::BLACK . "• " . TF::DARK_GREEN . "Version: " . TF::WHITE . self::VERSION . " \n " . TF::BLACK . "• " . TF::DARK_GREEN . "Author/s: " . TF::WHITE . self::AUTHOR . " \n " . TF::BLACK . "• " . TF::DARK_GREEN . "Website: " . TF::WHITE . self::WEBSITE . " \n " . TF::BLACK . "• " . TF::DARK_GREEN . "Description: " . TF::WHITE . "The growing plugin with so many features! \n " . TF::BLACK . "• " . TF::DARK_GREEN . "License: " . TF::WHITE . "CC A-NC-ND 4.0 International License");
+            if(!$sender instanceof Player){
+                $this->getLogger()->info(TF::BLACK . "-=[" . TF::AQUA . "BoxOfBits Info" . TF::BLACK . "]=- \n " . TF::BLACK . "• " . TF::DARK_GREEN . "Version: " . TF::WHITE . self::VERSION . " \n " . TF::BLACK . "• " . TF::DARK_GREEN . "Author/s: " . TF::WHITE . self::AUTHOR . " \n " . TF::BLACK . "• " . TF::DARK_GREEN . "Website: " . TF::WHITE . self::WEBSITE . " \n " . TF::BLACK . "• " . TF::DARK_GREEN . "Description: " . TF::WHITE . self::DESCRIPTION . " \n " . TF::BLACK . "• " . TF::DARK_GREEN . "License: " . TF::WHITE . self::LICENSE);
             }elseif($sender instanceof Player){
-				if(!($sender->hasPermission("boxofbits" || "boxofbits.info"))){
+				if(!$sender->hasPermission("boxofbits" || "boxofbits.info")){
 					$sender->sendMessage(self::PREFIX . TF::DARK_RED . "You do not have permission to run this command!");
 				}elseif($sender->hasPermission("boxofbits" || "boxofbits.info")){
                 	$sender->sendMessage(TF::BLACK . "-=[" . TF::AQUA . "BoxOfBits Info" . TF::BLACK . "]=- \n " . TF::BLACK . "• " . TF::DARK_GREEN . "Version: " . TF::WHITE . self::VERSION . " \n " . TF::BLACK . "• " . TF::DARK_GREEN . "Author/s: " . TF::WHITE . self::AUTHOR . " \n " . TF::BLACK . "• " . TF::DARK_GREEN . "Website: " . TF::WHITE . self::WEBSITE . " \n " . TF::BLACK . "• " . TF::DARK_GREEN . "Description: " . TF::WHITE . "The growing plugin with so many features! \n " . TF::BLACK . "• " . TF::DARK_GREEN . "License: " . TF::WHITE . "CC A-NC-ND 4.0 International License");

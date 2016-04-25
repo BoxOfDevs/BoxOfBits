@@ -35,14 +35,14 @@ class xyz extends Loader implements CommandExecutor{
 
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         if(strolower($cmd->getName() == "xyz")){
-            if(!($sender instanceof Player)){
+            if(!$sender instanceof Player){
 				if(!isset($args[0])){
-				    $this->getLogger()->info(self::PREFIX . TF::DARK_RED . "Usage: /xyz [player] - [player] required when run from console!");
+				    $this->getLogger()->info(self::PREFIX . TF::DARK_RED . " Usage: /xyz [player] - [player] required when run from console!");
 				}elseif(isset($args[0])){
     				$player = $this->getServer()->getPlayer($args[0]);
 					$player_name = $args[0];
     				if(!$player instanceof Player){
-    				    $this->getLogger()->info(self::PREFIX . TF::DARK_RED."Player not found");
+    				    $this->getLogger()->info(self::PREFIX . TF::DARK_RED . " Player not found");
                     }elseif($player instanceof Player){
 				        $x = $player->getX();
     				    $y = $player->getY();
@@ -51,8 +51,8 @@ class xyz extends Loader implements CommandExecutor{
 				    }
 				}
             }elseif($sender instanceof Player){
-                if(!($sender->hasPermission("boxofbits" || "boxofbits.xyz"))){
-					$sender->sendMessage(self::PREFIX . TF::DARK_RED . "You do not have permission to run this command!");
+                if(!$sender->hasPermission("boxofbits" || "boxofbits.xyz")){
+					$sender->sendMessage(self::PREFIX . TF::DARK_RED . " You do not have permission to run this command!");
 				}elseif($sender->hasPermission("boxofbits" || "boxofbits.xyz")){
 				    if(!isset($args[0])){
 				    	$x = $sender->getX();
@@ -63,7 +63,7 @@ class xyz extends Loader implements CommandExecutor{
     					$player = $this->getServer()->getPlayer($args[0]);
 						$player_name = $args[0];
     					if(!$player instanceof Player){
-    					    $sender->sendMessage(self::PREFIX . TF::DARK_RED."Player not found");
+    					    $sender->sendMessage(self::PREFIX . TF::DARK_RED . " Player not found");
                     	}elseif($player instanceof Player){
 				    	    $x = $player->getX();
     					    $y = $player->getY();

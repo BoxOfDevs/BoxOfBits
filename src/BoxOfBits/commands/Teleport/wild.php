@@ -35,15 +35,50 @@ class wild extends Loader{
 
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         if(strolower($cmd->getName() == "wild")){
-            if(!($sender instanceof Player)){
-                $sender->sendMessage(TF::DARK_RED."This command can only be executed in-game!");
+            if(!$sender instanceof Player){
+				if(!isset($args[0])){
+				    $this->getLogger()->info(self::PREFIX . TF::DARK_RED . " Usage: /wild [player] - [player] required when run from console!");
+				}elseif(isset($args[0])){
+    				$player = $this->getServer()->getPlayer($args[0]);
+					$player_name = $args[0];
+    				if(!$player instanceof Player){
+    				    $this->getLogger()->info(self::PREFIX . TF::DARK_RED . " Player not found");
+                    }elseif($player instanceof Player){
+						$x = rand(1,999);
+            			$y = rand(1,128);
+            			$z = rand(1,999);
+            			$player->teleport(new Position($x,$y,$z));
+           				$player->sendMessage(self::PREFIX . TF::AQUA . " CONSOLE teleported you to a random position!");
+						$this->getLogger()->info(self::PREFIX . TF::AQUA . " " . $player_name . " was teleported to a random position!");
+				    }
+				}
             }elseif($sender instanceof Player){
-				$x = rand(1,999);
-            	$y = rand(1,128);
-            	$z = rand(1,999);
-            	$sender->teleport(new Position($x,$y,$z));
-            	$sender->sendMessage(TF::GREEN."Teleported to a random position!");
-			}
+                if(!$sender->hasPermission("boxofbits" || "boxofbits.tp" || "boxofbits.tp.wild")){
+					$sender->sendMessage(self::PREFIX . TF::DARK_RED . " You do not have permission to run this command!");
+				}elseif($sender->hasPermission("boxofbits" || "boxofbits.tp" || "boxofbits.tp.wild")){
+				    if(!isset($args[0])){
+						$x = rand(1,999);
+            			$y = rand(1,128);
+            			$z = rand(1,999);
+            			$sender->teleport(new Position($x,$y,$z));
+            	$		sender->sendMessage(self::PREFIX . TF::AQUA . " Teleported to a random position!");
+					}elseif(isset($args[0])){
+    					$player = $this->getServer()->getPlayer($args[0]);
+						$player_name = $args[0];
+						$sender_name = $sender->getName();
+    					if(!$player instanceof Player){
+    					    $this->getLogger()->info(self::PREFIX . TF::DARK_RED . " Player not found");
+                    	}elseif($player instanceof Player){
+							$x = rand(1,999);
+            				$y = rand(1,128);
+            				$z = rand(1,999);
+            				$player->teleport(new Position($x,$y,$z));
+            				$player->sendMessage(self::PREFIX . TF::AQUA . " " . $sender_name . " teleported you to a random position!");
+							$sender->sendMessage(self::PREFIX . TF::AQUA . " " . $player_name . " was teleported to a random position!");
+                		}
+				    }
+				}
+            }
         }
         return true;
     }

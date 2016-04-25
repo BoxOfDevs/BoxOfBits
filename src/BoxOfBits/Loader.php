@@ -21,7 +21,7 @@ use BoxOfBits\commands\xyz;
 use BoxOfBits\commands\rules;
 use BoxOfBits\commands\info;
 use BoxOfBits\commands\fly;
-// use BoxOfBits\commands\Teleport\wild;
+use BoxOfBits\commands\Teleport\wild;
 // use BoxOfBits\commands\PermissionsManager\setperm;
 // use BoxOfBits\commands\PermissionsManager\rmperm;
 // use BoxOfBits\commands\PermissionsManager\hasperm;
@@ -71,6 +71,8 @@ class Loader extends PluginBase implements Listener && CommandExecutor{
     const VERSION = "1.2.3";
     const WEBSITE = "http://boxofdevs.x10host.com/software/BoxOfBits/";
     const PREFIX = TF::BLACK . "[" . TF::AQUA . "BoxOfBits" . TF::BLACK . "]";
+	const DESCRIPTION = "The growing plugin with so many features!";
+	const LICENSE = "CC A-NC-ND 4.0 International License";
     
     public function onEnable(){
 		if(!$this->getServer()->getName() === "ImagicalMine"){
@@ -104,6 +106,14 @@ class Loader extends PluginBase implements Listener && CommandExecutor{
 
     public function getWebsite(){
         return self::WEBSITE;
+    }
+
+    public function getDescription(){
+        return self::DESCRIPTION;
+    }
+
+    public function getLicense(){
+        return self::LICENSE;
     }
 
     public function onDisable(){

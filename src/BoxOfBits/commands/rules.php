@@ -35,18 +35,18 @@ class rules extends Loader implements CommandExecutor{
     
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         if(strolower($cmd->getName() == "rules")){
-            if(!($sender instanceof Player)){
-				$config = new Config($this->getDataFolder . "/config.yml", CONFIG::YAML);
+            if(!$sender instanceof Player){
+				$config = new Config($this->getDataFolder . "config.yml", CONFIG::YAML);
 				$name = $sender->getName();
                 $line = "\n";
                 $r = str_replace("{player}", $name, $config->get("ServerRules"));
 				$rules = str_replace("{line}", $line, $r));
                 $this->getLogger()->info($rules);
             }elseif($sender instanceof Player){
-                if(!($sender->hasPermission("boxofbits" || "boxofbits.rules"))){
-					$sender->sendMessage(self::PREFIX . TF::DARK_RED . "You do not have permission to run this command!");
+                if(!$sender->hasPermission("boxofbits" || "boxofbits.rules")){
+					$sender->sendMessage(self::PREFIX . TF::DARK_RED . " You do not have permission to run this command!");
 				}elseif($sender->hasPermission("boxofbits" || "boxofbits.rules")){
-					$config = new Config($this->getDataFolder . "/config.yml", CONFIG::YAML);
+					$config = new Config($this->getDataFolder . "config.yml", CONFIG::YAML);
 				    $name = $sender->getName();
                 	$line = "\n";
                 	$r = str_replace("{player}", $name, $config->get("ServerRules"));
