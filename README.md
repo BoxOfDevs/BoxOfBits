@@ -2,7 +2,7 @@ ESTIMATED UPDATE PROGRESS = 68%
 
 Description
 ============
-Originally inspired EssentialsPE, BoxOfBits began as a small plugin developed by TheDragonRing, then as it slowly grew bigger it was transferred to the BoxOfDevs Team. Now, it is a huge, but still growing plugin with many, many features. Our goal is to make this plugin have so many features, that a server owner could download this plugin and have features from a 100 or more other plugins! Enjoy :D
+Ever felt like you just want one plugin which will add in all the features you need? Well, here it is. Originally inspired EssentialsPE, BoxOfBits began as a small plugin developed by TheDragonRing, then as it slowly grew bigger it was transferred to the BoxOfDevs Team. Now, it is a huge, but still growing plugin with many, many features. Our goal is to make this plugin have so many features, that a server owner could download this plugin and have features from a 100 or more other plugins! Enjoy :D
 
 Commands
 =========
