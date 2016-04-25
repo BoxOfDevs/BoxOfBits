@@ -74,19 +74,18 @@ class Loader extends PluginBase implements Listener && CommandExecutor{
     
     public function onEnable(){
 		if(!($this->getServer()->getName() === "ImagicalMine")){
-			$this->getLogger()->notice(self::PREFIX . "Sorry, but BoxOfBits is only compatible with ImagicalMine - Server Software for Minecraft: Pocket Edition and a third-party build of PocketMine-MP");
-			$this->getLogger()->notice(self::PREFIX . "In order to use BoxOfBits, download ImagicalMine at https://imagicalmine.net");
-			$this->getLogger()->notice(self::PREFIX . "You can also download the latest version of BoxOfBits at " . self::WEBSITE);
+			$this->getLogger()->warn(self::PREFIX . " Sorry, but BoxOfBits is only compatible with ImagicalMine - Server Software for Minecraft: Pocket Edition and a third-party build of PocketMine-MP");
+			$this->getLogger()->warn(self::PREFIX . " In order to use BoxOfBits, download ImagicalMine at https://imagicalmine.net");
+			$this->getLogger()->warn(self::PREFIX . " You can also download the latest version of BoxOfBits at " . self::WEBSITE);
 			$this->setEnabled(false);
 		}elseif($this->getServer()->getName() ==="ImagicalMine"){
     	    $this->getServer()->getPluginManager()->registerEvents($this, $this);
             $this->saveDefaultConfig();
-    	    $messages = new Config($this->getDataFolder . "/messages.yml", Config::YAML);
+    	    $messages = new Config($this->getDataFolder . "messages.yml", Config::YAML);
             $messages->save();
-	        $config = new Config($this->getDataFolder . "/config.yml", Config::YAML);
+	    $config = new Config($this->getDataFolder . "config.yml", Config::YAML);
             $config->save();
-            $time = intval($config->get("BroadcastSeconds")) * 20;
-            $this->getServer()->getScheduler()->scheduleRepeatingTask(new BroadcastTask($this), $time);
+            $this->getServer()->getScheduler()->scheduleRepeatingTask(new BroadcastTask($this), $config->get("BroadcastSeconds") * 20);
             $this->getLogger()->info(self::PREFIX . TF::GREEN . "Enabled!");
 		}
     }
