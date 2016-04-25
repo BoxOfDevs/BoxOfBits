@@ -73,7 +73,7 @@ class Loader extends PluginBase implements Listener && CommandExecutor{
     const PREFIX = TF::BLACK . "[" . TF::AQUA . "BoxOfBits" . TF::BLACK . "]";
     
     public function onEnable(){
-		if(!($this->getServer()->getName() === "ImagicalMine")){
+		if(!$this->getServer()->getName() === "ImagicalMine"){
 			$this->getLogger()->warn(self::PREFIX . " Sorry, but BoxOfBits is only compatible with ImagicalMine - Server Software for Minecraft: Pocket Edition and a third-party build of PocketMine-MP");
 			$this->getLogger()->warn(self::PREFIX . " In order to use BoxOfBits, download ImagicalMine at https://imagicalmine.net");
 			$this->getLogger()->warn(self::PREFIX . " You can also download the latest version of BoxOfBits at " . self::WEBSITE);
