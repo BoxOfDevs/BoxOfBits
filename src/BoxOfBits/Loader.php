@@ -50,6 +50,7 @@ use BoxOfBits\commands\fly;
 // use BoxOfBits\events\Kick;
 // use BoxOfBits\events\Quit;
 // use BoxOfBits\events\Sign;
+use BoxOfBits\tasks\BroadcastTask;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
@@ -79,12 +80,14 @@ class Loader extends PluginBase implements Listener && CommandExecutor{
 			$this->setEnabled(false);
 		}elseif($this->getServer()->getName() ==="ImagicalMine"){
     	    $this->getServer()->getPluginManager()->registerEvents($this, $this);
-    	    $this->saveDefaultConfig();
+            $this->saveDefaultConfig();
     	    $messages = new Config($this->getDataFolder . "/messages.yml", Config::YAML);
-    	    $messages->save();
-			$config = new Config($this->getDataFolder . "/config.yml", Config::YAML);
-    	    $config->save();
-    	    $this->getLogger()->info(self::PREFIX . TF::GREEN . "Enabled!");
+            $messages->save();
+	        $config = new Config($this->getDataFolder . "/config.yml", Config::YAML);
+            $config->save();
+            $time = intval($config->get("BroadcastSeconds")) * 20;
+            $this->getServer()->getScheduler()->scheduleRepeatingTask(new BroadcastTask($this), $time);
+            $this->getLogger()->info(self::PREFIX . TF::GREEN . "Enabled!");
 		}
     }
 
