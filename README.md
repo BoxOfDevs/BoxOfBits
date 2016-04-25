@@ -1,4 +1,4 @@
-ESTIMATED UPDATE PROGRESS = 73%
+ESTIMATED UPDATE PROGRESS = 68%
 
 Description
 ============
@@ -38,13 +38,13 @@ All the commands currently in BoxOfBits:
 
     - /health <amount> [player] : Sets your or players health
 
-    - /fly : Lets you fly in survival
+    - /fly [player] : Lets a player fly in survival
 
     - /hidetag <on|off> : Hides the nametag above your head
 
     - /nick <nickname|reset> : Changes your display name
 
-    - /wild : Teleport to a random place
+    - /wild [player] : Teleports to a random place
 
     - /setperm <player> <permission> : Give a player a permission
 

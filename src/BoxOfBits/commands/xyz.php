@@ -40,34 +40,35 @@ class xyz extends Loader implements CommandExecutor{
 				    $this->getLogger()->info(self::PREFIX . TF::DARK_RED . "Usage: /xyz [player] - [player] required when run from console!");
 				}elseif(isset($args[0])){
     				$player = $this->getServer()->getPlayer($args[0]);
-    				if($player instanceof Player){
-    				    $x = $player->getX();
+					$player_name = $args[0];
+    				if(!$player instanceof Player){
+    				    $this->getLogger()->info(self::PREFIX . TF::DARK_RED."Player not found");
+                    }elseif($player instanceof Player){
+				        $x = $player->getX();
     				    $y = $player->getY();
     				    $z = $player->getZ();
-				        $this->getLogger()->info(TF::GOLD . "Coordinates: \n " . TF::DARK_GREEN . "X:" . TF::WHITE . " $x " . TF::DARK_GREEN . "Y:" . TF::WHITE . " $y " . TF::DARK_GREEN . "Z:" . TF::WHITE . " $z");
-                    }else{
-				        $this->getLogger()->info(self::PREFIX . TF::DARK_RED."Player not found");
+				        $this->getLogger()->info(TF::GOLD . $player_name . "'s Coordinates: \n " . TF::DARK_GREEN . "X:" . TF::WHITE . " $x " . TF::DARK_GREEN . "Y:" . TF::WHITE . " $y " . TF::DARK_GREEN . "Z:" . TF::WHITE . " $z");
 				    }
 				}
-            }
-            if($sender instanceof Player){
-                if($sender->hasPermission("boxofbits" || "boxofbits.xyz")){
+            }elseif($sender instanceof Player){
+                if(!($sender->hasPermission("boxofbits" || "boxofbits.xyz"))){
+					$sender->sendMessage(self::PREFIX . TF::DARK_RED . "You do not have permission to run this command!");
+				}elseif($sender->hasPermission("boxofbits" || "boxofbits.xyz")){
 				    if(!isset($args[0])){
-                        $x = $sender->getX();
-                        $y = $sender->getY();
-                        $z = $sender->getZ();
-                        $sender->sendMessage(TF::GOLD . "Coordinates: \n " . TF::DARK_GREEN . "X:" . TF::WHITE . " $x " . TF::DARK_GREEN . "Y:" . TF::WHITE . " $y " . TF::DARK_GREEN . "Z:" . TF::WHITE . " $z");
-				    }
-				    if(isset($args[0])){
-                        $player = $this->getServer()->getPlayer($args[0]);
-    				    if($player instanceof Player){
-    				        $x = $player->getX();
-    				        $y = $player->getY();
-    				        $z = $player->getZ();
-				            $sender->sendMessage(TF::GOLD . "Coordinates: \n " . TF::DARK_GREEN . "X:" . TF::WHITE . " $x " . TF::DARK_GREEN . "Y:" . TF::WHITE . " $y " . TF::DARK_GREEN . "Z:" . TF::WHITE . " $z");
-                        }else{
-				            $sender->sendMessage(self::PREFIX . TF::DARK_RED . "Player not found");
-				        }
+				    	$x = $sender->getX();
+    				    $y = $sender->getY();
+    				    $z = $sender->getZ();
+			    	    $sender->sendMessage(TF::GOLD . "Your Coordinates: \n " . TF::DARK_GREEN . "X:" . TF::WHITE . " $x " . TF::DARK_GREEN . "Y:" . TF::WHITE . " $y " . TF::DARK_GREEN . "Z:" . TF::WHITE . " $z");
+					}elseif(isset($args[0])){
+    					$player = $this->getServer()->getPlayer($args[0]);
+						$player_name = $args[0];
+    					if(!$player instanceof Player){
+    					    $sender->sendMessage(self::PREFIX . TF::DARK_RED."Player not found");
+                    	}elseif($player instanceof Player){
+				    	    $x = $player->getX();
+    					    $y = $player->getY();
+    					    $z = $player->getZ();
+				    	    $sender->sendMessage(TF::GOLD . $player_name . "'s Coordinates: \n " . TF::DARK_GREEN . "X:" . TF::WHITE . " $x " . TF::DARK_GREEN . "Y:" . TF::WHITE . " $y " . TF::DARK_GREEN . "Z:" . TF::WHITE . " $z");
 				    }
 				}
             }

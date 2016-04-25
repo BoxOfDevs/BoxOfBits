@@ -67,8 +67,8 @@ commands:
         description: "Sets your or players health"
         permission: boxofbits.hm.health
     fly:
-        usage: "/fly"
-        description: "Lets you fly in survival"
+        usage: "/fly [player]"
+        description: "Lets a player fly in survival"
         permission: boxofbits.fly
     hidetag:
         usage: "/hidetag <on|off>"
@@ -79,8 +79,8 @@ commands:
         description: "Changes your display name"
         permission: boxofbits.name.nick
     wild:
-        usage: "/wild"
-        description: "Teleport to a random place"
+        usage: "/wild [player]"
+        description: "Teleports to a random place"
         permission: boxofbits.tp.wild
     setperm:
         usage: "/setperm <player> <permission>"

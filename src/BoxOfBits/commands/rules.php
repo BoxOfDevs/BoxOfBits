@@ -1,4 +1,4 @@
-<<?php
+<?php
 
 /*
 *  ____             ____   __ ____  _ _       
@@ -36,17 +36,23 @@ class rules extends Loader implements CommandExecutor{
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         if(strolower($cmd->getName() == "rules")){
             if(!($sender instanceof Player)){
-                $name = $sender->getName();
+				$config = new Config($this->getDataFolder . "/config.yml", CONFIG::YAML);
+				$name = $sender->getName();
                 $line = "\n";
-                $rules = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("ServerRules"));
+                $r = str_replace("{player}", $name, $config->get("ServerRules"));
+				$rules = str_replace("{line}", $line, $r));
                 $this->getLogger()->info($rules);
             }elseif($sender instanceof Player){
-                if($sender->hasPermission("boxofbits" || "boxofbits.rules")){
-                    $name = $sender->getName();
-                    $line = "\n";
-                    $rules = str_replace("{player}", $name, "{line}", $line, $this->getConfig()->get("ServerRules"));
-                    $sender->sendMessage($rules)
-                }
+                if(!($sender->hasPermission("boxofbits" || "boxofbits.rules"))){
+					$sender->sendMessage(self::PREFIX . TF::DARK_RED . "You do not have permission to run this command!");
+				}elseif($sender->hasPermission("boxofbits" || "boxofbits.rules")){
+					$config = new Config($this->getDataFolder . "/config.yml", CONFIG::YAML);
+				    $name = $sender->getName();
+                	$line = "\n";
+                	$r = str_replace("{player}", $name, $config->get("ServerRules"));
+					$rules = str_replace("{line}", $line, $r));
+                	$sender->sendMessage($rules);
+				}
             }
         }
         return $cmd;

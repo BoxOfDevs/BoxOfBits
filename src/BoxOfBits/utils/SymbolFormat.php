@@ -345,6 +345,33 @@ class SymbolFormat{
         return $woptip;
 	}
 
+    public static function RulesTF($rules){
+        $symbol = "&";
+        $rules = str_replace($symbol . "0", TF::BLACK, $rules);
+        $rules = str_replace($symbol . "1", TF::DARK_BLUE, $rules);
+        $rules = str_replace($symbol . "2", TF::DARK_GREEN, $rules);
+        $rules = str_replace($symbol . "3", TF::DARK_AQUA, $rules);
+        $rules = str_replace($symbol . "4", TF::DARK_RED, $rules);
+        $rules = str_replace($symbol . "5", TF::DARK_PURPLE, $rules);
+        $rules = str_replace($symbol . "6", TF::GOLD, $rules);
+        $rules = str_replace($symbol . "7", TF::GRAY, $rules);
+        $rules = str_replace($symbol . "8", TF::DARK_GRAY, $rules);
+        $rules = str_replace($symbol . "9", TF::BLUE, $rules);
+        $rules = str_replace($symbol . "a", TF::GREEN, $rules);
+        $rules = str_replace($symbol . "b", TF::AQUA, $rules);
+        $rules = str_replace($symbol . "c", TF::RED, $rules);
+        $rules = str_replace($symbol . "d", TF::LIGHT_PURPLE, $rules);
+        $rules = str_replace($symbol . "e", TF::YELLOW, $rules);
+        $rules = str_replace($symbol . "f", TF::WHITE, $rules);
+        $rules = str_replace($symbol . "k", TF::OBFUSCATED, $rules);
+        $rules = str_replace($symbol . "l", TF::BOLD, $rules);
+        $rules = str_replace($symbol . "m", TF::STRIKETHROUGH, $rules);
+        $rules = str_replace($symbol . "n", TF::UNDERLINE, $rules);
+        $rules = str_replace($symbol . "o", TF::ITALIC, $rules);
+        $rules = str_replace($symbol . "r", TF::RESET, $rules);
+        return $rules;
+    }
+
 }
 
 ?>

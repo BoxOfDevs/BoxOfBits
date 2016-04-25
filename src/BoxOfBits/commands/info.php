@@ -15,7 +15,7 @@
 * 
 */
 
-namespace BoxOfBits\Commands;
+namespace BoxOfBits\commands;
 
 use BoxOfBits\Loader;
 use BoxOfBits\utils\SymbolFormat;
@@ -25,20 +25,26 @@ use pocketmine\command\CommandSender;
 use pocketmine\command\CommandExecutor;
 use pocketmine\command\PluginCommand;
 use pocketmine\utils\TextFormat as TF;
+use pocketmine\utils\Config;
+use pocketmine\permission\Permission;
 use pocketmine\Player;
 use pocketmine\Server;
+use pocketmine\math\Vector3;
 
-class info extends Loader{
+class info extends Loader implements CommandExecutor{
     
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         if(strolower($cmd->getName() == "boxofbits")){
             if(!($sender instanceof Player)){
-                $sender->sendMessage(TF::BLACK."-=[."TF::AQUA."BoxOfBits Info".TF::BLACK."]=- \n	".TF::BLACK."• ".TF::DARK_GREEN."Version: ".TF::WHITE."1.2.3 \n	".TF::BLACK."• ".TF::DARK_GREEN."Author/s: ".TF::WHITE."BoxOfDevs Team \n	".TF::BLACK."• ".TF::DARK_GREEN."Website: ".TF::WHITE."https://boxofdevs.github.io/BoxOfBits/ \n	".TF::BLACK."• ".TF::DARK_GREEN."Description: ".TF::WHITE."The growing plugin with so many features! \n	".TF::BLACK."• ".TF::DARK_GREEN."License: ".TF::WHITE."GNU GENERAL PUBLIC LICENSE");
+                $this->getLogger()->info(TF::BLACK . "-=[" . TF::AQUA . "BoxOfBits Info" . TF::BLACK . "]=- \n " . TF::BLACK . "• " . TF::DARK_GREEN . "Version: " . TF::WHITE . self::VERSION . " \n " . TF::BLACK . "• " . TF::DARK_GREEN . "Author/s: " . TF::WHITE . self::AUTHOR . " \n " . TF::BLACK . "• " . TF::DARK_GREEN . "Website: " . TF::WHITE . self::WEBSITE . " \n " . TF::BLACK . "• " . TF::DARK_GREEN . "Description: " . TF::WHITE . "The growing plugin with so many features! \n " . TF::BLACK . "• " . TF::DARK_GREEN . "License: " . TF::WHITE . "CC A-NC-ND 4.0 International License");
             }elseif($sender instanceof Player){
-                $sender->sendMessage(TF::BLACK."-=[."TF::AQUA."BoxOfBits Info".TF::BLACK."]=- \n	".TF::BLACK."• ".TF::DARK_GREEN."Version: ".TF::WHITE."1.2.3 \n	".TF::BLACK."• ".TF::DARK_GREEN."Author/s: ".TF::WHITE."BoxOfDevs Team \n	".TF::BLACK."• ".TF::DARK_GREEN."Website: ".TF::WHITE."https://boxofdevs.github.io/BoxOfBits/ \n	".TF::BLACK."• ".TF::DARK_GREEN."Description: ".TF::WHITE."The growing plugin with so many features! \n	".TF::BLACK."• ".TF::DARK_GREEN."License: ".TF::WHITE."GNU GENERAL PUBLIC LICENSE");
+				if(!($sender->hasPermission("boxofbits" || "boxofbits.info"))){
+					$sender->sendMessage(self::PREFIX . TF::DARK_RED . "You do not have permission to run this command!");
+				}elseif($sender->hasPermission("boxofbits" || "boxofbits.info")){
+                	$sender->sendMessage(TF::BLACK . "-=[" . TF::AQUA . "BoxOfBits Info" . TF::BLACK . "]=- \n " . TF::BLACK . "• " . TF::DARK_GREEN . "Version: " . TF::WHITE . self::VERSION . " \n " . TF::BLACK . "• " . TF::DARK_GREEN . "Author/s: " . TF::WHITE . self::AUTHOR . " \n " . TF::BLACK . "• " . TF::DARK_GREEN . "Website: " . TF::WHITE . self::WEBSITE . " \n " . TF::BLACK . "• " . TF::DARK_GREEN . "Description: " . TF::WHITE . "The growing plugin with so many features! \n " . TF::BLACK . "• " . TF::DARK_GREEN . "License: " . TF::WHITE . "CC A-NC-ND 4.0 International License");
             }
         }
-        return true;
+        return $cmd;
     }
 
 }
