@@ -12,6 +12,7 @@ api:
 - 1.14.0
 - 2.0.0
 main: BoxOfBits\Loader
+website: http://bodp.ml/BoxOfBits/
 commands:
     boxofbits:
         usage: "/boxofbits"
