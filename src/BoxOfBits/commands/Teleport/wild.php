@@ -15,7 +15,7 @@
 * 
 */
 
-namespace BoxOfBits\Commands;
+namespace BoxOfBits\commands;
 
 use BoxOfBits\Loader;
 use BoxOfBits\utils\SymbolFormat;
@@ -25,13 +25,15 @@ use pocketmine\command\CommandSender;
 use pocketmine\command\CommandExecutor;
 use pocketmine\command\PluginCommand;
 use pocketmine\utils\TextFormat as TF;
+use pocketmine\utils\Config;
+use pocketmine\permission\Permission;
 use pocketmine\Player;
 use pocketmine\Server;
 use pocketmine\math\Vector3;
 use pocketmine\level\Level;
 use pocketmine\level\Position;
 
-class wild extends Loader{
+class wild extends Loader implements CommandExecutor{
 
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         if(strolower($cmd->getName() == "wild")){

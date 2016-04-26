@@ -30,6 +30,8 @@ use pocketmine\permission\Permission;
 use pocketmine\Player;
 use pocketmine\Server;
 use pocketmine\math\Vector3;
+use pocketmine\level\Level;
+use pocketmine\level\Position;
 
 class xyz extends Loader implements CommandExecutor{
 

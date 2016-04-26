@@ -1,8 +1,8 @@
-ESTIMATED UPDATE PROGRESS = 68%
+ESTIMATED UPDATE PROGRESS = 72%
 
 Description
 ============
-Ever felt like you just want one plugin which will add in all the features you need? Well, here it is. Originally inspired EssentialsPE, BoxOfBits began as a small plugin developed by TheDragonRing, then as it slowly grew bigger it was transferred to the BoxOfDevs Team. Now, it is a huge, but still growing plugin with many, many features. Our goal is to make this plugin have so many features, that a server owner could download this plugin and have features from a 100 or more other plugins! Enjoy :D
+Ever felt like you just want one plugin which will add in all the features you need? Well, here it is. Originally inspired by EssentialsPE, BoxOfBits began as a small plugin developed by TheDragonRing, then as it slowly grew bigger it was transferred to the BoxOfDevs Team. Now, it is a huge, but still growing plugin with many, many features. Our goal is to make this plugin have so many features, that a server owner could download this plugin and have features from a 100 or more other plugins! Enjoy :D
 
 Commands
 =========
@@ -53,6 +53,8 @@ All the commands currently in BoxOfBits:
     - /hasperm <player> <permission> : Checks if a player has a permission
 
     - /seeperms <player> : Shows a players permissions
+
+    - /allperms <player> : Shows all possible permissions on the server
 
 Permissions
 ============
@@ -123,6 +125,8 @@ All the permissions for BoxOfBits:
             - boxofbits.pm.hasperm : Allows /hasperm (Default: op)
 
             - boxofbits.pm.seeperms : Allows /seeperms (Default: op)
+
+            - boxofbits.pm.allperms : Allows /allperms (Default: op)
 
 Configuration
 ==============

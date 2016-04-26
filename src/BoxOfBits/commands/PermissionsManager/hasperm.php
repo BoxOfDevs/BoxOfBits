@@ -33,38 +33,35 @@ use pocketmine\math\Vector3;
 use pocketmine\level\Level;
 use pocketmine\level\Position;
 
-class setperm extends Loader implements CommandExecutor{
+class hasperm extends Loader implements CommandExecutor{
 
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
-        if(strolower($cmd->getName() == "setperm")){
-			$permdata = new Config($this->getDataFolder . "permdata.yml", CONFIG::YAML);
+        if(strolower($cmd->getName() == "hasperm")){
 			if(!$sender instanceof Player){
             	if(!isset($args[1])){
-            	    $this->getLogger()->info(self::PREFIX . TF::DARK_RED . " Usage: /setperm <player> <permission>");
+            	    $this->getLogger()->info(self::PREFIX . TF::DARK_RED . " Usage: /hasperm <player> <permission>");
             	}else{
             	    $player_name = $args[0];
             	    $player = $this->getServer()->getPlayer($args[0]);
-            	    $perm = Server::getInstance()->getPluginManager()->getPermission($args[1]);
-            	    $player->addAttachment($this, $perm, true);
-            	    $this->getLogger()->info(self::PREFIX . TF::AQUA . " " . $perm . " successfully set to " . $playername . "!");
-					$plperms = $permdata->get($player_name);
-					array_push($plperms, $args[0]);
-					$permdata->set($player_name, $plperms);
-					$permdata->save();
+            	    $perm = $args[1];
+                	if(!$player->hasPermission($perm)){
+                    	$this->getLogger()->info(self::PREFIX . TF::AQUA . " " .  $playername . " doesn't have permission " . $perm . "!");
+                	}elseif($player->hasPermission($perm)){
+                    	$this->getLogger()->info(self::PREFIX . TF::AQUA . " " . $playername . " has permission " . $perm . "!");
+                	}
             	}
 			}elseif($sender instanceof Player){
-                if(!$sender->hasPermission("boxofbits" || "boxofbits.pm" || "boxofbits.pm.setperm")){
+                if(!$sender->hasPermission("boxofbits" || "boxofbits.pm" || "boxofbits.pm.hasperm")){
 					$sender->sendMessage(self::PREFIX . TF::DARK_RED . " You do not have permission to run this command!");
-				}elseif($sender->hasPermission("boxofbits" || "boxofbits.pm" || "boxofbits.pm.setperm")){
+				}elseif($sender->hasPermission("boxofbits" || "boxofbits.pm" || "boxofbits.pm.hasperm")){
 		            $player_name = $args[0];
             	    $player = $this->getServer()->getPlayer($args[0]);
-            	    $perm = Server::getInstance()->getPluginManager()->getPermission($args[1]);
-            	    $player->addAttachment($this, $perm, true);
-            	    $sender->sendMessage(self::PREFIX . TF::AQUA . " " . $perm . " successfully set to " . $playername . "!");
-					$plperms = $permdata->get($player_name);
-					array_push($plperms, $args[0]);
-					$permdata->set($player_name, $plperms);
-					$permdata->save();
+            	    $perm = $args[1];
+                	if(!$player->hasPermission($perm)){
+                    	$sender->sendMessage(self::PREFIX . TF::AQUA . " " .  $playername . " doesn't have permission " . $perm . "!");
+                	}elseif($player->hasPermission($perm)){
+                    	$sender->sendMessage(self::PREFIX . TF::AQUA . " " . $playername . " has permission " . $perm . "!");
+                	}
 				}
 			}
 		}

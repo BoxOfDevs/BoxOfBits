@@ -22,9 +22,9 @@ use BoxOfBits\commands\rules;
 use BoxOfBits\commands\info;
 use BoxOfBits\commands\fly;
 use BoxOfBits\commands\Teleport\wild;
-// use BoxOfBits\commands\PermissionsManager\setperm;
+use BoxOfBits\commands\PermissionsManager\setperm;
 // use BoxOfBits\commands\PermissionsManager\rmperm;
-// use BoxOfBits\commands\PermissionsManager\hasperm;
+use BoxOfBits\commands\PermissionsManager\hasperm;
 // use BoxOfBits\commands\PermissionsManager\seeperms;
 // use BoxOfBits\commands\PermissionsManager\allperms;
 // use BoxOfBits\commands\NameTag\nick;
@@ -64,12 +64,14 @@ use pocketmine\permission\Permission;
 use pocketmine\Player;
 use pocketmine\Server;
 use pocketmine\math\Vector3;
+use pocketmine\level\Level;
+use pocketmine\level\Position;
 
 class Loader extends PluginBase implements Listener && CommandExecutor{
     
     const AUTHOR = "BoxOfDevs Team";
     const VERSION = "1.2.3";
-    const WEBSITE = "http://boxofdevs.x10host.com/software/BoxOfBits/";
+    const WEBSITE = "http://bodp.ml/software/BoxOfBits/";
     const PREFIX = TF::BLACK . "[" . TF::AQUA . "BoxOfBits" . TF::BLACK . "]";
 	const DESCRIPTION = "The growing plugin with so many features!";
 	const LICENSE = "CC A-NC-ND 4.0 International License";
@@ -85,8 +87,10 @@ class Loader extends PluginBase implements Listener && CommandExecutor{
             $this->saveDefaultConfig();
     	    $messages = new Config($this->getDataFolder . "messages.yml", Config::YAML);
             $messages->save();
-	    $config = new Config($this->getDataFolder . "config.yml", Config::YAML);
+	    	$config = new Config($this->getDataFolder . "config.yml", Config::YAML);
             $config->save();
+			$permdata = new Config($this->getDataFolder . "permdata.yml", CONFIG::YAML);
+			$permdata->save();
             $this->getServer()->getScheduler()->scheduleRepeatingTask(new BroadcastTask($this), $config->get("BroadcastSeconds") * 20);
             $this->getLogger()->info(self::PREFIX . TF::GREEN . "Enabled!");
 		}

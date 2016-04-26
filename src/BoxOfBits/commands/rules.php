@@ -30,13 +30,15 @@ use pocketmine\permission\Permission;
 use pocketmine\Player;
 use pocketmine\Server;
 use pocketmine\math\Vector3;
+use pocketmine\level\Level;
+use pocketmine\level\Position;
 
 class rules extends Loader implements CommandExecutor{
     
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         if(strolower($cmd->getName() == "rules")){
+			$config = new Config($this->getDataFolder . "config.yml", CONFIG::YAML);
             if(!$sender instanceof Player){
-				$config = new Config($this->getDataFolder . "config.yml", CONFIG::YAML);
 				$name = $sender->getName();
                 $line = "\n";
                 $r = str_replace("{player}", $name, $config->get("ServerRules"));
@@ -46,7 +48,6 @@ class rules extends Loader implements CommandExecutor{
                 if(!$sender->hasPermission("boxofbits" || "boxofbits.rules")){
 					$sender->sendMessage(self::PREFIX . TF::DARK_RED . " You do not have permission to run this command!");
 				}elseif($sender->hasPermission("boxofbits" || "boxofbits.rules")){
-					$config = new Config($this->getDataFolder . "config.yml", CONFIG::YAML);
 				    $name = $sender->getName();
                 	$line = "\n";
                 	$r = str_replace("{player}", $name, $config->get("ServerRules"));
