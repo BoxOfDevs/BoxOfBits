@@ -71,7 +71,7 @@ class Loader extends PluginBase implements Listener && CommandExecutor{
     
     const AUTHOR = "BoxOfDevs Team";
     const VERSION = "1.2.3";
-    const WEBSITE = "http://bodp.ml/software/BoxOfBits/";
+    const WEBSITE = "http://bodp.ml/BoxOfBits/";
     const PREFIX = TF::BLACK . "[" . TF::AQUA . "BoxOfBits" . TF::BLACK . "]";
 	const DESCRIPTION = "The growing plugin with so many features!";
 	const LICENSE = "CC A-NC-ND 4.0 International License";
