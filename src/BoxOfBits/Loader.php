@@ -67,7 +67,7 @@ use pocketmine\math\Vector3;
 use pocketmine\level\Level;
 use pocketmine\level\Position;
 
-class Loader extends PluginBase implements Listener && CommandExecutor{
+class Loader extends PluginBase implements Listener, CommandExecutor{
     
     const AUTHOR = "BoxOfDevs Team";
     const VERSION = "1.2.3";
