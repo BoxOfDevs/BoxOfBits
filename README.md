@@ -148,7 +148,7 @@ The features we want to add to BoxOfBits:
 
 Authors
 ========
-The BoxOfDevs Team members who have contributed and devleloped BoxOfBits:
+The BoxOfDevs Team members who have contributed and developed BoxOfBits:
 
     - TheDragonRing
 
