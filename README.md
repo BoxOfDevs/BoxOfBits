@@ -102,9 +102,9 @@ Links
 =====
 BoxOfBits Links:
 
-	- BoxOfDevs Team Forums:
+	- BoxOfDevs Team Site:
 
-	- ImagicalMine Forums:
+	- ImagicalMine Community Forums:
 
 Contributers
 ============
