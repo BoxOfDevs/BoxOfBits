@@ -1,6 +1,12 @@
----
+BroadcastSettings:
+    Enabled: Yes
+    Type: Message
+    Prefix: "[ServerName]"
+    SecondsBetweenBroadcast: 30
 
-# BroadcastTime - The time in seconds between each broadcast.
-BroadcastTime: 60
-
-...
+Broadcasts:
+    - "Random Broadcast!"
+    - "Other Random Broadcast!"
+    - "Another Random Broadcast!"
+    - "Yet Again, A Random Broadcast!"
+    - "Why So Many Random Broadcasts?"

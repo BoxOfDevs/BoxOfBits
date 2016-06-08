@@ -1,0 +1,13 @@
+Installation
+============
+BoxOfDevs Installation:
+
+	- Step 1: Download the file named BoxOfBits_v1.5.phar.
+
+	- Step 2: Move the file you have downloaded named BoxOfBits_v1.5.phar to PATH_TO_YOUR_SERVER_FILES/plugins.
+
+    - Step 3: Start your server, then stop it again, so that the configuration files are generated.
+
+    - Step 4: Set everything up in the various configurable files the way you want, and run your server.
+
+Voila, you're done!

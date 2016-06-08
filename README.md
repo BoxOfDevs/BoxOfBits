@@ -1,163 +1,127 @@
-ESTIMATED UPDATE PROGRESS = 72%
-
-Description
-============
-Ever felt like you just want one plugin which will add in all the features you need? Well, here it is. Originally inspired by EssentialsPE, BoxOfBits began as a small plugin developed by TheDragonRing, then as it slowly grew bigger it was transferred to the BoxOfDevs Team. Now, it is a huge, but still growing plugin with many, many features. Our goal is to make this plugin have so many features, that a server owner could download this plugin and have features from a 100 or more other plugins! Enjoy :D
-
-Commands
-=========
-All the commands currently in BoxOfBits:
-
-    - /boxofbits : View BoxOfBits info
-
-    - /message <server|player> <message...> : Send a message to either the whole server or one player
-
-    - /popup <server|player> <message...> : Send a popup to either the whole server or one player
-
-    - /tip <server|player> <message...> : Send a tip to either the whole server or one player
-
-    - /pm <player> <message...> : Sends a private message
-
-    - /gms [player] : Changes gamemode to Survival
-
-    - /gmc [player] : Changes gamemode to Creative
-
-    - /gma [player] : Changes gamemode to Adventure
-
-    - /gmsp [player] : Changes gamemode to Spectator
-
-    - /xyz [player] : Get coordinates
-
-    - /rules : Shows the server rules
-
-    - /suicide : Kill yourself
-
-    - /slay <player> : Kills player
-
-    - /heal [player] : Heals you or specified player
-
-    - /health <amount> [player] : Sets your or players health
-
-    - /fly [player] : Lets a player fly in survival
-
-    - /hidetag <on|off> : Hides the nametag above your head
-
-    - /nick <nickname|reset> : Changes your display name
-
-    - /wild [player] : Teleports to a random place
-
-    - /setperm <player> <permission> : Give a player a permission
-
-    - /rmperm <player> <permission> : Removes a players permission
-
-    - /hasperm <player> <permission> : Checks if a player has a permission
-
-    - /seeperms <player> : Shows a players permissions
-
-    - /allperms <player> : Shows all possible permissions on the server
-
-Permissions
-============
-All the permissions for BoxOfBits:
-
-    - boxofbits : BoxOfBits Universal Permission (Default: false)
-
-        • boxofbits.info : Allows /boxofbits (Default: true)
-
-        • boxofbits.msgs : BoxOfBits Message Features Universal Permission (Default: false)
-
-            - boxofbits.msgs.message : Allows /message (Default: op)
-
-            - boxofbits.msgs.popup : Allows /popup (Default: op)
-
-            - boxofbits.msgs.tip : Allows /tip (Default: op)
-
-            - boxofbits.msgs.pm : Allows /pm (Default: true)
-
-        • boxofbits.gm : BoxOfBits Gamemode Features Universal Permission (Default: false)
-
-            - boxofbits.gm.gms : Allows /gms (Default: op)
-
-            - boxofbits.gm.gmc : Allows /gmc (Default: op)
-
-            - boxofbits.gm.gma : Allows /gma (Default: op)
-
-            - boxofbits.gm.gmsp : Allows /gmsp (Default: op)
-
-        • boxofbits.xyz : Allows /xyz (Default: true)
-
-        • boxofbits.rules : Allows /rules (Default: true)
-
-        • boxofbits.hm : BoxOfBits Health Manager Features Universal Permission (Default: false)
-
-            - boxofbits.hm.suicide : Allows /suicide (Default: true)
-
-            - boxofbits.hm.slay : Allows /slay (Default: op)
-
-            - boxofbits.hm.heal : Allows /heal (Default: op)
-
-            - boxofbits.hm.health : Allows /health (Default: op)
-
-        • boxofbits.fly : Allows /fly (Default: op)
-
-        • boxofbits.name : BoxOfBits Name Features Universal Permission (Default: false)
-
-            - boxofbits.name.ht : Allows /hidetag (Default: op)
-
-            - boxofbits.name.nick : Allows /nick (Default: op)
-
-        • boxofbits.allowcolour : Allows colouring text (Default: false)
-
-			- boxofbits.allowcolour.chat : Allows colouring text in chat (Default: op)
-
-			- boxofbits.allowcolour.sign : Allows colouring text on signs (Default: op)
-
-        • boxofbits.tp : BoxOfBits Teleport Features Universal Permission (Default: false)
-
-            - boxofbits.tp.wild : Allows /wild (Default: true)
-
-        • boxofbits.pm : BoxOfBits Permissions Manager Universal Permission (Default: false)
-
-            - boxofbits.pm.setperm : Allows /setperm (Default: op)
-
-            - boxofbits.pm.rmperm : Allows /rmperm (Default: op)
-
-            - boxofbits.pm.hasperm : Allows /hasperm (Default: op)
-
-            - boxofbits.pm.seeperms : Allows /seeperms (Default: op)
-
-            - boxofbits.pm.allperms : Allows /allperms (Default: op)
-
-Configuration
-==============
-
-
-Planned Features
-=================
-The features we want to add to BoxOfBits:
-
-    - Warp, Home, TPA, Portal, and other teleport features,
-
-    - Jail features,
-
-    - WorldEdit features,
-
-    - Authentication features,
-
-    - Other awesome features, we are open to suggestions!
-
-Authors
+Overview
 ========
-The BoxOfDevs Team members who have contributed and developed BoxOfBits:
+BoxOfBits, the growing plugin with so many features, is exactly what it says it is - a plugin for PocketMine-MP that already has so many amazing features, but is also still growing and constantly being added to. Originally inspired by EssentialsPE's large array of features, this plugin has been having new features added ever since it started in January 2016! Enjoy 😃
 
-    - TheDragonRing
+Frequently Asked Questions
+==========================
+BoxOfBits FAQ:
 
-    - Taki21
+	- Q: What are the benefits of using BoxOfBits?
 
-    - remotevase
+	  A: Since BoxOfBits is a plugin designed to have a massive amount of functionality, it means that instead of searching for all those little features in different plugins and getting more than your server can handle, you can just download and use the many features of BoxOfBits!
 
-    - Ad5001
+    - Q: What compatability does BoxOfBits have?
 
-    - Vaivez66
+	  A: BoxOfBits is designed to be used with PocketMine-MP, and as it has only been tested with PM-MP although it may work with others like Genysis, don't be surprised if you find bugs! Also, we cannot assure you that BoxOfBits will be compatible will all other plugins, so if you find that a plugin is causing errors with BoxOfBits, please ask the plugin developer to add BoxOfBits compatability. All the same, please report all bugs to us and we will do our best to fix them.
+
+    - Q: Why does it take so long to update BoxOfBits?
+
+	  A: One of the main reasons it takes so long to update is simply that many of the main developers working on this project have other projects, school, and many other things going on in their lives, leaving them without much time to concentrate on BoxOfBits. Even then, after the developers have done their job and the update is finish it still requires endless beta-testing, bug-fixing, and going of the code trying to fix and clean up any little mistakes to keep the code as clean as possible. Still, because of all this you know that when the update finally comes out it will be just as good as you wish it could be!
+
+    - Q: Can I contribute to BoxOfBits?
+
+	  A: Of course you can contribute to BoxOfBits! Their are a few major things you can contribute to, like developing and beta-testing. But if you don't think you are able to help with that and still want to contribute to BoxOfBits their are others you can help with, like helping setup documentations  or just requesting some of your favourite features to be added in when we run out of ideas!
+
+    - Q: Does BoxOfBits have an API that I can use?
+
+	  A: Currently and unfortunately, no it doesn't. We definitely plan to add an API to BoxOfBits though, so although it may take a while, be assured that we are working our hardest to bring this feature to you!
+
+Documentation
+=============
+BoxOfBits Documentation:
+
+	Commands
+	--------
+	BoxOfBits Commands:
+
+
+
+	Permissions
+	-----------
+	BoxOfBits Permissions:
+
+		- boxofbits : BoxOfBits Universal Permission (Default: FALSE)
+
+	Configuration
+	-------------
+	BoxOfBits Configuration:
+
+
+
+Version History
+===============
+BoxOfBits Version History:
+
+	- Version 1.5
+
+		• Software Name: BoxOfBits
+
+		• Software Ownership: BoxOfDevs
+
+		• Software License: MIT License
+
+		• Changelog:
+
+			-  
+
+	- Version 1.0
+
+		• Software Name: BoxOfBits
+
+		• Software Ownership: TheDragonRing
+
+		• Software License: GNU General Public License v3.0
+
+		• Changelog:
+
+			- Added /xyz Coordinates Command
+
+			- Added /sendpopup & /sendbroadcast Serverwide Broadcast Commands
+
+			- Added /rules Server Rules Command
+
+			- Updated /gmc, /gms, /gma & /gmsp Gamemode Change Shortcut Commands
+
+			- Updated config.yml Configurable Options
+
+	- Version 0.0.1 Initial Release
+
+		• Software Name: BoxOfBits
+
+		• Software Ownership: TheDragonRing
+
+		• Software License: None
+
+		• Changelog:
+
+			- Added /gmc, /gms, /gma & /gmsp Gamemode Change Shortcut Commands
+
+			- Added Customizable Join, Quit, Kick & Death Messages
+
+Links
+=====
+BoxOfBits Links:
+
+	- BoxOfDevs Team Forums:
+
+	- ImagicalMine Forums:
+
+Contributers
+============
+BoxOfBits Contributers:
+
+	- TheDragonRing
+
+	- Taki21
+
+	- remotevase
+
+	- Ad5001
+
+	- Vaivez66
+
+	- iksaku
 
 	- 0-Eclipse-0
+
+	- UltimateMcraft
