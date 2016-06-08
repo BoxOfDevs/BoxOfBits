@@ -15,6 +15,7 @@ main: BoxOfBits\Loader
 api:
 - 2.0.0
 website: http://boxofdevs.com
+prefix: §0[§bBoxOfBits§0]§f
 commands:
 permissions:
     boxofbits:

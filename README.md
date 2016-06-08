@@ -24,7 +24,7 @@ BoxOfBits FAQ:
 
     - Q: Does BoxOfBits have an API that I can use?
 
-	  A: Currently and unfortunately, no it doesn't. We definitely plan to add an API to BoxOfBits though, so although it may take a while, be assured that we are working our hardest to bring this feature to you!
+	  A: A new feature in the 1.5 update, you can access almost any feature BoxOfBits has to offer through our extensive API! Plugin developers out in the wide world of code suddenly have a much wider range of acessible features they can use. For a full API documentation, please read the wiki.
 
 Documentation
 =============

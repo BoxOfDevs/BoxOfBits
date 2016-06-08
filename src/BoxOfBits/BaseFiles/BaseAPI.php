@@ -18,15 +18,34 @@
  *
  */
 
-namespace BoxOfBits\utils;
+namespace BoxOfBits\BaseFiles;
 
 use BoxOfBits\Loader;
+use BoxOfBits\Tasks\BroadcastTask;
 
 use pocketmine\utils\TextFormat as TF;
+use pocketmine\utils\Config;
 
-class SymbolFormat{
+class BaseAPI{
 
-	public function SymbolFormat($message){
+	const AUTHOR = "BoxOfDevs Team";
+	const VERSION = "1.5";
+	const WEBSITE = "boxofdevs.com";
+	const PREFIX = TF::BLACK . "[" . TF::AQUA . "BoxOfBits" . TF::BLACK . "]";
+	const DESCRIPTION = "The growing plugin with so many features!";
+	const LICENSE = "MIT License";
+
+	public function loadConfigBox(){
+		@mkdir($this->getDataFolder());
+		$this->saveResource("config.yml");
+		$config = new Config($this->getDataFolder() . "config.yml", config::YAML);
+		$config->save();
+		$this->saveResource("messages.yml");
+		$messages = new Config($this->getDataFolder() . "messages.yml", config::YAML);
+		$messages->save();
+	}
+
+	public function formatText($message){
 		$symbol = "&";
 		$othersymbol = "§";
 		$message = str_replace($symbol . "0", TF::BLACK, $message);
@@ -75,6 +94,30 @@ class SymbolFormat{
 		$message = str_replace($othersymbol . "r", TF::RESET, $message);
         return $message;
     }
+
+	public function getBroadcastSettings(){
+		$config = new Config($this->getDataFolder() . "config.yml", config::YAML);
+		$broadcastSettings = $config->get("BroadcastSettings");
+		return $broadcastSettings;
+	}
+
+	public function getBroadcasts(){
+		$config = new Config($this->getDataFolder() . "messages.yml", config::YAML);
+		$broadcasts = str_replace("{LINE}", "\n", $config->get("Broadcasts"));
+		return $broadcasts;
+	}
+
+	public function sendBroadcast($type){
+		$broadcastSettings = $this->getBroadcastSettings();
+		$prefix = $$broadcastSettings["Prefix"] . " ";
+		$broadcasts = $this->getBroadcasts();
+		$msgamount = rand(1, count($broadcasts)-1);
+		if($type === "Message"){
+			$this->getServer()->broadcastMessage($this->formatText($prefix) . $this->formatText($message));
+		}elseif($type === "Popup"){
+			$this->getServer()->broadcastPopup($this->formatText($prefix) . $this->formatText($message));
+		}
+	}
 
 }
 

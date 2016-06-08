@@ -20,8 +20,7 @@
 
 namespace BoxOfBits\tasks;
 
-use BoxOfBits\Loader;
-use BoxOfBits\utils\SymbolFormat;
+use BoxOfBits\BaseFiles\BaseAPI;
 
 use pocketmine\scheduler\PluginTask;
 use pocketmine\Server;
@@ -35,18 +34,10 @@ class BroadcastTask extends PluginTask{
 	}
 
 	public function onRun($tick){
-		$config = new Config($this->getDataFolder() . "config.yml", config::YAML);
-		$broadcastsettings = $config->get("BroadcastSettings");
-		if($broadcastsettings["Enabled"] === "Yes"){
-			$prefix = $$broadcastsettings["Prefix"] . " ";
-			$broadcasts = str_replace("{LINE}", "\n", $config->get("Broadcasts"));
-			$msgamount = rand(1, count($broadcasts)-1);
-			$message = $broadcasts[$msgamount];
-			if($broadcastsettings["Type"] === "Message"){
-				$this->getServer()->broadcastMessage($this->SymbolFormat($prefix) . $this->SymbolFormat($message));
-			}elseif($broadcastsettings["Type"] === "Popup"){
-				$this->getServer()->broadcastPopup($this->SymbolFormat($prefix) . $this->SymbolFormat($message));
-			}
+		$this->loadConfigBox();
+		$broadcastSettings = $this->getBroadcastSettings();
+		if($broadcastSettings["Enabled"] === "Yes"){
+			$this->sendBroadcast($broadcastsettings["Type"]);
 		}
 	}
 

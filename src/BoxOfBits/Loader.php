@@ -20,8 +20,8 @@
 
 namespace BoxOfBits;
 
-use BoxOfBits\tasks\BroadcastTask;
-use BoxOfBits\utils\SymbolFormat;
+use BoxOfBits\BaseFiles\BaseAPI;
+use BoxOfBits\Tasks\BroadcastTask;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat as TF;
@@ -33,24 +33,11 @@ use pocketmine\command\CommandExecutor;
 
 class Loader extends PluginBase implements Listener, CommandExecutor{
 
-    const AUTHOR = "BoxOfDevs Team";
-    const VERSION = "1.5";
-    const WEBSITE = "boxofdevs.com";
-    const PREFIX = TF::BLACK . "[" . TF::AQUA . "BoxOfBits" . TF::BLACK . "]";
-    const DESCRIPTION = "The growing plugin with so many features!";
-    const LICENSE = "MIT License";
-
 	public function onEnable(){
-		@mkdir($this->getDataFolder());
-		$this->saveResource("config.yml");
-		$config = new Config($this->getDataFolder() . "config.yml", config::YAML);
-		$config->save();
-		$this->saveResource("messages.yml");
-		$messages = new Config($this->getDataFolder() . "messages.yml", config::YAML);
-		$messages->save();
+		$this->loadConfigBox();
 		$this->getServer()->getPluginManager()->registerEvents($this,$this);
-		$broadcastsettings = $config->get("BroadcastSettings");
-		$this->getServer()->getScheduler()->scheduleRepeatingTask(new BroadcastTask($this), $broadcastsettings["SecondsBetweenBroadcast"] * 20);
+		$broadcastSettings = $this->getBroadcastSettings();
+		$this->getServer()->getScheduler()->scheduleRepeatingTask(new BroadcastTask($this), $broadcastSettings["SecondsBetweenBroadcast"] * 20);
 		$this->getLogger()->info(TF::GREEN . "Enabled!");
 	}
 
