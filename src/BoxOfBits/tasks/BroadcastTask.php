@@ -29,7 +29,7 @@ use pocketmine\utils\Config;
 
 class BroadcastTask extends PluginTask{
 
-	public function __construct(BroadcastTask $plugin){
+	public function __construct(Loader $plugin){
 		parent::__construct($plugin);
 		$this->plugin = $plugin;
 	}
