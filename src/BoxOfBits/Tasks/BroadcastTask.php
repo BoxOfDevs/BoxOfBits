@@ -28,13 +28,12 @@ use pocketmine\utils\Config;
 
 class BroadcastTask extends PluginTask{
 
-	public function __construct(Loader $plugin){
-		parent::__construct($plugin);
-		$this->plugin = $plugin;
+	public function __construct(BaseAPI $api){
+		parent::__construct($api);
+		$this->api = $api;
 	}
 
 	public function onRun($tick){
-		$this->loadConfigBox();
 		$broadcastSettings = $this->getBroadcastSettings();
 		if($broadcastSettings["Enabled"] === "Yes"){
 			$this->sendBroadcast($broadcastsettings["Type"]);

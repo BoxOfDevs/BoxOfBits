@@ -28,6 +28,10 @@ use pocketmine\utils\Config;
 
 class BaseAPI{
 
+	private $box;
+
+	private static $instance;
+
 	const AUTHOR = "BoxOfDevs Team";
 	const VERSION = "1.5";
 	const WEBSITE = "boxofdevs.com";
@@ -35,8 +39,13 @@ class BaseAPI{
 	const DESCRIPTION = "The growing plugin with so many features!";
 	const LICENSE = "MIT License";
 
-	public function loadConfigBox(){
-		@mkdir($this->getDataFolder());
+	public function __construct(Loader $box){
+		$this->box = $box;
+		self::$instance = $this;
+		$this->saveConfigBox;
+	}
+
+	public function saveConfigBox(){
 		$this->saveResource("config.yml");
 		$config = new Config($this->getDataFolder() . "config.yml", config::YAML);
 		$config->save();

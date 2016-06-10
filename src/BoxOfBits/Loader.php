@@ -33,8 +33,16 @@ use pocketmine\command\CommandExecutor;
 
 class Loader extends PluginBase implements Listener, CommandExecutor{
 
+	private $api;
+
 	public function onEnable(){
+		//Configuration Stuff...
+		$this->checkConfig;
+		@mkdir($this->getDataFolder());
 		$this->loadConfigBox();
+		//Custom API Setup...
+
+		//Other Startup Stuff..
 		$this->getServer()->getPluginManager()->registerEvents($this,$this);
 		$broadcastSettings = $this->getBroadcastSettings();
 		$this->getServer()->getScheduler()->scheduleRepeatingTask(new BroadcastTask($this), $broadcastSettings["SecondsBetweenBroadcast"] * 20);
