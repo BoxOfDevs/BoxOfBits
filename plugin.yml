@@ -1,21 +1,12 @@
 name: BoxOfBits
 description: The growing plugin with so many features!
-version: 1.5
+version: 1.1
 author: BoxOfDevs Team
-authors:
-- TheDragonRing
-- Taki21
-- remotevase
-- Ad5001
-- Vaivez66
-- iksaku
-- 0-Eclipse-0
-- UltimateMcraft
-main: BoxOfBits\Loader
+main: BoxOfBits\BaseBox
 api:
 - 2.0.0
 website: http://boxofdevs.com
-prefix: §0[§bBoxOfBits§0]§f
+prefix: §0§l[§r§bBoxOfBits§0§l]§r
 commands:
 permissions:
     boxofbits:

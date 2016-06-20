@@ -20,23 +20,22 @@
 
 namespace BoxOfBits\tasks;
 
-use BoxOfBits\BaseFiles\BaseAPI;
+use BoxOfBits\BaseBox;
 
 use pocketmine\scheduler\PluginTask;
 use pocketmine\Server;
-use pocketmine\utils\Config;
 
 class BroadcastTask extends PluginTask{
 
-	public function __construct(BaseAPI $api){
-		parent::__construct($api);
-		$this->api = $api;
+	public function __construct(BaseBox $BoxAPI){
+		parent::__construct($BoxAPI);
+		$this->BoxAPI = $BoxAPI;
 	}
 
 	public function onRun($tick){
-		$broadcastSettings = $this->getBroadcastSettings();
+		$broadcastSettings = $this->BoxAPI->getBroadcastSettings();
 		if($broadcastSettings["Enabled"] === "Yes"){
-			$this->sendBroadcast($broadcastsettings["Type"]);
+			$this->BoxAPI->sendBroadcast($broadcastSettings["Type"]);
 		}
 	}
 

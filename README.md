@@ -6,25 +6,25 @@ Frequently Asked Questions
 ==========================
 BoxOfBits FAQ:
 
-	- Q: What are the benefits of using BoxOfBits?
+	What are the benefits of using BoxOfBits?
+	-----------------------------------------
+    Since BoxOfBits is a plugin designed to have a massive amount of functionality, it means that instead of searching for all those little features in different plugins and getting more than your server can handle, you can just download and use the many features of BoxOfBits!
 
-	  A: Since BoxOfBits is a plugin designed to have a massive amount of functionality, it means that instead of searching for all those little features in different plugins and getting more than your server can handle, you can just download and use the many features of BoxOfBits!
+    What compatability does BoxOfBits have?
+    ---------------------------------------
+    BoxOfBits is designed to be used with PocketMine-MP, and as it has only been tested with PM-MP although it may work with others like Genysis, don't be surprised if you find bugs! Also, we cannot assure you that BoxOfBits will be compatible will all other plugins, so if you find that a plugin is causing errors with BoxOfBits, please ask the plugin developer to add BoxOfBits compatability. All the same, please report all bugs to us and we will do our best to resolve them.
 
-    - Q: What compatability does BoxOfBits have?
+    Why does it take so long to update BoxOfBits?
+    ---------------------------------------------
+    One of the main reasons it takes so long to update is simply that many of the main developers working on this project have other projects, school, and many other things going on in their lives, leaving them without much time to concentrate on BoxOfBits. Even then, after the developers have done their job and the update is finished it still requires endless beta-testing, bug-fixing, and going over the code trying to fix and clean up any little mistakes to keep the code as clean as possible. Still, because of all this you can be assured that when the update finally comes out it will be just as good as you wish it could be!
 
-	  A: BoxOfBits is designed to be used with PocketMine-MP, and as it has only been tested with PM-MP although it may work with others like Genysis, don't be surprised if you find bugs! Also, we cannot assure you that BoxOfBits will be compatible will all other plugins, so if you find that a plugin is causing errors with BoxOfBits, please ask the plugin developer to add BoxOfBits compatability. All the same, please report all bugs to us and we will do our best to fix them.
+    Can I contribute to BoxOfBits?
+    ------------------------------
+    Of course you can contribute to BoxOfBits! Their are a few major things you can contribute to, like developing and beta-testing. But if you don't think you are able to help with that and still want to contribute to BoxOfBits their are others you can help with, like helping setup documentations, showcasing the plugin so other people can find it as well, or just requesting some of your favourite features to be added in when we run out of ideas!
 
-    - Q: Why does it take so long to update BoxOfBits?
-
-	  A: One of the main reasons it takes so long to update is simply that many of the main developers working on this project have other projects, school, and many other things going on in their lives, leaving them without much time to concentrate on BoxOfBits. Even then, after the developers have done their job and the update is finish it still requires endless beta-testing, bug-fixing, and going of the code trying to fix and clean up any little mistakes to keep the code as clean as possible. Still, because of all this you know that when the update finally comes out it will be just as good as you wish it could be!
-
-    - Q: Can I contribute to BoxOfBits?
-
-	  A: Of course you can contribute to BoxOfBits! Their are a few major things you can contribute to, like developing and beta-testing. But if you don't think you are able to help with that and still want to contribute to BoxOfBits their are others you can help with, like helping setup documentations  or just requesting some of your favourite features to be added in when we run out of ideas!
-
-    - Q: Does BoxOfBits have an API that I can use?
-
-	  A: A new feature in the 1.5 update, you can access almost any feature BoxOfBits has to offer through our extensive API! Plugin developers out in the wide world of code suddenly have a much wider range of acessible features they can use. For a full API documentation, please read the wiki.
+    Does BoxOfBits have an API that I can use?
+    ------------------------------------------
+    A new feature in the 1.1 update, you can access almost any feature BoxOfBits has to offer through our extensive API! Plugin developers out in the wide world of code suddenly have a much wider range of acessible features. For a full API documentation, please read the wiki or check out the API section of this file below.
 
 Documentation
 =============
@@ -52,17 +52,17 @@ Version History
 ===============
 BoxOfBits Version History:
 
-	- Version 1.5
+	- Version 1.1
 
 		• Software Name: BoxOfBits
 
 		• Software Ownership: BoxOfDevs
 
-		• Software License: MIT License
+		• Software License: Creative Commons Attribution-NonCommercial 4.0 International License
 
 		• Changelog:
 
-			-  
+			-  Added Unlimited Broadcasts
 
 	- Version 1.0
 
@@ -82,7 +82,7 @@ BoxOfBits Version History:
 
 			- Updated /gmc, /gms, /gma & /gmsp Gamemode Change Shortcut Commands
 
-			- Updated config.yml Configurable Options
+			- Updated Configurable Options
 
 	- Version 0.0.1 Initial Release
 
@@ -97,6 +97,18 @@ BoxOfBits Version History:
 			- Added /gmc, /gms, /gma & /gmsp Gamemode Change Shortcut Commands
 
 			- Added Customizable Join, Quit, Kick & Death Messages
+
+Installation
+============
+BoxOfDevs Installation:
+
+    Downloading
+    ------------
+    Download the file name BoxOfBits_v1.5.0:Stable.phar to PATH_TO_SERVER_FILES/plugins.
+
+    Setting Up
+    ----------
+    Run your server and then immediately stop it, so that the configuration files are generated. Then go to PATH_TO_SERVER_FILES/plugins/BoxOfBits and change the settings in all the various files to your desires. Voila, you're done!
 
 Links
 =====
