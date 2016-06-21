@@ -58,7 +58,7 @@ BoxOfBits Version History:
 
 		• Software Ownership: BoxOfDevs
 
-		• Software License: Creative Commons Attribution-NonCommercial 4.0 International License
+		• Software License: BoxOfDevs General Software License 1.1
 
 		• Changelog:
 

@@ -13,7 +13,7 @@
  * @author BoxOfDevs Team
  * @version 1.1
  * @description The growing plugin with so many features!
- * @license Creative Commons Attribution-NonCommercial 4.0 International License, Copyright © 2016 BoxOfDevs Team
+ * @license BoxOfDevs General Software License 1.1, Copyright © 2016 BoxOfDevs Team
  * @website boxofdevs.com
  * @prefix [BoxOfBits]
  *
@@ -36,24 +36,18 @@ class BaseBox extends PluginBase implements Listener, CommandExecutor{
 	const Author = "BoxOfDevs Team";
     const Version = "1.1";
     const Description = "The growing plugin with so many features!";
-    const License = "Creative Commons Attribution-NonCommercial 4.0 International License, Copyright © 2016 BoxOfDevs Team";
+    const License = "BoxOfDevs General Software License 1.1, Copyright © 2016 BoxOfDevs Team";
     const Website = "boxofdevs.com";
     const Prefix = "§0§l[§r§bBoxOfBits§p§l]§r";
 
     public function onLoad(){
         //Loading Message...
-		$this->getLogger()->info(TF::GOLD . "Loading BoxOfBits...");
-
-        //Loaded Message...
-        $this->getLogger()->info(TF::GOLD . "BoxOfBits Loaded!");
+		$this->getLogger()->info(TF::DARK_GREEN . "Loading BoxOfBits...");
     }
 
 	public function onEnable(){
-	    //Enabling Message...
-	    $this->getLogger()->info(TF::DARK_GREEN . "Enabling BoxOfBits...");
-
-		//Configuration Stuff...
-		$this->saveConfigBox();
+	    //Configuration Stuff...
+		$this->saveBoxConfig();
 
 		//Register Events & Commands...
 		$this->getServer()->getPluginManager()->registerEvents($this,$this);
@@ -67,50 +61,50 @@ class BaseBox extends PluginBase implements Listener, CommandExecutor{
 	}
 
 	public function onDisable(){
-	    //Disabling Message...
-		$this->getLogger()->info(TF::DARK_RED. "Disabling BoxOfBits...");
+	    //Configuration Stuff...
+		$this->saveBoxConfig();
 
-        //Disabled Message...
-        $this->getLogger()->info(TF::DARK_RED . "BoxOfBits Disabled!");
+	    //Disabled Message...
+        $this->getLogger()->info(TF::DARK_GREEN . "BoxOfBits Disabled!");
 	}
 
 	/*
-	 * $$$$$$\  $$$$$$$\ $$$$$$\ 
-	 * $$  __$$\ $$  __$$\\_$$  _|
-	 * $$ /  $$ |$$ |  $$ | $$ |  
-	 * $$$$$$$$ |$$$$$$$  | $$ |  
-	 * $$  __$$ |$$  ____/  $$ |  
-	 * $$ |  $$ |$$ |       $$ |  
-	 * $$ |  $$ |$$ |     $$$$$$\ 
-	 * \__|  \__|\__|     \______|
+	 *  $$$$$$\                        $$\                                    $$$$$$\  $$$$$$$\ $$$$$$\ 
+	 * $$  __$$\                       $$ |                                  $$  __$$\ $$  __$$\\_$$  _|
+	 * $$ /  \__|$$\   $$\  $$$$$$$\ $$$$$$\    $$$$$$\  $$$$$$\$$$$\        $$ /  $$ |$$ |  $$ | $$ |  
+	 * $$ |      $$ |  $$ |$$  _____|\_$$  _|  $$  __$$\ $$  _$$  _$$\       $$$$$$$$ |$$$$$$$  | $$ |  
+	 * $$ |      $$ |  $$ |\$$$$$$\    $$ |    $$ /  $$ |$$ / $$ / $$ |      $$  __$$ |$$  ____/  $$ |  
+	 * $$ |  $$\ $$ |  $$ | \____$$\   $$ |$$\ $$ |  $$ |$$ | $$ | $$ |      $$ |  $$ |$$ |       $$ |  
+	 * \$$$$$$  |\$$$$$$  |$$$$$$$  |  \$$$$  |\$$$$$$  |$$ | $$ | $$ |      $$ |  $$ |$$ |     $$$$$$\ 
+	 *  \______/  \______/ \_______/    \____/  \______/ \__| \__| \__|      \__|  \__|\__|     \______|
 	 *
 	 */
 
-	public function getAuthorBox(){
+	public function getBoxAuthor(){
 		return self::Author;
 	}
 
-	public function getVersionBox(){
+	public function getBoxVersion(){
 		return self::Version;
 	}
 
-	public function getDescriptionBox(){
+	public function getBoxDescription(){
 		return self::Description;
 	}
 
-	public function getLicenseBox(){
+	public function getBoxLicense(){
 		return self::License;
 	}
 
-	public function getWebsiteBox(){
+	public function getBoxWebsite(){
 		return self::Website;
 	}
 
-	public function getPrefixBox(){
+	public function getBoxPrefix(){
 		return self::Prefix;
 	}
 
-	public function saveConfigBox(){
+	public function saveBoxConfig(){
 		//Creates Configuration Files Directory..
 		@mkdir($this->getDataFolder());
 
@@ -305,7 +299,7 @@ class BaseBox extends PluginBase implements Listener, CommandExecutor{
 	public function sendBroadcast($type){
 		//Gets Broadcasts & Broadcast Settings...
 		$broadcastSettings = $this->getBroadcastSettings();
-		$prefix = $broadcastSettings["Prefix"] . " ";
+		$prefix = $broadcastSettings["Prefix"];
 		$broadcasts = $this->getBroadcasts();
 
 		//Chooses Random Broadcast...
@@ -314,21 +308,18 @@ class BaseBox extends PluginBase implements Listener, CommandExecutor{
 
 		//Broadcasts Message...
 		if($type === "Message"){
-			$this->getServer()->broadcastMessage($this->formatText($prefix) . $this->formatText($message));
+			$this->getServer()->broadcastMessage($this->formatText($prefix) . " " . $this->formatText($message));
 		}elseif($type === "Popup"){
-			$this->getServer()->broadcastPopup($this->formatText($prefix) . $this->formatText($message));
+			$this->getServer()->broadcastPopup($this->formatText($prefix) . " " . $this->formatText($message));
 		}
 	}
 
 	public function sendCustomBroadcast($type, $prefix, $message){
-		//Fixes Prefix..
-		$prefix = $prefix . " ";
-
 		//Broadcasts Message...
 		if($type === "Message"){
-			$this->getServer()->broadcastMessage($this->formatText($prefix) . $this->formatText($message));
+			$this->getServer()->broadcastMessage($this->formatText($prefix) . " " . $this->formatText($message));
 		}elseif($type === "Popup"){
-			$this->getServer()->broadcastPopup($this->formatText($prefix) . $this->formatText($message));
+			$this->getServer()->broadcastPopup($this->formatText($prefix) . " " . $this->formatText($message));
 		}
 	}
 

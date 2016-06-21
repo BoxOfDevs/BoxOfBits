@@ -1,7 +1,6 @@
 <?php
 
 /*
- *
  * $$$$$$$\                       $$$$$$\   $$$$$$\  $$$$$$$\  $$\   $$\               
  * $$  __$$\                     $$  __$$\ $$  __$$\ $$  __$$\ \__|  $$ |              
  * $$ |  $$ | $$$$$$\  $$\   $$\ $$ /  $$ |$$ /  \__|$$ |  $$ |$$\ $$$$$$\    $$$$$$$\ 
@@ -12,13 +11,15 @@
  * \_______/  \______/ \__/  \__| \______/ \__|      \_______/ \__|   \____/ \_______/ 
  *
  * @author BoxOfDevs Team
- * @link http://boxofdevs.com
+ * @version 1.1
  * @description The growing plugin with so many features!
- * @license MIT License, Copyright © 2016 BoxOfDevs Team
+ * @license BoxOfDevs General Software License 1.1, Copyright © 2016 BoxOfDevs Team
+ * @website boxofdevs.com
+ * @prefix [BoxOfBits]
  *
  */
 
-namespace BoxOfBits\tasks;
+namespace BoxOfBits\Tasks;
 
 use BoxOfBits\BaseBox;
 
@@ -29,13 +30,13 @@ class BroadcastTask extends PluginTask{
 
 	public function __construct(BaseBox $BoxAPI){
 		parent::__construct($BoxAPI);
-		$this->BoxAPI = $BoxAPI;
+		$this->getBoxAPI = $BoxAPI;
 	}
 
 	public function onRun($tick){
-		$broadcastSettings = $this->BoxAPI->getBroadcastSettings();
+		$broadcastSettings = $this->getBoxAPI->getBroadcastSettings();
 		if($broadcastSettings["Enabled"] === "Yes"){
-			$this->BoxAPI->sendBroadcast($broadcastSettings["Type"]);
+			$this->getBoxAPI->sendBroadcast($broadcastSettings["Type"]);
 		}
 	}
 
