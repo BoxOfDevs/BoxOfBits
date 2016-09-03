@@ -30,11 +30,11 @@ use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\command\CommandExecutor;
 use pocketmine\permission\Permission;
+use pocketmine\utils\TextFormat as TF;
 
 class addbroadcast extends BaseBox implements CommandExecutor{
 
 	public function __construct(BaseBox $BaseBox){
-		parent::__construct($BaseBox);
 		$this->BaseBox = $BaseBox;
 	}
 
@@ -43,13 +43,13 @@ class addbroadcast extends BaseBox implements CommandExecutor{
 	}
 
 	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
-        if(strolower($cmd->getName() == "addbroadcast")){
+        if(strtolower($cmd->getName() == "addbroadcast")){
             if(!$sender instanceof Player){
                 if(!isset($args[0])){
-					$this->getLogger()->warn(TF::DARK_RED . " Usage: /addbroadcast <broadcast>");
+					$this->getAPI()->getServer()->getLogger()->warn(TF::DARK_RED . " Usage: /addbroadcast <broadcast>");
 				}else{
 					$this->getAPI()->addBroadcast(implode(" ", $args));
-					$this->getLogger()->info(TF::GREEN . " Broadcast Added Successfully");
+					$this->getAPI()->getServer()->getLogger()->info(TF::GREEN . " Broadcast Added Successfully");
 				}
             }else{
                 if($sender->hasPermission("boxofbits") || $sender->hasPermission("boxofbits.broadcast") || $sender->hasPermission("boxofbits.broadcast.add")){

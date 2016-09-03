@@ -8,7 +8,7 @@ website: boxofdevs.com
 prefix: §0§l[§r§bBoxOfBits§0§l]§r
 commands:
     addbroadcast:
-        usage: "/addbroadcast <broadcast>"
+        usage: /addbroadcast <broadcast>
         description: "Adds Broadcast to Automated Broadcasts List"
 permissions:
     boxofbits:

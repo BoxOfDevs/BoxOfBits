@@ -106,14 +106,17 @@ class BaseBox extends PluginBase implements Listener, CommandExecutor{
 		//Loads & Saves: Settings.yml...
 		$this->saveResource("Settings.yml");
 		$settings = $this->getSettings();
+		$settings->save();
 
 		//Loads & Saves: Messages.yml...
 		$this->saveResource("Messages.yml");
 		$messages = $this->getMessages();
+		$messages->save();
 
 		//Loads & Saves: PlayerData.yml...
 		$this->saveResource("PlayerData.yml");
 		$playerData = $this->getPlayerData();
+		$playerData->save();
 	}
 
 	public function registerEvents(){

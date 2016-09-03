@@ -27,6 +27,6 @@ Broadcast:
     # The prefix at the start of each Automatic Broadcast. Use either the colour tags (listed in Messages.yml), & or § to colour the text.
     Prefix: "[ServerBroadcast]"
     # The amount of time in seconds between each Automatic Broadcast.
-    SecondsBetweenBroadcast: 30
+    SecondsBetweenBroadcast: 3
 
 ...
