@@ -1,14 +1,23 @@
 name: BoxOfBits
 description: The growing plugin with so many features!
-version: 1.1
+version: 1.0.0
 author: BoxOfDevs Team
 main: BoxOfBits\BaseBox
-api:
-- 2.0.0
-website: http://boxofdevs.com
+api: 2.0.0
+website: boxofdevs.com
 prefix: §0§l[§r§bBoxOfBits§0§l]§r
 commands:
+    addbroadcast:
+        usage: "/addbroadcast <broadcast>"
+        description: "Adds Broadcast to Automated Broadcasts List"
 permissions:
     boxofbits:
         default: false
         children:
+            boxofbits.broadcast:
+                default: false
+                children:
+                    boxofbits.broadcast.recieve:
+                        default: true
+                    boxofbits.broadcast.add:
+                        default: op

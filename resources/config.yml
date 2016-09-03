@@ -1,5 +1,0 @@
-BroadcastSettings:
-    Enabled: "Yes"
-    Type: "Message"
-    Prefix: "[ServerBroadcast]"
-    SecondsBetweenBroadcast: 30

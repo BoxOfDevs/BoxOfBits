@@ -1,6 +1,6 @@
 Overview
 ========
-BoxOfBits, the growing plugin with so many features, is exactly what it says it is - a plugin for PocketMine-MP that already has so many amazing features, but is also still growing and constantly being added to. Originally inspired by EssentialsPE's large array of features, this plugin has been having new features added ever since it started in January 2016! Enjoy 😃
+BoxOfBits, the growing plugin with so many features, is exactly what it says it is - a plugin for Minecraft: PE servers that already has so many amazing features, but is also still growing and constantly being added to. Originally inspired by EssentialsPE's large array of features, this plugin has been having new features added ever since it started in January 2016! Enjoy 😃
 
 Frequently Asked Questions
 ==========================
@@ -14,7 +14,7 @@ BoxOfBits FAQ:
     ---------------------------------------
     BoxOfBits is designed to be used with PocketMine-MP, and as it has only been tested with PM-MP although it may work with others like Genysis, don't be surprised if you find bugs! Also, we cannot assure you that BoxOfBits will be compatible will all other plugins, so if you find that a plugin is causing errors with BoxOfBits, please ask the plugin developer to add BoxOfBits compatability. All the same, please report all bugs to us and we will do our best to resolve them.
 
-    Why does it take so long to update BoxOfBits?
+    Why does it usually take so long to update BoxOfBits?
     ---------------------------------------------
     One of the main reasons it takes so long to update is simply that many of the main developers working on this project have other projects, school, and many other things going on in their lives, leaving them without much time to concentrate on BoxOfBits. Even then, after the developers have done their job and the update is finished it still requires endless beta-testing, bug-fixing, and going over the code trying to fix and clean up any little mistakes to keep the code as clean as possible. Still, because of all this you can be assured that when the update finally comes out it will be just as good as you wish it could be!
 
@@ -24,15 +24,24 @@ BoxOfBits FAQ:
 
     Does BoxOfBits have an API that I can use?
     ------------------------------------------
-    A new feature in the 1.1 update, you can access almost any feature BoxOfBits has to offer through our extensive API! Plugin developers out in the wide world of code suddenly have a much wider range of acessible features. For a full API documentation, please read the wiki or check out the API section of this file below.
+    A new feature in the 1.0.0 update, you can access almost any feature BoxOfBits has to offer through our extensive API! Plugin developers out in the wide world of code suddenly have a much wider range of acessible features. For a full API documentation, please read the wiki or check out the API section of this file below.
 
 Documentation
 =============
 BoxOfBits Documentation:
 
+	Current Features
+	----------------
+
+		- Advanced Unlimited Broadcast System
+
+		- Advanced Configuration Options
+
 	Commands
 	--------
 	BoxOfBits Commands:
+
+	   - /addbroadcast <broadcast> : Adds Broadcast to Automated Broadcasts List (Permission: boxofbits.broadcast.add)
 
 
 
@@ -42,29 +51,59 @@ BoxOfBits Documentation:
 
 		- boxofbits : BoxOfBits Universal Permission (Default: FALSE)
 
+            • boxofbits.broadcast : Broadcast Universal Permission (Default: FALSE)
+
+                - boxofbits.broadcast.recieve : Allows Recieving Automated Broadcasts (Default: TRUE)
+
+                - boxofbits.broadcast.add : Allows /addbroadcast (Default: OP)
+
 	Configuration
 	-------------
 	BoxOfBits Configuration:
 
+		- Settings.yml : Allows Changing Various BoxOfBits Settings
 
+		- Messages.yml : Allows Changing Various BoxOfBits Messages
+
+		- PlayerData.yml : Stores Various Player Data
+
+	Compatability
+	-------------
+	BoxOfBits Compatability:
+
+		- PocketMine-MP : Yes (TESTED)
+
+		- ImagicalMine : Yes (UNTESTED)
+
+		- Genysis : Unknown (UNTESTED)
+
+		- ClearSky : Unknown (UNTESTED)
+
+		- Nukkit : No (UNTESTED)
+
+		- MiNET : No (UNTESTED)
 
 Version History
 ===============
 BoxOfBits Version History:
 
-	- Version 1.1
+	- Version 1.0.0
 
 		• Software Name: BoxOfBits
 
-		• Software Ownership: BoxOfDevs
+		• Software Ownership: BoxOfDevs Team
 
-		• Software License: BoxOfDevs General Software License 1.1
+		• Software License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
 
 		• Changelog:
 
-			-  Added Unlimited Broadcasts
+			- Changed Plugin Build Method
 
-	- Version 1.0
+			- Added Advanced Unlimited Broadcast System
+
+			- Updated Configurable Options
+
+	- Version 0.1.0
 
 		• Software Name: BoxOfBits
 
@@ -104,36 +143,16 @@ BoxOfDevs Installation:
 
     Downloading
     ------------
-    Download the file name BoxOfBits_v1.5.0:Stable.phar to PATH_TO_SERVER_FILES/plugins.
+    Download the file name BoxOfBits_v1.0:Stable.phar and save it to PATH_TO_SERVER_FILES/plugins.
 
     Setting Up
     ----------
-    Run your server and then immediately stop it, so that the configuration files are generated. Then go to PATH_TO_SERVER_FILES/plugins/BoxOfBits and change the settings in all the various files to your desires. Voila, you're done!
+    Run your server and then immediately stop it, so that the configurable files are generated. Then go to PATH_TO_SERVER_FILES/plugins/BoxOfBits and change the settings in all the various files to your desires. Voila, you're done!
 
 Links
 =====
 BoxOfBits Links:
 
-	- BoxOfDevs Team Site:
+	- GitHub Repository: http://github.com/BoxOfDevs/BoxOfBits
 
-	- ImagicalMine Community Forums:
-
-Contributers
-============
-BoxOfBits Contributers:
-
-	- TheDragonRing
-
-	- Taki21
-
-	- remotevase
-
-	- Ad5001
-
-	- Vaivez66
-
-	- iksaku
-
-	- 0-Eclipse-0
-
-	- UltimateMcraft
+	- BoxOfDevs Team Site: http://products.boxofdevs.com/plugins/BoxOfBits

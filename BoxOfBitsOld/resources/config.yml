@@ -1,6 +1,0 @@
----
-
-# BroadcastTime - The time in seconds between each broadcast.
-BroadcastTime: 60
-
-...

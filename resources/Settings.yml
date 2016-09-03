@@ -1,0 +1,32 @@
+---
+
+#
+# $$$$$$$\                       $$$$$$\   $$$$$$\  $$$$$$$\  $$\   $$\               
+# $$  __$$\                     $$  __$$\ $$  __$$\ $$  __$$\ \__|  $$ |              
+# $$ |  $$ | $$$$$$\  $$\   $$\ $$ /  $$ |$$ /  \__|$$ |  $$ |$$\ $$$$$$\    $$$$$$$\ 
+# $$$$$$$\ |$$  __$$\ \$$\ $$  |$$ |  $$ |$$$$\     $$$$$$$\ |$$ |\_$$  _|  $$  _____|
+# $$  __$$\ $$ /  $$ | \$$$$  / $$ |  $$ |$$  _|    $$  __$$\ $$ |  $$ |    \$$$$$$\  
+# $$ |  $$ |$$ |  $$ | $$  $$<  $$ |  $$ |$$ |      $$ |  $$ |$$ |  $$ |$$\  \____$$\ 
+# $$$$$$$  |\$$$$$$  |$$  /\$$\  $$$$$$  |$$ |      $$$$$$$  |$$ |  \$$$$  |$$$$$$$  |
+# \_______/  \______/ \__/  \__| \______/ \__|      \_______/ \__|   \____/ \_______/ 
+#
+# @author BoxOfDevs Team
+# @version 1.0.0
+# @description The growing plugin with so many features!
+# @license Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, Copyright © 2016 BoxOfDevs Team
+# @website boxofdevs.com
+# @prefix [BoxOfBits]
+#
+
+# Various Settings To Customize Automatic Broadcasts
+Broadcast:
+    # Whether or not Automatic Broadcasts are enabled. Choose either true or false
+    Enabled: true
+    # The type of message the Automatic Broadcasts are. Choose either "Message" or "Popup"
+    Type: "Message"
+    # The prefix at the start of each Automatic Broadcast. Use either the colour tags (listed in Messages.yml), & or § to colour the text.
+    Prefix: "[ServerBroadcast]"
+    # The amount of time in seconds between each Automatic Broadcast.
+    SecondsBetweenBroadcast: 30
+
+...

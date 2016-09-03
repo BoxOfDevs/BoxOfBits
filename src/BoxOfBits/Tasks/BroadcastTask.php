@@ -11,9 +11,9 @@
  * \_______/  \______/ \__/  \__| \______/ \__|      \_______/ \__|   \____/ \_______/ 
  *
  * @author BoxOfDevs Team
- * @version 1.1
+ * @version 1.0.0
  * @description The growing plugin with so many features!
- * @license BoxOfDevs General Software License 1.1, Copyright © 2016 BoxOfDevs Team
+ * @license Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, Copyright © 2016 BoxOfDevs Team
  * @website boxofdevs.com
  * @prefix [BoxOfBits]
  *
@@ -23,21 +23,25 @@ namespace BoxOfBits\Tasks;
 
 use BoxOfBits\BaseBox;
 
-use pocketmine\scheduler\PluginTask;
 use pocketmine\Server;
+use pocketmine\Player;
+use pocketmine\IPlayer;
+use pocketmine\scheduler\PluginTask;
 
 class BroadcastTask extends PluginTask{
 
-	public function __construct(BaseBox $BoxAPI){
-		parent::__construct($BoxAPI);
-		$this->getBoxAPI = $BoxAPI;
+	public function __construct(BaseBox $BaseBox){
+		parent::__construct($BaseBox);
+		$this->BaseBox = $BaseBox;
+	}
+
+	public function getAPI(){
+		return ($api = $this->BaseBox);
 	}
 
 	public function onRun($tick){
-		$broadcastSettings = $this->getBoxAPI->getBroadcastSettings();
-		if($broadcastSettings["Enabled"] === "Yes"){
-			$this->getBoxAPI->sendBroadcast($broadcastSettings["Type"]);
-		}
+		$broadcastSettings = $this->getAPI()->getBroadcastSettings();
+		$this->getAPI()->sendBroadcast($broadcastSettings["Type"]);
 	}
 
 }
