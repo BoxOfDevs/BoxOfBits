@@ -75,9 +75,9 @@ BoxOfBits Documentation:
 
 		- ImagicalMine : Yes (UNTESTED)
 
-		- Genysis : Unknown (UNTESTED)
+		- Genysis : Not FULLY compatible. Some features work, others cause crashes (UNTESTED)
 
-		- ClearSky : Unknown (UNTESTED)
+		- ClearSky : Yes (UNTESTED)
 
 		- Nukkit : No (UNTESTED)
 
