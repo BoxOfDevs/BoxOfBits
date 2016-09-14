@@ -30,7 +30,7 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat as TF;
 use pocketmine\utils\Config;
 use pocketmine\scheduler\PluginTask;
-use pocketmine\event\Listener;
+use pocketmine\event\Listener;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\command\CommandExecutor;
