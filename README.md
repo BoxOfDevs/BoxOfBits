@@ -73,7 +73,7 @@ BoxOfBits Documentation:
 
 		- PocketMine-MP : Yes (TESTED)
 
-		- Tesseract : Yes (UNTESTED)
+		- Tesseract : Yes (TESTED)
 
 		- Genisys : Not FULLY compatible. Some features work, others cause crashes (UNTESTED)
 
