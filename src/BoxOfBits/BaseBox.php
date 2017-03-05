@@ -275,7 +275,7 @@ class BaseBox extends PluginBase implements Listener, CommandExecutor {
 		
 		//Gets Players...
 		foreach($this->getServer()->getOnlinePlayers() as $player){
-			if($sender->hasPermission("boxofbits") || $sender->hasPermission("boxofbits.broadcast") || $sender->hasPermission("boxofbits.broadcast.recieve")){
+			if($player->hasPermission("boxofbits") || $sender->hasPermission("boxofbits.broadcast") || $sender->hasPermission("boxofbits.broadcast.recieve")){
 
 				//Broadcasts Message...
 				if($type === "Message"){
