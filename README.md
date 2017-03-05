@@ -73,7 +73,7 @@ BoxOfBits Documentation:
 
 		- PocketMine-MP : Yes (TESTED)
 
-		- ImagicalMine : Yes (UNTESTED)
+		- Tesseract : Yes (UNTESTED)
 
 		- Genysis : Not FULLY compatible. Some features work, others cause crashes (UNTESTED)
 
