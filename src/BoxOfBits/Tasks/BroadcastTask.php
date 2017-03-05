@@ -13,11 +13,11 @@
  * @author BoxOfDevs Team
  * @version 1.0.0
  * @description The growing plugin with so many features!
- * @license Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, Copyright © 2016 BoxOfDevs Team
+ * @license Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, Copyright © 2017 BoxOfDevs Team
  * @website boxofdevs.com
  * @prefix [BoxOfBits]
  *
- */
+*/
 
 namespace BoxOfBits\Tasks;
 
@@ -43,7 +43,4 @@ class BroadcastTask extends PluginTask{
 		$broadcastSettings = $this->getAPI()->getBroadcastSettings();
 		$this->getAPI()->sendBroadcast($broadcastSettings["Type"]);
 	}
-
 }
-
-?>

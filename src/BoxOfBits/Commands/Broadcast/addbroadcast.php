@@ -13,11 +13,11 @@
  * @author BoxOfDevs Team
  * @version 1.0.0
  * @description The growing plugin with so many features!
- * @license Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, Copyright © 2016 BoxOfDevs Team
+ * @license Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, Copyright © 2017 BoxOfDevs Team
  * @website boxofdevs.com
  * @prefix [BoxOfBits]
  *
- */
+*/
 
 namespace BoxOfBits\Commands\Broadcast;
 
@@ -46,26 +46,23 @@ class addbroadcast extends BaseBox implements CommandExecutor{
         if(strtolower($cmd->getName() == "addbroadcast")){
             if(!$sender instanceof Player){
                 if(!isset($args[0])){
-					$this->getAPI()->getServer()->getLogger()->warn(TF::DARK_RED . " Usage: /addbroadcast <broadcast>");
+					$this->getAPI()->getServer()->getLogger()->warn(TF::DARK_RED."Usage: /addbroadcast <broadcast>");
 				}else{
 					$this->getAPI()->addBroadcast(implode(" ", $args));
-					$this->getAPI()->getServer()->getLogger()->info(TF::GREEN . " Broadcast Added Successfully");
+					$this->getAPI()->getServer()->getLogger()->info(TF::GREEN."Broadcast Added Successfully!");
 				}
             }else{
                 if($sender->hasPermission("boxofbits") || $sender->hasPermission("boxofbits.broadcast") || $sender->hasPermission("boxofbits.broadcast.add")){
 					if(!isset($args[0])){
-						$sender->sendMessage($this->getAPI()->getPrefix() . TF::DARK_RED . " Usage: /addbroadcast <broadcast>");
+						$sender->sendMessage($this->getAPI()->getPrefix().TF::DARK_RED."Usage: /addbroadcast <broadcast>");
 					}else{
 						$this->getAPI()->addBroadcast(implode(" ", $args));
-						$sender->sendMessage($this->getAPI()->getPrefix() . TF::GREEN . " Broadcast Added Successfully");
+						$sender->sendMessage($this->getAPI()->getPrefix().TF::GREEN."Broadcast Added Successfully!");
 					}
 				}else{
-                    $sender->sendMessage($this->getAPI()->getPrefix() . TF::DARK_RED . " You do not have permission to run this command!");
+                    $sender->sendMessage($this->getAPI()->getPrefix().TF::DARK_RED."You do not have permission to run this command!");
                 }
             }
         }
     }
-
 }
-
-?>

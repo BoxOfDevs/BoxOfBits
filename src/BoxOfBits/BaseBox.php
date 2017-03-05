@@ -13,7 +13,7 @@
  * @author BoxOfDevs Team
  * @version 1.0.0
  * @description The growing plugin with so many features!
- * @license Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, Copyright © 2016 BoxOfDevs Team
+ * @license Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, Copyright © 2017 BoxOfDevs Team
  * @website boxofdevs.com
  *
  */
@@ -35,20 +35,19 @@ use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\command\CommandExecutor;
 
-
-class BaseBox extends PluginBase implements Listener, CommandExecutor{
-
+class BaseBox extends PluginBase implements Listener, CommandExecutor {
+	
 	//Constant Variables...
 	const Author = "BoxOfDevs Team";
 	const Version = "1.0.0";
 	const Description = "The growing plugin with so many features!";
-	const License = "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, Copyright © 2016 BoxOfDevs Team";
+	const License = "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, Copyright © 2017 BoxOfDevs Team";
 	const Website = "boxofdevs.com";
-	const Prefix = TF::BLACK . TF::BOLD . "[" . TF::RESET . TF::AQUA . "BoxOfBits" . TF::BLACK . TF::BOLD . "]" . TF::RESET;
+	const Prefix = TF::BLACK.TF::BOLD."[".TF::RESET.TF::AQUA."BoxOfBits".TF::BLACK.TF::BOLD."]".TF::RESET." ";
 
 	public function onLoad(){
 		//Loading Message...
-		$this->getLogger()->info(TF::GOLD . "Loading...");
+		$this->getLogger()->info(TF::GOLD."Loading...");
 	}
 
 	public function onEnable(){
@@ -66,7 +65,7 @@ class BaseBox extends PluginBase implements Listener, CommandExecutor{
 		}
 
 		//Enabled Message...
-		$this->getLogger()->info(TF::GREEN . "Enabled!");
+		$this->getLogger()->info(TF::GREEN."Enabled!");
 	}
 
 	public function onDisable(){
@@ -131,17 +130,17 @@ class BaseBox extends PluginBase implements Listener, CommandExecutor{
 
 	public function getSettings(){
 		//Returns Settings.yml...
-		return ($settings = new Config($this->getDataFolder() . "Settings.yml", Config::YAML));
+		return ($settings = new Config($this->getDataFolder()."Settings.yml", Config::YAML));
 	}
 
 	public function getMessages(){
 		//Returns Messages.yml...
-		return ($messages = new Config($this->getDataFolder() . "Messages.yml", Config::YAML));
+		return ($messages = new Config($this->getDataFolder()."Messages.yml", Config::YAML));
 	}
 
 	public function getPlayerData(){
 		//Returns PlayerData.yml...
-		return ($playerData = new Config($this->getDataFolder() . "PlayerData.yml", Config::YAML));
+		return ($playerData = new Config($this->getDataFolder()."PlayerData.yml", Config::YAML));
 	}
 
 	public function getAuthor(){
@@ -221,7 +220,6 @@ class BaseBox extends PluginBase implements Listener, CommandExecutor{
 		$tags = array("{COLOUR_BLACK}", "{COLOUR_DARK_BLUE}", "{COLOUR_DARK_GREEN}", "{COLOUR_DARK_AQUA}", "{COLOUR_DARK_RED}", "{COLOUR_DARK_PURPLE}", "{COLOUR_GOLD}", "{COLOUR_GRAY}", "{COLOUR_DARK_GRAY}", "{COLOUR_BLUE}", "{COLOUR_GREEN}", "{COLOUR_AQUA}", "{COLOUR_RED}", "{COLOUR_LIGHT_PURPLE}", "{COLOUR_YELLOW}", "{COLOUR_WHITE}", "{COLOUR_OBFUSCATED}", "{COLOUR_BOLD}", "{COLOUR_STRIKETHROUGH}", "{COLOUR_UNDERLINE}", "{COLOUR_ITALIC}", "{COLOUR_RESET}");
 		$text = str_replace($tags, $reset, $text);
 
-
 		//Returns Final Text...
 		return $text;
 	}
@@ -234,7 +232,7 @@ class BaseBox extends PluginBase implements Listener, CommandExecutor{
 	 *  | |_) | | | (_) | (_| | (_| | (_| (_| \__ \ |_\__ \
 	 *  |____/|_|  \___/ \__,_|\__,_|\___\__,_|___/\__|___/
 	 *
-	 */
+	*/
 
 	public function getBroadcastSettings(){
 		//Gets Broadcast Settings...
@@ -297,7 +295,4 @@ class BaseBox extends PluginBase implements Listener, CommandExecutor{
 			$this->getServer()->broadcastPopup($this->formatText($prefix) . " " . $this->formatText($message));
 		}
 	}
-
 }
-
-?>

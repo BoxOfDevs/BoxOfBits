@@ -71,17 +71,17 @@ BoxOfBits Documentation:
 	-------------
 	BoxOfBits Compatability:
 
-		- PocketMine-MP : Yes (TESTED)
+		- PocketMine-MP : Yes (TESTED) [Download](https://github.com/pmmp/PocketMine-MP)
 
-		- Tesseract : Yes (UNTESTED)
+		- Tesseract : Yes (UNTESTED) [Download](https://github.com/TesseractTeam/Tesseract)
 
-		- Genysis : Not FULLY compatible. Some features work, others cause crashes (UNTESTED)
+		- Genisys : Not FULLY compatible. Some features work, others cause crashes (UNTESTED) [Download](https://github.com/iTXTech/Genisys)
 
-		- ClearSky : Yes (UNTESTED)
+		- ClearSky : Yes (UNTESTED) [Download](https://github.com/ClearSkyTeam/PocketMine-MP)
 
-		- Nukkit : No (UNTESTED)
+		- Nukkit : No (UNTESTED) [Download](https://github.com/Nukkit/Nukkit)
 
-		- MiNET : No (UNTESTED)
+		- MiNET : No (UNTESTED) [Download](https://github.com/NiclasOlofsson/MiNET)
 
 Version History
 ===============
@@ -154,5 +154,3 @@ Links
 BoxOfBits Links:
 
 	- GitHub Repository: http://github.com/BoxOfDevs/BoxOfBits
-
-	- BoxOfDevs Team Site: http://products.boxofdevs.com/plugins/BoxOfBits
